@@ -24,7 +24,7 @@
           <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to root_path, class: "nav-link text-dark text-right" do %>
+                <%= link_to my_page_path, class: "nav-link text-dark text-right" do %>
                   <button class="btn btn-outline-dark">マイページ</button>
                 <% end %>
               </li>

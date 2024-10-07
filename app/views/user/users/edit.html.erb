@@ -1,0 +1,64 @@
+<div class="container">
+  <h1 class ="text-center mt-5">プロフィール編集</h4><br>
+
+  <%= form_with model: @user, url: update_mypage_path, method: :patch do |f| %>
+  <table class="table">
+    <tr>
+      <td class="col-6"><%= f.file_field :image, accept: "image/*" %></td>
+      <td class="col-6">
+        <div><strong>ユーザーネーム</strong></div>
+        <div>
+          <%= f.text_field :name, class: "form-control name" %>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>プロフィール</strong></td>
+      <td><%= f.text_area :bio, class: 'form-control' %></td>
+    </tr>
+    <tr>
+      <td><strong>性別</strong></td>
+      <td>
+        <%= f.select :gender, @gender_options, { include_blank: '選択してください' }, class: 'form-control' %>
+      </td>
+      <td><strong>年齢</strong></td>
+      <td>
+        <%= f.select :age, @age_options, { include_blank: '選択してください' }, class: 'form-control' %>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>喫煙</strong></td>
+      <td>
+        <%= f.select :smoking, @smoking_options, { include_blank: '選択してください' }, class: 'form-control' %>
+      </td>
+      <td><strong>飲酒</strong></td>
+      <td>
+        <%= f.select :drinking, @drinking_options, { include_blank: '選択してください' }, class: 'form-control' %>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>行った国数</strong></td>
+      <td>
+        <%= f.text_field :country_count, class: 'form-control', placeholder: "数字を入力"%>
+      </td>
+      <td><strong>好きな地域</strong></td>
+      <td>
+        <%= f.select :favorite_area, @favorite_area_options, { include_blank: '選択してください' }, class: 'form-control' %>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>予算</strong></td>
+      <td>
+        <%= f.select :budget, @budget_options, { include_blank: '選択してください' }, class: 'form-control' %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-group">
+          <%= f.submit "保存する", class: "btn btn-dark" %>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <% end %>
+</div>
