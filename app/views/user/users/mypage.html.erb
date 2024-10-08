@@ -1,6 +1,4 @@
 <div class="container">
-  
-  
   <div class="mt-4" style="text-align: right;">
     <%= link_to new_post_path, class: "text-dark" do %>
       <button class="btn btn-dark btn-lg">投稿を作成する <i class="fa-solid fa-pen"></i></button>
@@ -61,7 +59,7 @@
       <tr style="line-height: 3; vertical-align: middle;">
         <td style="font-size: 15px;"><strong>行った国数</strong></td>
         <td style="font-size: 20px;">
-          <%= @user.country_count %>
+          <%= @user.country_count.present? ? @user.country_count : '非公開' %>
         </td>
         <td style="font-size: 15px;"><strong>好きな地域</strong></td>
         <td style="font-size: 20px;">
