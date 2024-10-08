@@ -1,6 +1,29 @@
 <div class="container">
-  <div class="d-flex justify-content-center mt-3">
-    <h1>マイページ</h1>
+  <div class="mt-4" style="text-align: right;">
+    <%= link_to new_post_path, class: "nav-link text-dark text-right" do %>
+      <button class="btn btn-dark btn-lg">投稿を作成する</button>
+    <% end %>
+  </div>
+  <table class='table'>
+    <tr><%= image_tag @user.get_profile_image(200, 200) %></tr>
+    <tr><%= @user.name %> </tr>
+    <tr><%= @user.bio %></tr>
+  </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div>
       <%= link_to edit_mypage_path, class: "nav-link text-dark text-right" do %>
         <button class="btn btn-dark">編集する</button>

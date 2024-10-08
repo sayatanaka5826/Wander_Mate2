@@ -14,8 +14,8 @@
         </td>
       </tr>
       <tr>
-        <td colspan="2" style="width: 50%;"><strong>プロフィール</strong></td>
-        <td colspan="2" style="width: 50%;"><%= f.text_area :bio, class: 'form-control' %></td>
+        <td colspan="1" style="width: 25%;"><strong>プロフィール</strong></td>
+        <td colspan="3" style="width: 75%;"><%= f.text_area :bio, class: 'form-control' %></td>
       </tr>
       <tr>
         <td style="width: 25%;"><strong>性別</strong></td>
@@ -52,13 +52,15 @@
         <td>
           <%= f.select :budget, @budget_options, { include_blank: '選択してください' }, class: 'form-control' %>
         </td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td></td>
-        <td style="text-align: right;">
+        <td style="text-align: right; padding-top: 40px;">
           <%= link_to "退会する", confirm_users_path, class: "btn btn-danger" %>
         </td>
-        <td>
+        <td style="padding-top: 40px;">
           <%= f.submit "保存する", class: "btn btn-dark" %>
         </td>
         <td></td>

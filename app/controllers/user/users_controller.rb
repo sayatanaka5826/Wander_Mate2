@@ -1,5 +1,9 @@
 class User::UsersController < ApplicationController
 
+  def mypage
+    @user = current_user
+  end
+  
   def edit
     @user = current_user
     @gender_options = User.genders_i18n.invert.map{|key,value|[key,value]}

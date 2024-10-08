@@ -33,7 +33,6 @@ class User < ApplicationRecord
   enum budget: {low: 0 , normal: 1, high: 2}
 
 
-
   def get_profile_image(width, height)
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')
@@ -41,5 +40,5 @@ class User < ApplicationRecord
     end
       profile_image.variant(resize_to_limit: [width, height]).processed
   end
-
+  
 end
