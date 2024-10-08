@@ -1,5 +1,7 @@
 <div class="container">
-  <div class="mt-5" style="text-align: right;">
+  
+  
+  <div class="mt-4" style="text-align: right;">
     <%= link_to new_post_path, class: "text-dark" do %>
       <button class="btn btn-dark btn-lg">投稿を作成する <i class="fa-solid fa-pen"></i></button>
     <% end %>
@@ -7,7 +9,7 @@
   <table class="col-md-12" style="margin: auto;">
     <tr>
       <td>
-        <%= image_tag @user.get_profile_image(200, 200) %>
+        <%= image_tag @user.get_profile_image(200, 200), class: "rounded-circle" %>
       </td>
       <td>
         <div style="font-weight: bold; font-size: 50px;">
@@ -30,7 +32,7 @@
     </tr>
   </table>
 
-  <div style="font-weight: bold; font-size: 30px; margin-top: 50px;" class="text-center">
+  <div style="font-weight: bold; font-size: 30px; margin-top: 40px; margin-bottom: 10px;" class="text-center">
     プロフィール
   </div>
 
@@ -39,21 +41,21 @@
       <tr style="line-height: 3; vertical-align: middle;">
         <td style="font-size: 15px;"><strong>性別</strong></td>
         <td style="font-size: 20px;">
-          <%= @user.gender %>
+          <%= @user.gender_japanese %>
         </td>
         <td style="font-size: 15px;"><strong>年齢</strong></td>
         <td style="font-size: 20px;">
-          <%= @user.age %>
+          <%= @user.age_japanese %>
         </td>
       </tr>
       <tr style="line-height: 3; vertical-align: middle;">
         <td style="font-size: 15px;"><strong>喫煙</strong></td>
         <td style="font-size: 20px;">
-          <%= @user.smoking %>
+          <%= @user.smoking_japanese %>
         </td>
         <td style="font-size: 15px;"><strong>飲酒</strong></td>
         <td style="font-size: 20px;">
-          <%= @user.drinking %>
+          <%= @user.drinking_japanese %>
         </td>
       </tr>
       <tr style="line-height: 3; vertical-align: middle;">
@@ -63,13 +65,13 @@
         </td>
         <td style="font-size: 15px;"><strong>好きな地域</strong></td>
         <td style="font-size: 20px;">
-          <%= @user.favorite_area %>
+          <%= @user.favorite_area_japanese %>
         </td>
       </tr>
       <tr style="line-height: 3; vertical-align: middle;">
         <td style="font-size: 15px;"><strong>予算</strong></td>
         <td style="font-size: 20px;">
-          <%= @user.budget %>
+          <%= @user.budget_japanese %>
         </td>
         <td></td>
         <td></td>
@@ -77,16 +79,26 @@
     </tbody>
   </table>
 
-</div>
-
-
-    <div>
-      <%= link_to edit_mypage_path, class: "nav-link text-dark text-right" do %>
-        <button class="btn btn-dark">編集する</button>
-      <% end %>
-    </div>
+  <div style="text-align: center;">
+    <%= link_to edit_mypage_path, class: "text-dark" do %>
+      <button class="btn btn-dark">編集する</button>
+    <% end %>
   </div>
+
+  <div style="font-weight: bold; font-size: 30px; margin-top: 40px; margin-bottom: 10px;" class="text-center">
+    投稿一覧
+  </div>
+
 </div>
+
+
+
+
+
+
+
+
+
 
 
 

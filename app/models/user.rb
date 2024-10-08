@@ -23,6 +23,14 @@ class User < ApplicationRecord
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
   validates :bio, length: { maximum: 200 }
 
+  def get_profile_image(width, height)
+    unless profile_image.attached?
+      file_path = Rails.root.join('app/assets/images/no_image.jpg')
+      profile_image.attach(io: File.open(file_path), filename: 'no_image.jpg', content_type: 'image/jpeg')
+    end
+      profile_image.variant(resize_to_limit: [width, height]).processed
+  end
+
   enum gender: {male: 0 , female: 1, other: 2}
   enum age: {teens: 0 , twenties: 1, thirties: 2, forties: 3, fifties: 4,
     sixties: 5, seventies: 6, older: 7}
@@ -32,13 +40,97 @@ class User < ApplicationRecord
     asia: 4, oceania: 5, others: 6}
   enum budget: {low: 0 , normal: 1, high: 2}
 
-
-  def get_profile_image(width, height)
-    unless profile_image.attached?
-      file_path = Rails.root.join('app/assets/images/no_image.jpg')
-      profile_image.attach(io: File.open(file_path), filename: 'no_image.jpg', content_type: 'image/jpeg')
+  def gender_japanese
+    case gender
+    when "male"
+      "男性"
+    when "female"
+      "女性"
+    when "other"
+      "その他"
+    else
+      "非公開"
     end
-      profile_image.variant(resize_to_limit: [width, height]).processed
   end
-  
+
+  def age_japanese
+    case age
+    when "teens"
+      "10代"
+    when "twenties"
+      "20代"
+    when "thirties"
+      "30代"
+    when "forties"
+      "40代"
+    when "fifties"
+      "50代"
+    when "sixties"
+      "60代"
+    when "seventies"
+      "70代"
+    when "older"
+      "それ以上"
+    else
+      "非公開"
+    end
+  end
+
+  def smoking_japanese
+    case smoking
+    when "smoker"
+      "吸う"
+    when "non_smoker"
+      "吸わない"
+    else
+      "非公開"
+    end
+  end
+
+  def drinking_japanese
+    case drinking
+    when "drinker"
+      "飲む"
+    when "non_drinker"
+      "飲まない"
+    else
+      "非公開"
+    end
+  end
+
+  def favorite_area_japanese
+    case favorite_area
+    when "north_america"
+      "北アメリカ"
+    when "south_america"
+      "南アメリカ"
+    when "europe"
+      "ヨーロッパ"
+    when "africa"
+      "アフリカ"
+    when "asia"
+      "アジア"
+    when "oceania"
+      "オセアニア"
+    when "others"
+      "その他"
+    else
+      "非公開"
+    end
+  end
+
+  def budget_japanese
+    case budget
+    when "low"
+      "￥"
+    when "normal"
+      "￥￥"
+    when "high"
+      "￥￥￥"
+    else
+      "非公開"
+    end
+  end
+
+
 end
