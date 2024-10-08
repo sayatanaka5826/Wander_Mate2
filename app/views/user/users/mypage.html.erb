@@ -4,7 +4,7 @@
       <button class="btn btn-dark btn-lg">投稿を作成する <i class="fa-solid fa-pen"></i></button>
     <% end %>
   </div>
-  <table class="col-md-10">
+  <table class="col-md-12" style="margin: auto;">
     <tr>
       <td>
         <%= image_tag @user.get_profile_image(200, 200) %>
@@ -30,52 +30,51 @@
     </tr>
   </table>
 
-  <div style="font-weight: bold; font-size: 30px; margin-top: 80px;" class="text-center">
+  <div style="font-weight: bold; font-size: 30px; margin-top: 50px;" class="text-center">
     プロフィール
   </div>
 
   <table class="table col-10" style="margin: auto;">
     <tbody>
-      <tr>
-        <td ><strong>性別</strong></td>
-        <td >
+      <tr style="line-height: 3; vertical-align: middle;">
+        <td style="font-size: 15px;"><strong>性別</strong></td>
+        <td style="font-size: 20px;">
           <%= @user.gender %>
         </td>
-        <td ><strong>年齢</strong></td>
-        <td >
+        <td style="font-size: 15px;"><strong>年齢</strong></td>
+        <td style="font-size: 20px;">
           <%= @user.age %>
         </td>
       </tr>
-      <tr>
-        <td><strong>喫煙</strong></td>
-        <td>
+      <tr style="line-height: 3; vertical-align: middle;">
+        <td style="font-size: 15px;"><strong>喫煙</strong></td>
+        <td style="font-size: 20px;">
           <%= @user.smoking %>
         </td>
-        <td><strong>飲酒</strong></td>
-        <td>
+        <td style="font-size: 15px;"><strong>飲酒</strong></td>
+        <td style="font-size: 20px;">
           <%= @user.drinking %>
         </td>
       </tr>
-      <tr>
-        <td><strong>行った国数</strong></td>
-        <td>
+      <tr style="line-height: 3; vertical-align: middle;">
+        <td style="font-size: 15px;"><strong>行った国数</strong></td>
+        <td style="font-size: 20px;">
           <%= @user.country_count %>
         </td>
-        <td><strong>好きな地域</strong></td>
-        <td>
+        <td style="font-size: 15px;"><strong>好きな地域</strong></td>
+        <td style="font-size: 20px;">
           <%= @user.favorite_area %>
         </td>
       </tr>
-      <tr>
-        <td><strong>予算</strong></td>
-        <td>
+      <tr style="line-height: 3; vertical-align: middle;">
+        <td style="font-size: 15px;"><strong>予算</strong></td>
+        <td style="font-size: 20px;">
           <%= @user.budget %>
         </td>
         <td></td>
         <td></td>
       </tr>
     </tbody>
-
   </table>
 
 </div>
