@@ -1,11 +1,12 @@
 <div class="container">
+  <%= render "user/shared/error_messages", resource: @user %>
   <h1 class ="text-center mt-5">プロフィール編集</h4><br>
 
   <%= form_with model: @user, url: update_mypage_path, method: :patch do |f| %>
   <table class="table">
     <tbody>
       <tr>
-        <td colspan="2" style="width: 50%; text-align: center;"><%= f.file_field :image, accept: "image/*" %></td>
+        <td colspan="2" style="width: 50%; text-align: center;"><%= f.file_field :profile_image, accept: "image/*" %></td>
         <td colspan="2" style="width: 50%;">
           <div><strong>ユーザーネーム</strong></div>
           <div>

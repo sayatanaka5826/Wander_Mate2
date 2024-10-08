@@ -1,27 +1,84 @@
 <div class="container">
-  <div class="mt-4" style="text-align: right;">
-    <%= link_to new_post_path, class: "nav-link text-dark text-right" do %>
-      <button class="btn btn-dark btn-lg">投稿を作成する</button>
+  <div class="mt-5" style="text-align: right;">
+    <%= link_to new_post_path, class: "text-dark" do %>
+      <button class="btn btn-dark btn-lg">投稿を作成する <i class="fa-solid fa-pen"></i></button>
     <% end %>
   </div>
-  <table class='table'>
-    <tr><%= image_tag @user.get_profile_image(200, 200) %></tr>
-    <tr><%= @user.name %> </tr>
-    <tr><%= @user.bio %></tr>
+  <table class="col-md-10">
+    <tr>
+      <td>
+        <%= image_tag @user.get_profile_image(200, 200) %>
+      </td>
+      <td>
+        <div style="font-weight: bold; font-size: 50px;">
+          <%= @user.name %>
+        </div>
+        <div style="font-size: 20px;" class="mt-4">
+          <%= @user.bio %>
+        </div>
+      </td>
+      <td style="text-align: right;">
+        <%= link_to chats_path, class: "text-dark" do %>
+          <button class="btn btn-outline-dark">チャットする</button>
+        <% end %>
+        <span style="margin: 0 10px;">&nbsp;</span>
+        <!--いいねした投稿一覧のurlが作成できてないため暫定的に新規登録画面のurl貼り付けてます-->
+        <%= link_to new_post_path, class: "text-dark" do %>
+          <button class="btn btn-outline-dark">いいね(新規投稿)</button>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+  <div style="font-weight: bold; font-size: 30px; margin-top: 80px;" class="text-center">
+    プロフィール
+  </div>
+
+  <table class="table col-10" style="margin: auto;">
+    <tbody>
+      <tr>
+        <td ><strong>性別</strong></td>
+        <td >
+          <%= @user.gender %>
+        </td>
+        <td ><strong>年齢</strong></td>
+        <td >
+          <%= @user.age %>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>喫煙</strong></td>
+        <td>
+          <%= @user.smoking %>
+        </td>
+        <td><strong>飲酒</strong></td>
+        <td>
+          <%= @user.drinking %>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>行った国数</strong></td>
+        <td>
+          <%= @user.country_count %>
+        </td>
+        <td><strong>好きな地域</strong></td>
+        <td>
+          <%= @user.favorite_area %>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>予算</strong></td>
+        <td>
+          <%= @user.budget %>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+
   </table>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
     <div>
