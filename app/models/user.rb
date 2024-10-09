@@ -20,7 +20,7 @@ class User < ApplicationRecord
   has_many :chats, dependent: :destroy
   has_many :rooms, through: :entries
 
-  validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
+  validates :name, presence: true, uniqueness: true
   validates :bio, length: { maximum: 200 }
 
   def get_profile_image(width, height)

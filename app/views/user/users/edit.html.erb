@@ -8,7 +8,9 @@
       <tr>
         <td colspan="2" style="width: 50%; text-align: center;"><%= f.file_field :profile_image, accept: "image/*" %></td>
         <td colspan="2" style="width: 50%;">
-          <div><strong>ユーザーネーム</strong></div>
+          <div>
+            <strong>ユーザーネーム</strong> <span class="badge badge-danger">必須</span>
+          </div>
           <div>
             <%= f.text_field :name, class: "form-control name" %>
           </div>

@@ -18,10 +18,14 @@
         </div>
       </td>
       <td style="text-align: right;">
+        <%= link_to edit_mypage_path, class: "text-dark" do %>
+          <button class="btn btn-outline-dark">プロフィールを編集する</button>
+        <% end %>
+        <span style="margin: 0 6px;">&nbsp;</span>
         <%= link_to chats_path, class: "text-dark" do %>
           <button class="btn btn-outline-dark">チャットする</button>
         <% end %>
-        <span style="margin: 0 10px;">&nbsp;</span>
+        <span style="margin: 0 6px;">&nbsp;</span>
         <!--いいねした投稿一覧のurlが作成できてないため暫定的に新規登録画面のurl貼り付けてます-->
         <%= link_to new_post_path, class: "text-dark" do %>
           <button class="btn btn-outline-dark">いいね(新規投稿)</button>
@@ -30,7 +34,7 @@
     </tr>
   </table>
 
-  <div style="font-weight: bold; font-size: 30px; margin-top: 40px; margin-bottom: 10px;" class="text-center">
+  <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;" class="text-center">
     プロフィール
   </div>
 
@@ -77,13 +81,13 @@
     </tbody>
   </table>
 
-  <div style="text-align: center;">
-    <%= link_to edit_mypage_path, class: "text-dark" do %>
-      <button class="btn btn-dark">編集する</button>
-    <% end %>
-  </div>
+  <!--<div style="text-align: center;">-->
+  <!--  <%= link_to edit_mypage_path, class: "text-dark" do %>-->
+  <!--    <button class="btn btn-dark">編集する</button>-->
+  <!--  <% end %>-->
+  <!--</div>-->
 
-  <div style="font-weight: bold; font-size: 30px; margin-top: 40px; margin-bottom: 10px;" class="text-center">
+  <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;" class="text-center">
     投稿一覧
   </div>
 
