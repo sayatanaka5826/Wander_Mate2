@@ -1,0 +1,51 @@
+<div class="container">
+  <%= render "user/shared/error_messages", resource: @post %>
+
+  <%= form_with model: @post, url: post_path, method: :patch do |f| %>
+  <table style="width: 75%; margin: auto; margin-top: 70px;">
+    <thead>
+      <th style="font-weight: bold; font-size: 30px;">
+        投稿を編集する <i class="fa-solid fa-pen"></i>
+      </th>
+    </thead>
+    
+    <tbody>
+      <tr style="line-height: 4; vertical-align: middle;">
+        <td>
+          <div style="margin-top: 30px;">
+            <strong>タイトル</strong> <span class="badge badge-danger">必須</span>
+          </div>
+          <div>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+        </td>
+      </tr>
+      <tr style="line-height: 4; vertical-align: middle;">
+        <td>
+          <div>
+            <strong>本文</strong> <span class="badge badge-danger">必須</span>
+          </div>
+          <div>
+            <%= f.text_area :body, class: "form-control" %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div style="margin-top: 25px;">
+            <strong>画像</strong> <span class="badge badge-secondary">任意</span>
+          </div>
+          <div style="margin-top: 10px;">
+            <%= f.file_field :post_image, accept: 'image/*'%>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="text-center" style="margin-top: 40px;">
+    <%= f.submit "保存する", class: "btn-lg btn-dark " %>
+  </div>
+
+  <% end %>
+</div>

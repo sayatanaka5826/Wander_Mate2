@@ -2,36 +2,45 @@
 
 <div class="container ">
   <div class="row justify-content-center">
-    <div style="margin-top: 70px; margin-bottom: 30px; font-weight: bold; font-size: 45px;">
+    <div style="margin-top: 50px; margin-bottom: 30px; font-weight: bold; font-size: 40px;">
       <%= @post.title %>
     </div>
   </div>
+
+  <table class="col-md-12" style="margin: auto;">
+    <tr class="col-md-12 row">
+      <td class="col-md-1">
+        <%= image_tag @user.get_profile_image(80, 80), class: "rounded-circle" %>
+      </td>
+      <td class="col-md-10 mt-1">
+        <div style="font-weight: bold; font-size: 20px;">
+          <%= @user.name %>
+        </div>
+        <div style="font-size: 15px;" class="mt-3">
+          <i class="fa-regular fa-clock"></i> 投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>
+          <span style="margin: 0 6px;">&nbsp;</span>
+          <i class="fa-solid fa-rotate-right"></i> 最終変更日：<%= @post.updated_at.strftime("%Y年%m月%d日") %>
+        </div>
+      </td>
+    </tr>
+    <tr class="col-md-12 row" style="margin-top:30px;">
+      <td class="col-md-4 offset-md-4 text-center">
+        <% if @post.post_image.attached? %>
+          <%= image_tag @post.get_post_image(300, 300)%><br>
+        <% else %>
+          <p>※画像がありません</p>
+        <% end %>
+        <%= @post.body %>
+      </td>
+    </tr>
+  </table>
   
-  <div class="row justify-content-center">
-    <div class="col-1">
-      <%= image_tag @user.get_profile_image(100, 100), class: "rounded-circle" %>
-    </div>
-    <div class="col-9">
-      <%= @user.name %>
-    </div>
-    <div>  
-      <i class="fa-regular fa-clock"></i>投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>
-      <i class="fa-regular fa-clock"></i>最終変更日：<%= @post.updated_at.strftime("%Y年%m月%d日") %>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col">
-      <%= @post.post_image %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <%= @post.body %>
-    </div>  
+  <div class="text-center" style="margin-top: 20px;">
+    <%= link_to edit_post_path do %>
+      <button class="btn btn-dark">投稿を編集する</button>
+    <% end %>
   </div>
 </div>
-    
-      
-    
-  
+
+
+

@@ -17,13 +17,21 @@ class User::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @user = User.find(params[:id])
+    @user = @post.user
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+    flash[:post_edit_success] = "投稿が編集されました。"
+    redirect_to post_path
+    else
+    render "edit"
+    end
   end
 
   def destroy
