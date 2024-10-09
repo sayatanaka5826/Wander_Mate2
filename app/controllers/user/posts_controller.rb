@@ -5,6 +5,14 @@ class User::PostsController < ApplicationController
   end
   
   def create
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    if @post.save
+      flash[:post_success] = "投稿されました"
+      redirect_to post_path(@post.id)
+    else
+      render :new
+    end
   end
   
   def show
@@ -19,5 +27,11 @@ class User::PostsController < ApplicationController
   def destroy
   end
   
-
+  
+  private
+  
+  def post_params
+    params.require(:post).permit(:title, :body, :post_image)
+  end
+  
 end
