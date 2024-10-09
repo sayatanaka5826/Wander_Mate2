@@ -1,2 +1,27 @@
 <%= flash[:post_success] %>
-<h1>投稿詳細画面</h1>
+
+<div class="container">
+  <table>
+    <thead>
+      <th><%= @post.title %></th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= image_tag @user.get_profile_image(50, 50), class: "rounded-circle" %>
+          <%= @user.name %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= @post.body %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= @post.post_image %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,72 +1,81 @@
 <div class="container">
   <%= render "user/shared/error_messages", resource: @user %>
-  <h1 class ="text-center mt-5">プロフィール編集</h4><br>
 
   <%= form_with model: @user, url: update_mypage_path, method: :patch do |f| %>
-  <table class="table">
+  <table style="margin-top: 50px;">
+    <thead>
+      <th colspan="2" style="font-weight: bold; font-size: 30px;">
+        プロフィール編集 <i class="fa-solid fa-pen-to-square"></i>
+      </th>
+    </thead>
+
     <tbody>
-      <tr>
-        <td colspan="2" style="width: 50%; text-align: center;"><%= f.file_field :profile_image, accept: "image/*" %></td>
-        <td colspan="2" style="width: 50%;">
-          <div>
-            <strong>ユーザーネーム</strong> <span class="badge badge-danger">必須</span>
+      <tr style="line-height: 4; vertical-align: middle;">
+        <td style="width: 25%;">
+          <div style="margin-top: 40px;">
+            <strong>プロフィール画像</strong> <span class="badge badge-secondary">任意</span>
           </div>
-          <div>
-            <%= f.text_field :name, class: "form-control name" %>
+        </td>
+        <td style="width: 25%;">
+          <div style="margin-top: 40px;">
+            <%= f.file_field :profile_image, accept: "image/*" %>
           </div>
         </td>
       </tr>
-      <tr>
-        <td colspan="1" style="width: 25%;"><strong>プロフィール</strong></td>
+      <tr style="line-height: 4; vertical-align: middle;">
+        <td style="width: 25%;"><strong>ユーザーネーム</strong> <span class="badge badge-danger">必須</span></td>
+        <td colspan="3"style="width: 25%;">
+          <%= f.text_field :name, class: "form-control" %>
+        </td>
+      </tr>
+      <tr style="line-height: 4; vertical-align: middle;">
+        <td colspan="1" style="width: 25%;"><strong>プロフィール </strong><span class="badge badge-secondary">任意</span></td>
         <td colspan="3" style="width: 75%;"><%= f.text_area :bio, class: 'form-control' %></td>
       </tr>
-      <tr>
-        <td style="width: 25%;"><strong>性別</strong></td>
-        <td style="width: 25%;">
+      <tr style="line-height: 4; vertical-align: middle;">
+        <td style="width: 25%;"><strong>性別 </strong><span class="badge badge-secondary">任意</span></td>
+        <td style="width: 25%; padding-right: 20px;">
           <%= f.select :gender, @gender_options, { include_blank: '選択してください' }, class: 'form-control' %>
         </td>
-        <td style="width: 25%;"><strong>年齢</strong></td>
+        <td style="width: 25%;"><strong>年齢 </strong><span class="badge badge-secondary">任意</span></td>
         <td style="width: 25%;">
           <%= f.select :age, @age_options, { include_blank: '選択してください' }, class: 'form-control' %>
         </td>
       </tr>
-      <tr>
-        <td><strong>喫煙</strong></td>
-        <td>
+      <tr style="line-height: 4; vertical-align: middle;">
+        <td><strong>喫煙 </strong><span class="badge badge-secondary">任意</span></td>
+        <td style="padding-right: 20px;">
           <%= f.select :smoking, @smoking_options, { include_blank: '選択してください' }, class: 'form-control' %>
         </td>
-        <td><strong>飲酒</strong></td>
+        <td><strong>飲酒 </strong><span class="badge badge-secondary">任意</span></td>
         <td>
           <%= f.select :drinking, @drinking_options, { include_blank: '選択してください' }, class: 'form-control' %>
         </td>
       </tr>
-      <tr>
-        <td><strong>行った国数</strong></td>
-        <td>
+      <tr style="line-height: 4; vertical-align: middle;">
+        <td><strong>行った国数 </strong><span class="badge badge-secondary">任意</span></td>
+        <td style="padding-right: 20px;">
           <%= f.text_field :country_count, class: 'form-control', placeholder: "数字を入力"%>
         </td>
-        <td><strong>好きな地域</strong></td>
+        <td><strong>好きな地域 </strong><span class="badge badge-secondary">任意</span></td>
         <td>
           <%= f.select :favorite_area, @favorite_area_options, { include_blank: '選択してください' }, class: 'form-control' %>
         </td>
       </tr>
-      <tr>
-        <td><strong>予算</strong></td>
-        <td>
+      <tr style="line-height: 4; vertical-align: middle;">
+        <td><strong>予算 </strong><span class="badge badge-secondary">任意</span></td>
+        <td style="padding-right: 20px;">
           <%= f.select :budget, @budget_options, { include_blank: '選択してください' }, class: 'form-control' %>
         </td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td></td>
-        <td style="text-align: right; padding-top: 40px;">
+        <td colspan="4" style="text-align: center; padding-top: 40px;">
           <%= link_to "退会する", confirm_users_path, class: "btn btn-danger" %>
-        </td>
-        <td style="padding-top: 40px;">
+          <span style="margin: 0 20px;">&nbsp;</span>
           <%= f.submit "保存する", class: "btn btn-dark" %>
         </td>
-        <td></td>
       </tr>
     </tbody>
   </table>
