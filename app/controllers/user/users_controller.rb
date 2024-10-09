@@ -2,6 +2,7 @@ class User::UsersController < ApplicationController
 
   def mypage
     @user = current_user
+    @posts = current_user.posts.page(params[:page]).per(5)
   end
 
   def edit

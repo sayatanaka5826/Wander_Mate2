@@ -85,6 +85,27 @@
     投稿一覧
   </div>
 
+  <table style="width: 75%; margin: auto; margin-top: 20px;">
+    <tbody>
+      <% @posts.each do |post| %>
+      <tr>
+        <td>
+          <%= link_to(post.user) do %>
+          <%= image_tag post.user.get_profile_image(50, 50), class: "rounded-circle" %>
+          <span style="color: #343a40; font-weight: bold; margin-left: 3px;"><%= post.user.name %></span>
+          <% end %>
+        </td>
+        <td style="font-weight: bold; font-size: 20px">
+          <%= link_to post.title, post_path(post.id), style: "color: #343a40;" %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <div class="pagination d-flex justify-content-center margin-top: 20px;">
+    <%= paginate @posts %>
+  </div>
 </div>
 
 
