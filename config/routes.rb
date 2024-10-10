@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     
     resources :posts, only: [:new,:show,:edit,:create,:destroy,:update] do
       resource :likes, only: [:create, :destroy]
-      resources :post_comments, only: [:create, :destroy]
+      resources :post_comments, only: [:create, :destroy, :update]
     end
     
     resources :chats, only: [:index, :create, :show, :destroy]

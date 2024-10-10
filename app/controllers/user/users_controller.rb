@@ -1,4 +1,6 @@
 class User::UsersController < ApplicationController
+  before_action :set_user, only: [:show]
+  before_action :authenticate_user!, except: [:show]
 
   def mypage
     @user = current_user
@@ -22,9 +24,21 @@ class User::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    if current_user && @user == current_user
+       redirect_to my_page_path
+    end
+    @posts = @user.posts.page(params[:page]).per(3)
+  end
+
 
   private
-  
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
   def set_edit_option
     @gender_options = User.genders_i18n.invert.map{|key,value|[key,value]}
     @age_options = User.ages_i18n.invert.map{|key,value|[key,value]}
@@ -33,7 +47,7 @@ class User::UsersController < ApplicationController
     @favorite_area_options = User.favorite_areas_i18n.invert.map{|key,value|[key,value]}
     @budget_options = User.budgets_i18n.invert.map{|key,value|[key,value]}
   end
-  
+
   def user_params
     params.require(:user).permit(:name, :bio, :gender, :age,
     :smoking, :drinking, :country_count, :favorite_area,
