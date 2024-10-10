@@ -1,24 +1,18 @@
 <%= flash[:post_success] %>
 
-<div class="container text-right">
-  <% if current_user == @post.user %>
-    <%= link_to edit_post_path do %>
-      <button class="btn btn-dark text-right">投稿を編集する</button>
-    <% end %>
-  <% end %>
-</div>
-
-
-<div class="card mb-3" style="width: 60%; margin: auto; margin-top: 20px; border-radius: 25px; overflow: hidden;">
-  <div class="card-header">
-    <%= image_tag @post.user.get_profile_image(70, 70), class: "rounded-circle" %>
-    <span style="font-weight: bold; font-size: 20px; margin-left: 10px;"><%= @post.user.name %>
+<div class="card mb-3 mt-5" style="width: 60%; margin: auto; border-radius: 25px; overflow: hidden;">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <%= image_tag @post.user.get_profile_image(70, 70), class: "rounded-circle" %>
+      <span style="font-weight: bold; font-size: 20px; margin-left: 10px;"><%= @post.user.name %>
+    </div>
     <% if current_user == @post.user %>
-      <%= link_to edit_post_path, class: "text-dark text-right" do %>
-        <button class="btn btn-outline-dark text-right">投稿を編集する</button>
+      <%= link_to edit_post_path, class: "text-dark text-right mr-2" do %>
+        <button class="btn btn-outline-dark">投稿を編集する <i class="fa-solid fa-pen"></i></button>
       <% end %>
     <% end %>
   </div>
+  
   <div class="card-body">
     <% if @post.post_image.attached? %>
       <%= image_tag @post.post_image, class: "card-img-top", style: "width: 100%; height: 300px;" %>
@@ -26,7 +20,7 @@
       <%= image_tag 'no_image2', class: "card-img-top", style: "width: 100%; height: 300px;" %>
     <% end %>
     <h5 class="card-title" style="font-weight: bold; font-size: 30px; margin-top: 20px;" ><%= @post.title %></h5>
-    <i class="fa-regular fa-clock"></i> 投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>
+    <i class="fa-regular fa-clock ml-2"></i> 投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>
     <span style="margin: 0 6px;">&nbsp;</span>
     <i class="fa-solid fa-rotate-right"></i> 最終変更日：<%= @post.updated_at.strftime("%Y年%m月%d日") %>
     <p class="card-text mt-3" style="font-size: 20px"><%= @post.body %></p>

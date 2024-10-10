@@ -1,15 +1,16 @@
-<div class="container">
-  <div class="mt-5" style="text-align: right;">
+<div class="container" style="width: 50%;" >
+  <div class="d-flex justify-content-between align-items-center mt-5 mb-5">
+    <div style="font-weight: bold; font-size: 30px;">
+      <i class="fa-solid fa-map-pin"></i> みんなの投稿 
+    </div>
     <%= link_to new_post_path, class: "text-dark" do %>
       <button class="btn btn-dark btn-lg">投稿を作成する <i class="fa-solid fa-pen"></i></button>
     <% end %>
-  </div>
-
-  <div class="d-flex justify-content-center mt-3">
-    <div style="font-weight: bold; font-size: 30px;">
-      みんなの投稿 <i class="fa-solid fa-map-pin"></i>
     </div>
   </div>
+
+
+
 
   <% @posts.each do |post| %>
     <div class="card mb-3" style="width: 50%; margin: auto; margin-top: 20px; border-radius: 25px; overflow: hidden;">
