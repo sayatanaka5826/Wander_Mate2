@@ -85,9 +85,7 @@
     投稿一覧
   </div>
   
-  
-
-  <table style="width: 60%; margin: auto; margin-top: 20px; margin-bottom: 20px;" >
+  <table style="width: 60%; margin: auto; margin-top: 20px;" >
     <tbody>
       <% @posts.each do |post| %>
       <tr>
@@ -103,12 +101,12 @@
         <td><i class="fa-regular fa-heart"></i></td>
         <td><i class="fa-regular fa-comment-dots"></i></td>
       </tr>
-      <tr><td colspan="2" style="height: 5px;"></td></tr>
+      <tr><td colspan="2" style="height: 10px;"></td></tr>
       <% end %>
     </tbody>
   </table>
 
-  <div class="pagination d-flex justify-content-center margin-top: 20px;">
+  <div class="pagination d-flex justify-content-center mt-4 mb-5">
     <%= paginate @posts %>
   </div>
 </div>
