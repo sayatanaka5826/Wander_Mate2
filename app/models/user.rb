@@ -21,7 +21,7 @@ class User < ApplicationRecord
   has_many :rooms, through: :entries
 
   validates :name, presence: true, uniqueness: true
-  validates :bio, length: { maximum: 200 }
+  validates :bio, length: { maximum: 150 }
 
   def get_profile_image(width, height)
     unless profile_image.attached?

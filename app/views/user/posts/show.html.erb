@@ -33,71 +33,7 @@
 
 
 
-<!--<div class="card mb-3" style="width: 60%; margin: auto; margin-top: 20px; border-radius: 25px; overflow: hidden;">-->
-<!--  <% if @post.post_image.attached? %>-->
-<!--    <%= image_tag @post.post_image, class: "card-img-top", style: "width: 100%; height: 300px;" %>-->
-<!--  <% else %>-->
-<!--    <%= image_tag 'no_image2', class: "card-img-top", style: "width: 100%; height: 300px;" %>-->
-<!--  <% end %>-->
-<!--  <div class="card-body">-->
-<!--    <h5 class="card-title" style="font-weight: bold; font-size: 35px" ><%= @post.title %></h5>-->
-<!--    <p>-->
-<!--      <%= image_tag @post.user.get_profile_image(80, 80), class: "rounded-circle" %>-->
-<!--      <span style="font-weight: bold; margin-right: 5px;"><%= @post.user.name %></span>-->
-<!--      <i class="fa-regular fa-clock"></i>投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>-->
-<!--    </p>-->
-<!--    <p class="card-text"><%= @post.body %></p>-->
-<!--    <p class="card-text">-->
-<!--      <%= link_to post_path(@post.id) do %>-->
-<!--        <button class="btn btn-dark">詳細を見る</button>-->
-<!--      <% end %>-->
-<!--    </p>-->
-<!--  </div>-->
-<!--</div>-->
 
-
-
-<!--<div class="container ">-->
-<!--  <div class="row justify-content-center">-->
-<!--    <div style="margin-top: 50px; margin-bottom: 30px; font-weight: bold; font-size: 40px;">-->
-<!--      <%= @post.title %>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <table class="col-md-12" style="margin: auto;">-->
-<!--    <tr class="col-md-12 row">-->
-<!--      <td class="col-md-1">-->
-<!--        <%= image_tag @user.get_profile_image(80, 80), class: "rounded-circle" %>-->
-<!--      </td>-->
-<!--      <td class="col-md-10 mt-1">-->
-<!--        <div style="font-weight: bold; font-size: 20px;">-->
-<!--          <%= @user.name %>-->
-<!--        </div>-->
-<!--        <div style="font-size: 15px;" class="mt-3">-->
-<!--          <i class="fa-regular fa-clock"></i> 投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>-->
-<!--          <span style="margin: 0 6px;">&nbsp;</span>-->
-<!--          <i class="fa-solid fa-rotate-right"></i> 最終変更日：<%= @post.updated_at.strftime("%Y年%m月%d日") %>-->
-<!--        </div>-->
-<!--      </td>-->
-<!--    </tr>-->
-<!--    <tr class="col-md-12 row" style="margin-top:30px;">-->
-<!--      <td class="col-md-4 offset-md-4 text-center">-->
-<!--        <% if @post.post_image.attached? %>-->
-<!--          <%= image_tag @post.post_image, size: "500x300", class: "img-fluid mx-auto d-block" %>-->
-<!--        <% else %>-->
-<!--          <%= image_tag 'no_image2', size: "500x300", class: "img-fluid mx-auto d-block"%>-->
-<!--        <% end %>-->
-<!--        <%= @post.body %>-->
-<!--      </td>  -->
-<!--    </tr>  -->
-<!--  </table>-->
-
-  <!--<div class="text-center" style="margin-top: 20px;">-->
-  <!--  <%= link_to edit_post_path do %>-->
-  <!--    <button class="btn btn-dark">投稿を編集する</button>-->
-  <!--  <% end %>-->
-  <!--</div>-->
-<!--</div>-->
 
 
 

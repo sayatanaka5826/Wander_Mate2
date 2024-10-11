@@ -1,15 +1,13 @@
 <div class="container" style="width: 50%;" >
   <div class="d-flex justify-content-between align-items-center mt-5 mb-5">
     <div style="font-weight: bold; font-size: 30px;">
-      <i class="fa-solid fa-map-pin"></i> みんなの投稿 
+      <i class="fa-solid fa-map-pin"></i> みんなの投稿
     </div>
     <%= link_to new_post_path, class: "text-dark" do %>
       <button class="btn btn-dark btn-lg">投稿を作成する <i class="fa-solid fa-pen"></i></button>
     <% end %>
     </div>
   </div>
-
-
 
 
   <% @posts.each do |post| %>
@@ -24,15 +22,30 @@
         <p>
           <%= link_to user_path(post.user) do %>
             <%= image_tag post.user.get_profile_image(40, 40), class: "rounded-circle" %>
+            <span style="font-weight: bold; margin-right: 5px; color: black;"><%= post.user.name %></span>
           <% end %>
-          <span style="font-weight: bold; margin-right: 5px;"><%= post.user.name %></span>
           <i class="fa-regular fa-clock"></i> 投稿日：<%= post.created_at.strftime("%Y年%m月%d日") %>
         </p>
         <p class="card-text"><%= post.body %></p>
         <p class="card-text">
-          <%= link_to post_path(post.id) do %>
-            <button class="btn btn-dark">詳細を見る</button>
-          <% end %>
+          <div class="d-flex justify-content-between align-items-center">
+            <%= link_to post_path(post.id) do %>
+              <button class="btn btn-dark">詳細を見る</button>
+            <% end %>
+            <div class="d-flex align-items-center mr-5">
+              <% if post.liked_by?(current_user) %>
+                <%= link_to post_likes_path(post), method: :delete do%>
+                  <span style="color: #343a40;"><i class="fa-solid fa-heart fa-2x"></i> 
+                <% end %>
+                <span style="font-size: 24px; margin-left: 6px;"><%= post.likes.count %></span>︎
+              <% else %>
+                <%= link_to post_likes_path(post), method: :post do %>
+                  <span style="color: #343a40;"><i class="fa-regular fa-heart fa-2x"></i> 
+                <% end %>
+                <span style="font-size: 24px; margin-left: 6px;"><%= post.likes.count %></span>
+              <% end %>
+            </div>
+          </div>
         </p>
       </div>
     </div>

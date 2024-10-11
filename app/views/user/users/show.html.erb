@@ -1,28 +1,53 @@
-
 <div class="container">
 
-  <table class="col-md-11 mt-5" style="margin: auto;">
-    <tr>
-      <td>
-        <%= image_tag @user.get_profile_image(200, 200), class: "rounded-circle" %>
-      </td>
-      <td>
+  <div class="container mt-5">
+    <div class="row col-11" style="margin: auto;">
+      <div class="col-12 col-md-3 mb-3 mb-md-0">
+        <%= image_tag @user.get_profile_image(200, 200), class: "rounded-circle" %>-
+      </div>
+      <div class="col-12 col-md-8">
         <div style="font-weight: bold; font-size: 50px;">
           <%= @user.name %>
         </div>
-        <div style="font-size: 20px;" class="mt-4">
+        <div style="font-size: 20px;">
           <%= @user.bio %>
         </div>
-      </td>
-      <td style="text-align: right;">
-        <button class="btn btn-outline-dark">フォローする</button>
-        <span style="margin: 0 6px;">&nbsp;</span>
-        <%= link_to chats_path, class: "text-dark" do %>
-          <button class="btn btn-outline-dark">チャットする</button>
-        <% end %>
-      </td>
-    </tr>
-  </table>
+        <div class="text-end mt-4">
+          <%= link_to edit_mypage_path, class: "text-dark" do %>
+            <button class="btn btn-outline-dark">フォローする</button>
+          <% end %>
+          <span style="margin: 0 6px;">&nbsp;</span>
+          <%= link_to chats_path, class: "text-dark" do %>
+            <button class="btn btn-outline-dark">チャットする</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!--<table class="col-md-11 mt-5" style="margin: auto;">-->
+  <!--  <tr>-->
+  <!--    <td>-->
+  <!--      <%= image_tag @user.get_profile_image(200, 200), class: "rounded-circle" %>-->
+  <!--    </td>-->
+  <!--    <td>-->
+  <!--      <div style="font-weight: bold; font-size: 50px;">-->
+  <!--        <%= @user.name %>-->
+  <!--      </div>-->
+  <!--      <div style="font-size: 20px;" class="mt-4">-->
+  <!--        <%= @user.bio %>-->
+  <!--      </div>-->
+  <!--    </td>-->
+  <!--    <td style="text-align: right;">-->
+  <!--      <button class="btn btn-outline-dark">フォローする</button>-->
+  <!--      <span style="margin: 0 6px;">&nbsp;</span>-->
+  <!--      <%= link_to chats_path, class: "text-dark" do %>-->
+  <!--        <button class="btn btn-outline-dark">チャットする</button>-->
+  <!--      <% end %>-->
+  <!--    </td>-->
+  <!--  </tr>-->
+  <!--</table>-->
 
   <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;" class="text-center">
     プロフィール
