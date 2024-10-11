@@ -1,0 +1,11 @@
+<% if current_user && post.liked_by?(current_user) %>
+  <%= link_to post_likes_path(post), method: :delete, remote: true do %>
+    <span style="color: #343a40;"><i class="fa-solid fa-heart fa-2x"></i>
+  <% end %>
+  <span style="font-size: 24px; margin-left: 6px;"><%= post.likes.count %></span>︎
+<% else %>
+  <%= link_to post_likes_path(post), method: :post, remote: true do %>
+    <span style="color: #343a40;"><i class="fa-regular fa-heart fa-2x"></i>
+  <% end %>
+  <span style="font-size: 24px; margin-left: 6px;"><%= post.likes.count %></span>
+<% end %>

@@ -4,14 +4,17 @@
   <div class="card-header d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center">
       <%= link_to user_path(@post.user) do %>
-        <%= image_tag @post.user.get_profile_image(70, 70), class: "rounded-circle" %>
+        <%= image_tag @post.user.get_profile_image(50, 50), class: "rounded-circle" %>
         <span style="font-weight: bold; font-size: 20px; margin-left: 10px; color: black;"><%= @post.user.name %>
       <% end %>
     </div>
     <% if current_user == @post.user %>
-      <%= link_to edit_post_path, class: "text-dark text-right mr-2" do %>
-        <button class="btn btn-outline-dark">投稿を編集する <i class="fa-solid fa-pen"></i></button>
-      <% end %>
+      <div class="ml-auto d-flex">
+        <%= link_to edit_post_path, class: "text-dark text-right mr-2" do %>
+          <button class="btn btn-outline-dark">投稿を編集する <i class="fa-solid fa-pen"></i></button>
+        <% end %>
+        <%= link_to '削除', post_path, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-outline-danger"%>
+      </div>
     <% end %>
   </div>
 
@@ -26,7 +29,22 @@
     <span style="margin: 0 6px;">&nbsp;</span>
     <i class="fa-solid fa-rotate-right"></i> 最終変更日：<%= @post.updated_at.strftime("%Y年%m月%d日") %>
     <p class="card-text mt-3" style="font-size: 20px"><%= @post.body %></p>
-
+    <div class="d-flex justify-content-end align-items-center mr-4">
+      <div class="like_btn_<%= @post.id %>">
+        <%= render 'user/likes/btn', post: @post %>
+      </div>
+      <!--<% if current_user && @post.liked_by?(current_user) %>-->
+      <!--  <%= link_to post_likes_path(@post), method: :delete, remote: true do%>-->
+      <!--    <span style="color: #343a40;"><i class="fa-solid fa-heart fa-2x"></i>-->
+      <!--  <% end %>-->
+      <!--  <span style="font-size: 24px; margin-left: 6px;"><%= @post.likes.count %></span>︎-->
+      <!--<% else %>-->
+      <!--  <%= link_to post_likes_path(@post), method: :post, remote: true do %>-->
+      <!--    <span style="color: #343a40;"><i class="fa-regular fa-heart fa-2x"></i>-->
+      <!--  <% end %>-->
+      <!--  <span style="font-size: 24px; margin-left: 6px;"><%= @post.likes.count %></span>-->
+      <!--<% end %>-->
+    </div>
   </div>
 </div>
 

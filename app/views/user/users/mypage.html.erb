@@ -86,7 +86,7 @@
     投稿一覧
   </div>
 
-  <table style="width: 60%; margin: auto; margin-top: 20px;" >
+  <table style="width: 70%; margin: auto; margin-top: 20px;" >
     <tbody>
       <% @posts.each do |post| %>
       <tr>
@@ -99,7 +99,7 @@
         <td style="font-weight: bold; font-size: 20px">
           <%= link_to post.title, post_path(post.id), style: "color: #343a40;" %>
         </td>
-        <td><i class="fa-regular fa-heart"></i></td>
+        <td><i class="fa-regular fa-heart mr-2"></i><%= post.likes.count %></td>
         <td><i class="fa-regular fa-comment-dots"></i></td>
       </tr>
       <tr><td colspan="2" style="height: 10px;"></td></tr>
