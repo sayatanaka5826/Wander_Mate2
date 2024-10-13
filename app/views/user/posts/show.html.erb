@@ -13,7 +13,7 @@
         <%= link_to edit_post_path, class: "text-dark text-right mr-2" do %>
           <button class="btn btn-outline-dark">投稿を編集する <i class="fa-solid fa-pen"></i></button>
         <% end %>
-        <%= link_to '削除', post_path, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-outline-danger"%>
+        <%= link_to '削除 <i class="fa-solid fa-trash-can"></i>'.html_safe, post_path, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-outline-danger"%>
       </div>
     <% end %>
   </div>
