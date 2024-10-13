@@ -17,4 +17,10 @@ class User::LikesController < ApplicationController
     # redirect_to request.referer
   end
   
+  def authenticate_user!
+    unless user_signed_in?
+      redirect_to new_user_session_path, alert: 'ログインしてください。'
+    end
+  end
+  
 end
