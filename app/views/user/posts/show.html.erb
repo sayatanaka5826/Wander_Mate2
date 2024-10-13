@@ -30,7 +30,7 @@
     <i class="fa-solid fa-rotate-right"></i> 最終変更日：<%= @post.updated_at.strftime("%Y年%m月%d日") %>
     <p class="card-text mt-3" style="font-size: 20px"><%= @post.body %></p>
     <div class="d-flex justify-content-end align-items-center mr-4">
-      <div class="like_btn_<%= @post.id %>">
+      <div id="like_btn_<%= @post.id %>">
         <%= render 'user/likes/btn', post: @post %>
       </div>
       <!--<% if current_user && @post.liked_by?(current_user) %>-->
