@@ -16,7 +16,7 @@ class User::UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      flash[:profile_edit_success] = "プロフィールが更新されました。"
+      flash[:mypage_edit_success] = "プロフィールが更新されました"
       redirect_to my_page_path(@user)
     else
       # @user.errors.full_messages
