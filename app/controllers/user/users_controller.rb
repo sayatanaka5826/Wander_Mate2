@@ -5,7 +5,7 @@ class User::UsersController < ApplicationController
   def mypage
     @user = current_user
     @posts = current_user.posts.page(params[:page]).per(5)
-    
+
   end
 
   def edit
@@ -31,6 +31,13 @@ class User::UsersController < ApplicationController
        redirect_to my_page_path
     end
     @posts = @user.posts.page(params[:page]).per(3)
+  end
+
+  def withdraw
+    @user = current_user
+    @user.update(is_active: false)
+    reset_session
+    redirect_to root_path, notice: '退会が完了しました。'
   end
 
 
