@@ -1,4 +1,8 @@
 <div class="cotainer">
+  <div class="text-center mt-3">
+    <%= render "user/shared/error_messages", resource: @user %>
+  </div>
+
   <%= form_with model: @user, url: user_registration_path do |f| %>
   <table class="d-flex justify-content-center" style="width: 80%; margin: auto; margin-top: 70px;">
     <tbody>
@@ -60,11 +64,11 @@
     </tbody>
   </table>
   <% end %>
-  
+
   <div class="row d-flex justify-content-center mt-4">
     <%= render "user/shared/links" %>
   </div>
- 
+
 </div>
 
 

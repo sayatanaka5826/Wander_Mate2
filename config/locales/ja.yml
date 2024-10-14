@@ -39,6 +39,11 @@ ja:
     attributes:
       user:
         name: "ユーザーネーム"
+        email: "メールアドレス"
+        password: "パスワード"
+      post:
+        title: "タイトル"
+        body: "本文"
 
     errors:
       models:

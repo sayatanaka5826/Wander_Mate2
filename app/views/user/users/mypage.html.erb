@@ -19,16 +19,16 @@
         </div>
         <div class="text-end mt-4">
           <%= link_to edit_mypage_path, class: "text-dark" do %>
-            <button class="btn btn-outline-dark">プロフィールを編集する</button>
+            <button class="btn btn-outline-dark">プロフィールを編集する <i class="fa-solid fa-pen"></i></button>
           <% end %>
           <span style="margin: 0 6px;">&nbsp;</span>
           <%= link_to chats_path, class: "text-dark" do %>
-            <button class="btn btn-outline-dark">チャットする</button>
+            <button class="btn btn-outline-dark">チャットする <i class="fa-solid fa-comment-dots"></i></button>
           <% end %>
           <span style="margin: 0 6px;">&nbsp;</span>
           <!--いいねした投稿一覧のurlが作成できてないため暫定的に新規登録画面のurl貼り付けてます-->
           <%= link_to new_post_path, class: "text-dark" do %>
-            <button class="btn btn-outline-dark">いいね(新規投稿)</button>
+            <button class="btn btn-outline-dark">いいね <i class="fa-solid fa-heart"></i></button>
           <% end %>
         </div>
       </div>

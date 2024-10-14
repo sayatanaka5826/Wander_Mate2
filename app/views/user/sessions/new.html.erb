@@ -1,4 +1,8 @@
 <div class="cotainer">
+  
+    <%= render "user/shared/error_messages", resource: @user %>
+  
+
   <%= form_with model: @user, url: user_session_path do |f| %>
   <table class="d-flex justify-content-center" style="width: 80%; margin: auto; margin-top: 70px;">
     <tbody>
