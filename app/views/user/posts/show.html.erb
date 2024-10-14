@@ -1,8 +1,13 @@
-<div class="text-center">
-  <%= flash[:post_success] %>
-  <%= flash[:post_edit_success] %>
-</div>
-
+<% if flash[:post_success] %>
+  <div class="alert alert-success mt-4 text-center w-25 mx-auto">
+    <%= flash[:post_success] %>
+  </div>
+<% end %>
+<% if flash[:post_edit_success] %>
+  <div class="alert alert-success mt-4 text-center w-25 mx-auto">
+    <%= flash[:post_edit_success] %>
+  </div>
+<% end %>
 
 <div class="shadow-lg card mb-3 mt-5" style="width: 60%; margin: auto; border-radius: 25px; overflow: hidden;">
   <div class="card-header d-flex justify-content-between align-items-center">

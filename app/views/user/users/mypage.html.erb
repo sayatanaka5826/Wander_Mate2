@@ -1,6 +1,8 @@
-<div class="text-center">
-  <%= flash[:mypage_edit_success] %>
-</div>
+<% if flash[:mypage_edit_success] %>
+  <div class="alert alert-success mt-4 text-center w-25 mx-auto">
+    <%= flash[:mypage_edit_success] %>
+  </div>
+<% end %>
 
 <div class="container">
   <div class="mt-4" style="text-align: right;">
