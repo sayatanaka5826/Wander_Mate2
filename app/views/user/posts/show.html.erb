@@ -1,4 +1,8 @@
-<%= flash[:post_success] %>
+<div class="text-center">
+  <%= flash[:post_success] %>
+  <%= flash[:post_edit_success] %>
+</div>
+
 
 <div class="shadow-lg card mb-3 mt-5" style="width: 60%; margin: auto; border-radius: 25px; overflow: hidden;">
   <div class="card-header d-flex justify-content-between align-items-center">
@@ -20,9 +24,9 @@
 
   <div class="card-body">
     <% if @post.post_image.attached? %>
-      <%= image_tag @post.post_image, class: "card-img-top", style: "width: 100%; height: 300px;" %>
+      <%= image_tag @post.post_image, class: "card-img-top", style: "width: 100%;" %>
     <% else %>
-      <%= image_tag 'no_image2.png', class: "card-img-top", style: "width: 100%; height: 300px;" %>
+      <%= image_tag 'no_image2.png', class: "card-img-top", style: "width: 100%;" %>
     <% end %>
     <h5 class="card-title" style="font-weight: bold; font-size: 30px; margin-top: 20px;" ><%= @post.title %></h5>
     <i class="fa-regular fa-clock ml-2"></i> 投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>
