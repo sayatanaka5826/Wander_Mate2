@@ -43,8 +43,8 @@
         <%= render 'user/likes/btn', post: @post %>
       </div>
       <div>
-        <span style="color: #343a40; margin-left: 6px;"><i class="fa-solid fa-comment-dots fa-2x"></i>
-        <span style="font-size: 24px; margin-left: 6px;"><%= @post.post_comments.count %></span>
+        <span style="color: #343a40; margin-left: 14px;"><i class="fa-solid fa-comment-dots fa-2x"></i>
+        <span style="font-size: 24px;"><%= @post.post_comments.count %></span>
       </div>
     </div>
     <div class="container">
@@ -66,18 +66,15 @@
             <%= image_tag post_comment.user.get_profile_image(30, 30), class: "rounded-circle ml-2" %>
           <% end %>
         </td>
-        <td class="ml-2"><%= post_comment.body %></td>
-        <td>
+        <td class="m">
+          <%= post_comment.body %>
           <% if post_comment.user == current_user %>
-            <%= link_to "削除", post_post_comment_path(@post, post_comment), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-outline-danger float-end" %>
+            <%= link_to "削除", post_post_comment_path(@post, post_comment), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-outline-danger float-end ml-3" %>
           <% end %>
         </td>
       </tr>
       <% end %>
     </table>
-
-
-
   </div>
 </div>
 
