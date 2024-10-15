@@ -38,22 +38,12 @@
             <%= link_to post_path(post.id) do %>
               <button class="btn btn-dark ml-2">詳細を見る</button>
             <% end %>
-            <div class="d-flex align-items-center mr-5">
-              <i class="fa-regular fa-comment-dots fa-2x mr-4"></i>
-                <div id="like_btn_<%= post.id %>">
-                  <%= render 'user/likes/btn', post: post %>
-                </div>
-              <!--<% if current_user && post.liked_by?(current_user) %>-->
-              <!--  <%= link_to post_likes_path(post), method: :delete, remote: true do%>-->
-              <!--    <span style="color: #343a40;"><i class="fa-solid fa-heart fa-2x"></i> -->
-              <!--  <% end %>-->
-              <!--  <span style="font-size: 24px; margin-left: 6px;"><%= post.likes.count %></span>︎-->
-              <!--<% else %>-->
-              <!--  <%= link_to post_likes_path(post), method: :post, remote: true do %>-->
-              <!--    <span style="color: #343a40;"><i class="fa-regular fa-heart fa-2x"></i> -->
-              <!--  <% end %>-->
-              <!--  <span style="font-size: 24px; margin-left: 6px;"><%= post.likes.count %></span>-->
-              <!--<% end %>-->
+            <div class="d-flex align-items-center mr-3">
+              <div id="like_btn_<%= post.id %>">
+                <%= render 'user/likes/btn', post: post %>
+              </div>
+              <i class="fa-regular fa-comment-dots fa-2x ml-4 mr-2"></i>
+              <span style="font-size: 24px;"><%= post.post_comments.count %></span>
             </div>
           </div>
         </p>
