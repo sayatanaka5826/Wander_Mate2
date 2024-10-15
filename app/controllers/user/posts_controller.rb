@@ -20,6 +20,7 @@ before_action :is_matching_login_user, only: [:edit, :update]
   def show
     @post = Post.find(params[:id])
     @user = @post.user
+    @post_comment = PostComment.new
   end
 
   def edit
