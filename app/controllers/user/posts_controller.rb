@@ -51,10 +51,11 @@ before_action :is_matching_login_user, only: [:edit, :update]
     params.require(:post).permit(:title, :body, :post_image)
   end
 
+
   def is_matching_login_user
-    @post = Post.find(params[:id])
-    unless @post.user.id == current_user.id
-      redirect_to root_path
+    post = Post.find_by(id: params[:id])
+    if post.nil? || post.user != current_user
+    redirect_to root_path
     end
   end
 
