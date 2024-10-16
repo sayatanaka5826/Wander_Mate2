@@ -4,9 +4,9 @@ class User::SearchesController < ApplicationController
     @range = params[:range]
     @word = params[:word]
     if @range == "ユーザー"
-      @users = User.where("name LIKE ?","%#{@word}%").page(params[:page]).per(3)
+      @users = User.where("name LIKE ?", "%#{@word}%").order(created_at: :desc).page(params[:page]).per(10)
     elsif @range == "投稿"
-      @posts = Post.where("title LIKE ?","%#{@word}%").page(params[:page]).per(3)
+      @posts = Post.where("title LIKE ?","%#{@word}%").order(created_at: :desc).page(params[:page]).per(10)
     end
   end
 
