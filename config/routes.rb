@@ -16,10 +16,9 @@ Rails.application.routes.draw do
     get "/users/my_page/edit" => "users#edit", as: "edit_mypage"
     patch "/users/my_page" => "users#update", as: "update_mypage"
 
-    resources :users, only: [:show] do
+    resources :users, only: [:show, :destroy] do
       collection do
         get "confirm"
-        patch "withdraw"
       end
 
       member do

@@ -32,10 +32,9 @@ class User::UsersController < ApplicationController
     @posts = @user.posts.order(created_at: :desc).page(params[:page]).per(3)
   end
 
-  def withdraw
+  def destroy
     @user = current_user
-    @user.update(is_active: false)
-    reset_session
+    @user.destroy
     redirect_to root_path
   end
 
