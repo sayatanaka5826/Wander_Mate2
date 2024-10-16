@@ -1,62 +1,85 @@
-<div class="container"style="width: 40%;">
+<div class="container" style="width: 45%;">
   <div class="text-center mt-5 mb-5">
     <div style="font-weight: bold; font-size: 30px;">
       <i class="fa-solid fa-magnifying-glass"></i> 検索結果
     </div>
   </div>
-<table class="table table-hover table-borderless">
-  <% if @range == "ユーザー" %>
-    <tbody>
-      <% if @users.present? %>
-        <% @users.each do |user| %>
+  <table class="table table-hover table-borderless">
+    <% if @range == "ユーザー" %>
+      <tbody>
+        <% if @users.present? %>
+          <% @users.each do |user| %>
+            <tr>
+              <td>
+                <%= link_to(user) do %>
+                  <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
+                  <span style="font-size: 30px; padding-left: 20px; color: black;"><%= user.name %></span>
+                <% end %>
+              </td>
+              <td style="text-align: right;">
+                <%= link_to edit_mypage_path, class: "text-dark" do %>
+                  <button class="btn btn-primary mt-3">フォローする</button>
+                <% end %>
+                <span style="margin: 0 6px;">&nbsp;</span>
+                <%= link_to chats_path, class: "text-dark" do %>
+                  <button class="btn btn-outline-dark mt-3">チャットする</button>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
           <tr>
-            <td>
-              <%= link_to(user) do %>
-                <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
-                <span style="font-size: 30px; padding-left: 20px; color: black;"><%= user.name %></span>
-              <% end %>
-            </td>
-            <td style="text-align: right;">
-              <%= link_to edit_mypage_path, class: "text-dark" do %>
-                <button class="btn btn-primary mt-3">フォローする</button>
-              <% end %>
-              <span style="margin: 0 6px;">&nbsp;</span>
-              <%= link_to chats_path, class: "text-dark" do %>
-                <button class="btn btn-outline-dark mt-3">チャットする</button>
-              <% end %>
-            </td>
+            <td colspan="2" class="text-center">該当するユーザーが見つかりませんでした。</td>
           </tr>
         <% end %>
-      <% else %>
-        <tr>
-          <td colspan="2" class="text-center">該当するユーザーが見つかりませんでした。</td>
-        </tr>
-      <% end %>
-    </tbody>
-  <% elsif @range == "投稿" %>
-    <tbody>
-      <% if @posts.present? %>
-        <% @posts.each do |post| %>
+        
+        <div class="pagination d-flex justify-content-center mt-5 mb-5">
+          <%= paginate @users %>
+        </div>
+
+      </tbody>
+    <% elsif @range == "投稿" %>
+      <tbody>
+        <% if @posts.present? %>
+          <% @posts.each do |post| %>
+            <tr>
+              <td>
+                <%= link_to(post.user) do %>
+                  <%= image_tag post.user.get_profile_image(50, 50), class: "rounded-circle" %>
+                <% end %>
+              </td>
+              <td>
+                <div style="font-size: 18px; margin-left: 3px;">
+                  <%= post.user.name %>
+                </div>
+                <div style="font-weight: bold; font-size: 20px">
+                  <%= link_to post.title, post_path(post.id), style: "color: #343a40;" %>
+                </div>
+              </td>
+              <td>
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                  <i class="fa-regular fa-heart mr-1"></i>
+                  <span><%= post.likes.count %></span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                  <i class="fa-regular fa-comment-dots mr-1"></i>
+                  <span><%= post.post_comments.count %></span>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
           <tr>
-            <td>
-              <%= link_to(post.user) do %>
-                <%= image_tag post.user.get_profile_image(50, 50), class: "rounded-circle" %>
-                <span style="color: #343a40; font-weight: bold; margin-left: 3px;"><%= post.user.name %></span>
-              <% end %>
-            </td>
-            <td style="font-weight: bold; font-size: 20px">
-              <%= link_to post.title, post_path(post.id), style: "color: #343a40;" %>
-            </td>
+            <td colspan="2" class="text-center">該当する投稿が見つかりませんでした。</td>
           </tr>
         <% end %>
-      <% else %>
-        <tr>
-          <td colspan="2" class="text-center">該当する投稿が見つかりませんでした。</td>
-        </tr>
-      <% end %>
-    </tbody>
-  <% end %>
-</table>
-
-
+        
+        <div class="pagination d-flex justify-content-center mt-5 mb-5">
+          <%= paginate @posts %>
+        </div>
+        
+      </tbody>
+    <% end %>
+  </table>
 </div>
+
