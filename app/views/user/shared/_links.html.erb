@@ -3,6 +3,6 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "※会員登録がお済でない方はこちら", new_registration_path(resource_name), style: "color: #343a40;" %><br />
+  <%= link_to "※会員登録がお済でない方はこちら", new_user_registration_path(resource_name), style: "color: #343a40;" %><br />
 <% end %>
 
