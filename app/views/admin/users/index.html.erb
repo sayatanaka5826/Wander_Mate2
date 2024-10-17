@@ -1,1 +1,35 @@
 <h1>admin/users/index</h1>
+
+<div class="container" style="width: 30%;">
+
+  <div class="text-center mt-5 mb-5">
+    <div style="font-weight: bold; font-size: 30px;">
+      ユーザー一覧
+    </div>
+  </div>
+
+  <table class="table table-hover table-borderless">
+    <tbody>
+      <% @users.each do |user| %>
+            <tr>
+              <td>
+                <%= link_to admin_user_path(user) do %>
+                  <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
+                  <span style="font-size: 30px; padding-left: 20px; color: black;"><%= user.name %></span>
+                <% end %>
+              </td>
+              <td style="text-align: right;">
+                <%= link_to admin_user_path(user), class: "text-dark" do %>
+                  <button class="btn btn-outline-secondary mt-3">詳細を見る</button>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+    </tbody>
+  </table>
+
+  <div class="pagination d-flex justify-content-center mt-5 mb-5">
+    <%= paginate @users %>
+  </div>
+
+</div>
