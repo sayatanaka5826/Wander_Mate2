@@ -1,1 +1,47 @@
 <h1>admin/posts/index</h1>
+
+<div class="container" style="width: 45%;">
+
+  <div class="text-center mt-5 mb-5">
+    <div style="font-weight: bold; font-size: 30px;">
+      投稿一覧
+    </div>
+  </div>
+
+  <table class="table table-hover table-borderless">
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td>
+            <%= link_to admin_user_path(post.user) do %>
+              <%= image_tag post.user.get_profile_image(50, 50), class: "rounded-circle" %>
+            <% end %>
+          </td>
+          <td>
+            <div style="font-size: 18px; margin-left: 3px;">
+              <%= post.user.name %>
+            </div>
+            <div style="font-weight: bold; font-size: 20px">
+              <%= link_to post.title, admin_post_path(post.id), style: "color: #343a40;" %>
+            </div>
+          </td>
+          <td>
+            <div style="display: flex; align-items: center; margin-bottom: 5px;">
+              <i class="fa-regular fa-heart mr-1"></i>
+              <span><%= post.likes.count %></span>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 5px;">
+              <i class="fa-regular fa-comment-dots mr-1"></i>
+              <span><%= post.post_comments.count %></span>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="pagination d-flex justify-content-center mt-5 mb-5">
+    <%= paginate @posts %>
+  </div>
+
+</div>

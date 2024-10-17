@@ -39,17 +39,17 @@ Rails.application.routes.draw do
     get "/search" => "searches#search", as: "search"
 
   end
-  
+
   namespace :admin do
     get "" => "homes#top", as: "top"
     get "/search" => "searches#search", as: "search"
-    
+
     resources :users, only: [:index, :show, :destroy]
-    
+
     resources :posts, only: [:index, :show, :destroy] do
       resources :post_comments, only: [:destroy]
     end
-    
+
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
