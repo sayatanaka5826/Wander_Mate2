@@ -17,7 +17,11 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container" style="margin-left: 170px;">
-        <%= link_to 'Wander Mate', root_path, class: 'navbar-brand' %>
+        <% if admin_signed_in? %>
+          <%= link_to 'Wander Mate', admin_top_path, class: 'navbar-brand' %>
+        <% else %>
+          <%= link_to 'Wander Mate', root_path, class: 'navbar-brand' %>
+        <% end %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
