@@ -32,6 +32,32 @@
   color: #eeeed3 !important; /* ホバー時のテキストカラー */
 }
 
+.sign-up-button {
+  background-color: #ea4335 !important;
+  color: #eeeed3 !important;
+  width: 170px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sign-up-button:hover {
+  background-color: #ed9f82 !important; /* ホバー時の背景色 */
+  color: #33231d !important; /* ホバー時のテキストカラー */
+}
+
+.post-new-button {
+  background-color: #ea4335 !important; /* 通常時の背景色 */
+  color: #eeeed3 !important; /* 通常時のテキストカラー */
+  border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
+  width: 250px; /* 幅を指定 */
+  height: 70px; /* 高さを指定 */
+  transition: background-color 0.3s, color 0.3s; /* スムーズな遷移 */
+}
+
+.post-new-button:hover {
+  background-color: #ed9f82 !important; /* ホバー時の背景色 */
+  color: #33231d !important; /* ホバー時のテキストカラー */
+}
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
