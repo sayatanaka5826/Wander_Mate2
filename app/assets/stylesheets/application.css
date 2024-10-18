@@ -1,3 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
+
+.custom-navbar {
+  background-color: #eeeed3; /* ヘッダーの背景色 */
+}
+
+.header_logo {
+  font-family: "Oi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.custom-button {
+  color: #33231d !important; /* 通常時のテキストカラー */
+  border-color: #33231d !important; /* 通常時の枠線カラー */
+  transition: background-color 0.3s, color 0.3s; /* スムーズな遷移 */
+}
+
+.custom-button:hover {
+  background-color: #ea4335 !important; /* ホバー時の背景色 */
+  color: #eeeed3 !important; /* ホバー時のテキストカラー */
+}
+
+.logout-custom-button {
+  color: #33231d !important; /* 通常時のテキストカラー */
+  border-color: #33231d !important; /* 通常時の枠線カラー */
+  transition: background-color 0.3s, color 0.3s; /* スムーズな遷移 */
+}
+
+.logout-custom-button:hover {
+  background-color: #0001dd !important; /* ホバー時の背景色 */
+  color: #eeeed3 !important; /* ホバー時のテキストカラー */
+}
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +48,4 @@
  *= require_tree .
  *= require_self
  */
+
