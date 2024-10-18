@@ -30,12 +30,12 @@
 - IDE：Cloud9
 ​
 ## 使用素材
-・フリーイラスト素材として以下を使用
-  ・Adobe Stock(https://stock.adobe.com/jp/)
-・フリーアイコンとして以下を使用
-  ・Font Awesome(https://fontawesome.com/)
-・フリーフォントとして以下を使用
-  ・Google Fonts(https://fonts.google.com/)
+- フリーイラスト素材として以下を使用
+  - Adobe Stock(https://stock.adobe.com/jp/)
+- フリーアイコンとして以下を使用
+  - Font Awesome(https://fontawesome.com/)
+- フリーフォントとして以下を使用
+  - Google Fonts(https://fonts.google.com/)
 <!-- - 架空の団体・題材を前提にポートフォリオを制作する場合、下記のテンプレートを当項目内に記載しましょう。 -->
 <!-- 【テンプレート】 -->
 <!-- 著作権を考慮し、架空のデータを扱う予定です。 -->
