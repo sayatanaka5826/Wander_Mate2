@@ -1,4 +1,4 @@
-<div class="cotainer">
+<div class="container text-color">
 
   <%= form_with(model: resource, local: true, url: session_path(resource_name)) do |f| %>
   <table class="d-flex justify-content-center" style="width: 80%; margin: auto; margin-top: 70px;">
@@ -31,7 +31,7 @@
       <tr>
         <td>
           <div class="mt-4 text-center">
-            <%= f.submit "ログイン", class: "btn btn-dark"%>
+            <%= f.submit "ログイン", class: "btn btn-dark sign-up-button", style: "border-radius: 25px;"%>
           </div>
         </td>
       </tr>

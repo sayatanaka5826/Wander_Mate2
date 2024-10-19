@@ -16,12 +16,12 @@
 
   <body style="background-color: #eeeed3;">
     <nav class="navbar navbar-expand-lg custom-navbar">
-      <div class="container" style="margin-left: 170px;">
+      <div class="container" style="margin-left: 150px;">
         <% if admin_signed_in? %>
-          <%= link_to 'Wander Mate', admin_top_path, class: 'navbar-brand header_logo',
+          <%= link_to 'Wander Mate', admin_top_path, class: 'navbar-brand header-logo',
           style: 'font-size: 30px; color: #33231d;' %>
         <% else %>
-          <%= link_to 'Wander Mate', root_path, class: 'navbar-brand header_logo',
+          <%= link_to 'Wander Mate', root_path, class: 'navbar-brand header-logo',
           style: 'font-size: 30px; color: #33231d;'  %>
         <% end %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,14 +36,14 @@
               </li>
               <li class="nav-item">
                 <%= link_to my_page_path, class: "nav-link" do %>
-                  <button class="btn btn-outline-dark custom-button" style="border-radius: 25px;">
+                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">
                     マイページ
                   </button>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark custom-button" style="border-radius: 25px;">
+                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">
                     ログアウト
                   </button>
                 <% end %>
@@ -54,28 +54,28 @@
               </li>
               <li class="nav-item">
                 <%= link_to admin_posts_path, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark custom-button" style="border-radius: 25px;">投稿一覧</button>
+                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">投稿一覧</button>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to admin_users_path, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark custom-button" style="border-radius: 25px;">ユーザー一覧</button>
+                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">ユーザー一覧</button>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark custom-button" style="border-radius: 25px;">ログアウト</button>
+                  <button class="btn btn-outline-dark header-buttonn" style="border-radius: 25px;">ログアウト</button>
                 <% end %>
               </li>
             <% else %>
               <li class="nav-item">
                 <%= link_to new_user_registration_path, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark logout-custom-button" style="border-radius: 25px;">会員登録</button>
+                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">会員登録</button>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to new_user_session_path, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark logout-custom-button" style="border-radius: 25px;">ログイン</button>
+                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">ログイン</button>
                 <% end %>
               </li>
             <% end %>

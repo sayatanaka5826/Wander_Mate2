@@ -1,41 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
 
+.text-color {
+  color: #33231d;
+}
+
+.button {
+  background-color: #ea4335 !important;
+  border: 3px solid #33231d !important; /* 枠線の太さと色を指定 */
+  color: #eeeed3 !important;
+  width: 150px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #fc7d7d !important; /* ホバー時の背景色 */
+}
+
 .custom-navbar {
   background-color: #eeeed3; /* ヘッダーの背景色 */
 }
 
-.header_logo {
+.header-logo {
   font-family: "Oi", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.custom-button {
-  color: #33231d !important; /* 通常時のテキストカラー */
-  border-color: #33231d !important; /* 通常時の枠線カラー */
+.header-button {
+  background-color: #0001dd !important;
+  color: #eeeed3 !important; /* 通常時のテキストカラー */
+  border: 3px solid #33231d !important; /* 枠線の太さと色を指定 */
   transition: background-color 0.3s, color 0.3s; /* スムーズな遷移 */
 }
 
-.custom-button:hover {
-  background-color: #ea4335 !important; /* ホバー時の背景色 */
-  color: #eeeed3 !important; /* ホバー時のテキストカラー */
-}
-
-.logout-custom-button {
-  color: #33231d !important; /* 通常時のテキストカラー */
-  border-color: #33231d !important; /* 通常時の枠線カラー */
-  transition: background-color 0.3s, color 0.3s; /* スムーズな遷移 */
-}
-
-.logout-custom-button:hover {
-  background-color: #0001dd !important; /* ホバー時の背景色 */
-  color: #eeeed3 !important; /* ホバー時のテキストカラー */
+.header-button:hover {
+  background-color: #8282ed !important;
+  color: #eeeed3 !important;
 }
 
 .sign-up-button {
   background-color: #ea4335 !important;
+  border: 3px solid #33231d !important; /* 枠線の太さと色を指定 */
   color: #eeeed3 !important;
-  width: 170px;
+  width: 150px;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -44,19 +51,60 @@
   color: #33231d !important; /* ホバー時のテキストカラー */
 }
 
-.post-new-button {
+.top-post-new-button {
   background-color: #ea4335 !important; /* 通常時の背景色 */
   color: #eeeed3 !important; /* 通常時のテキストカラー */
-  border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
-  width: 250px; /* 幅を指定 */
-  height: 70px; /* 高さを指定 */
+  border: 4px solid #33231d !important; /* 枠線の太さと色を指定 */
+  width: 300px; /* 幅を指定 */
+  height: 80px; /* 高さを指定 */
   transition: background-color 0.3s, color 0.3s; /* スムーズな遷移 */
 }
 
-.post-new-button:hover {
+.top-post-new-button:hover {
   background-color: #ed9f82 !important; /* ホバー時の背景色 */
-  color: #33231d !important; /* ホバー時のテキストカラー */
 }
+
+.post-edit-button {
+  background-color: #eeeed3 !important;
+  border: 3px solid #33231d !important; /* 枠線の太さと色を指定 */
+  color: #33231d !important;
+}
+
+.post-edit-button:hover {
+  background-color: #33231d !important;
+  color: #eeeed3 !important;
+}
+
+.post-delete-button {
+  background-color: #eeeed3 !important;
+  border: 3px solid #33231d !important;
+  color: red !important;
+}
+
+.post-delete-button:hover {
+  background-color: red !important;
+  color: #eeeed3 !important;
+}
+
+.comment-send-button {
+  background-color: #ea4335 !important;
+  border: 3px solid #33231d !important; /* 枠線の太さと色を指定 */
+  color: #eeeed3 !important;
+  width: 80px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.comment-send-button:hover {
+  background-color: #fc7d7d !important; /* ホバー時の背景色 */
+}
+
+.success-flash {
+  background-color: #eeeed3 !important;
+  border: 1px solid #33231d !important;
+  color: #33231d !important;
+}
+
+
 
 
 /*

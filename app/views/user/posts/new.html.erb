@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container text-color">
   <%= render "user/shared/error_messages", resource: @post %>
 
   <%= form_with model: @post, url: posts_path do |f| %>
@@ -44,8 +44,8 @@
     </tbody>
   </table>
 
-  <div class="text-center" style="margin-top: 40px;">
-    <%= f.submit "投稿する", class: "btn-lg btn-dark " %>
+  <div class="text-center " style="margin-top: 40px;">
+    <%= f.submit "投稿する", class: "btn-lg btn-dark button", style: "border-radius: 25px;" %>
   </div>
 
   <% end %>
