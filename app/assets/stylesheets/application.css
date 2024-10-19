@@ -13,7 +13,7 @@
 }
 
 .button:hover {
-  background-color: #fc7d7d !important; /* ホバー時の背景色 */
+  background-color: #ed9f82 !important; /* ホバー時の背景色 */
 }
 
 .custom-navbar {
@@ -64,6 +64,19 @@
   background-color: #ed9f82 !important; /* ホバー時の背景色 */
 }
 
+.mypage-post-new-button {
+  background-color: #ea4335 !important; /* 通常時の背景色 */
+  color: #eeeed3 !important; /* 通常時のテキストカラー */
+  border: 4px solid #33231d !important; /* 枠線の太さと色を指定 */
+  width: 250px; /* 幅を指定 */
+  height: 60px; /* 高さを指定 */
+  transition: background-color 0.3s, color 0.3s; /* スムーズな遷移 */
+}
+
+.mypage-post-new-button:hover {
+  background-color: #ed9f82 !important; /* ホバー時の背景色 */
+}
+
 .post-edit-button {
   background-color: #eeeed3 !important;
   border: 3px solid #33231d !important; /* 枠線の太さと色を指定 */
@@ -95,7 +108,7 @@
 }
 
 .comment-send-button:hover {
-  background-color: #fc7d7d !important; /* ホバー時の背景色 */
+  background-color: #ed9f82 !important; /* ホバー時の背景色 */
 }
 
 .success-flash {
@@ -103,6 +116,7 @@
   border: 1px solid #33231d !important;
   color: #33231d !important;
 }
+
 
 
 
