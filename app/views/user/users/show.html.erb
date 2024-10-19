@@ -14,11 +14,11 @@
         </div>
         <div class="text-end mt-4">
           <%= link_to edit_mypage_path, class: "text-dark" do %>
-            <button class="btn btn-primary">フォローする <i class="fa-solid fa-user-plus"></i></button>
+            <button class="btn btn-outline-dark post-edit-button" style="border-radius: 25px;">フォローする <i class="fa-solid fa-user-plus"></i></button>
           <% end %>
           <span style="margin: 0 6px;">&nbsp;</span>
           <%= link_to chats_path, class: "text-dark" do %>
-            <button class="btn btn-outline-dark">チャットする <i class="fa-solid fa-comment-dots"></i></button>
+            <button class="btn btn-outline-dark post-edit-button" style="border-radius: 25px;">チャット <i class="fa-solid fa-comment-dots"></i></button>
           <% end %>
         </div>
       </div>
@@ -26,12 +26,12 @@
   </div>
 
   <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;"
-       class="text-center">
+       class="text-center text-color">
     【プロフィール】
   </div>
 
   <table class="table col-10" style="margin: auto;">
-    <tbody>
+    <tbody class="text-color">
       <tr style="line-height: 2; vertical-align: middle;">
         <td style="font-size: 15px;"><strong>性別</strong></td>
         <td style="font-size: 20px;">
@@ -73,12 +73,13 @@
     </tbody>
   </table>
 
-  <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;" class="text-center">
+  <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;"
+       class="text-center text-color">
     【投稿一覧】
   </div>
 
   <table style="width: 70%; margin: auto; margin-top: 20px;" >
-    <tbody>
+    <tbody class="text-color">
       <% @posts.each do |post| %>
       <tr>
         <td>

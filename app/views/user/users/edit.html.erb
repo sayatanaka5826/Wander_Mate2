@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container text-color">
   <%= render "user/shared/error_messages", resource: @user %>
 
   <%= form_with model: @user, url: update_mypage_path, method: :patch do |f| %>
-  <table style="margin-top: 50px;">
+  <table style="margin-top: 50px; margin-bottom: 50px;">
     <thead>
       <th colspan="2" style="font-weight: bold; font-size: 30px;">
         プロフィール編集 <i class="fa-solid fa-pen-to-square"></i>
@@ -72,9 +72,9 @@
       </tr>
       <tr>
         <td colspan="4" style="text-align: center; padding-top: 40px; margin-bottom: 40px;">
-          <%= link_to "退会する", confirm_users_path, class: "btn btn-danger" %>
+          <%= link_to "退会する", confirm_users_path, class: "btn btn-danger to-confirm-button", style: "border-radius: 25px;" %>
           <span style="margin: 0 20px;">&nbsp;</span>
-          <%= f.submit "保存する", class: "btn btn-dark" %>
+          <%= f.submit "保存する", class: "btn btn-dark button", style: "border-radius: 25px;" %>
         </td>
       </tr>
     </tbody>
