@@ -1,7 +1,7 @@
 <h1>admin/search</h1>
 
 <% if @range == "ユーザー" %>
-  <div class="container" style="width: 45%;">
+  <div class="container" style="width: 40%;">
     <div class="text-center text-color mt-5 mb-5">
       <div style="font-weight: bold; font-size: 30px;">
         <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果
@@ -15,7 +15,7 @@
             <td style="display: flex; justify-content: space-between; align-items: center;">
               <div style="display: flex; align-items: center;">
                 <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
-                <span style="font-size: 30px; padding-left: 20px; color: #33231d;"><%= user.name %></span>
+                <span style="font-size: 25px; padding-left: 20px; color: #33231d;"><%= user.name %></span>
               </div>
               <span>
                 <%= link_to admin_user_path(user), class: "text-dark" do %>
@@ -33,7 +33,7 @@
     </table>
   </div>
 <% elsif @range == "投稿" %>
-  <div class="container" style="width: 60%;">
+  <div class="container" style="width: 50%;">
     <div class="text-center text-color mt-5 mb-5">
       <div style="font-weight: bold; font-size: 30px;">
         <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果

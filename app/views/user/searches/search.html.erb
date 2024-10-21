@@ -1,4 +1,4 @@
-<div class="container" style="width: 60%;">
+<div class="container" style="width: 50%;">
   <div class="text-center text-color mt-5 mb-5">
     <div style="font-weight: bold; font-size: 30px;">
       <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果
@@ -14,7 +14,7 @@
               <td>
                 <%= link_to(user) do %>
                   <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
-                  <span style="font-size: 30px; padding-left: 20px; color: #33231d;"><%= user.name %></span>
+                  <span style="font-size: 25px; padding-left: 20px; color: #33231d;"><%= user.name %></span>
                 <% end %>
               </td>
               <td style="text-align: right;">
