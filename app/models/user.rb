@@ -31,7 +31,19 @@ class User < ApplicationRecord
     end
       profile_image.variant(resize_to_limit: [width, height]).processed
   end
-
+  
+  def follow(user_id)
+    relationships.create(followed_id: user_id)
+  end
+  
+  def unfollow(user_id)
+    relationships.find_by(followed_id: user_id).destroy
+  end
+  
+  def following?(user)
+    followings.include?(user)
+  end
+  
   enum gender: {male: 0 , female: 1, other: 2}
   enum age: {teens: 0 , twenties: 1, thirties: 2, forties: 3, fifties: 4,
     sixties: 5, seventies: 6, older: 7}

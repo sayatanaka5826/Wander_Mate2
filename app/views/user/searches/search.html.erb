@@ -18,9 +18,16 @@
                 <% end %>
               </td>
               <td style="text-align: right;">
-                <%= link_to edit_mypage_path, class: "text-dark" do %>
-                  <button class="btn btn-primary post-edit-button mt-3" style="border-radius: 25px; width: 150px;">
+                <% if current_user.following?(user) %>
+                  <%= link_to user_relationships_path(user.id), method: :delete do%>
+                    <button class="btn following-button mt-3" style="border-radius: 25px; width: 150px;">
+                    フォロー中 <i class="fa-solid fa-user-group"></i></i></button>
+                  <% end %>
+                <% else %>
+                  <%= link_to user_relationships_path(user.id), method: :post do%>
+                    <button class="btn follow-button mt-3" style="border-radius: 25px; width: 150px;">
                     フォローする <i class="fa-solid fa-user-plus"></i></button>
+                  <% end %>
                 <% end %>
                 <span style="margin: 0 6px;">&nbsp;</span>
                 <%= link_to chats_path, class: "text-dark" do %>

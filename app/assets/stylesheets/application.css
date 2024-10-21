@@ -77,13 +77,13 @@
   background-color: #ed9f82 !important; /* ホバー時の背景色 */
 }
 
-.post-edit-button {
+.post-edit-button, .follow-button {
   background-color: #eeeed3 !important;
   border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
   color: #33231d !important;
 }
 
-.post-edit-button:hover {
+.post-edit-button:hover, .follow-button:hover, .following-button{
   background-color: #33231d !important;
   color: #eeeed3 !important;
 }
