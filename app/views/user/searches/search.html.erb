@@ -1,6 +1,6 @@
 <div class="container" style="width: 45%;">
 
-  <div class="text-center mt-5 mb-5">
+  <div class="text-center text-color mt-5 mb-5">
     <div style="font-weight: bold; font-size: 30px;">
       <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果
     </div>
@@ -15,16 +15,18 @@
               <td>
                 <%= link_to(user) do %>
                   <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
-                  <span style="font-size: 30px; padding-left: 20px; color: black;"><%= user.name %></span>
+                  <span style="font-size: 30px; padding-left: 20px; color: #33231d;"><%= user.name %></span>
                 <% end %>
               </td>
               <td style="text-align: right;">
                 <%= link_to edit_mypage_path, class: "text-dark" do %>
-                  <button class="btn btn-primary mt-3">フォローする</button>
+                  <button class="btn btn-primary post-edit-button mt-3" style="border-radius: 25px; width: 150px;">
+                    フォローする <i class="fa-solid fa-user-plus"></i></button>
                 <% end %>
                 <span style="margin: 0 6px;">&nbsp;</span>
                 <%= link_to chats_path, class: "text-dark" do %>
-                  <button class="btn btn-outline-dark mt-3">チャットする</button>
+                  <button class="btn btn-outline-dark post-edit-button mt-3" style="border-radius: 25px; width: 150px;">
+                    チャットする <i class="fa-solid fa-comment-dots"></i></button>
                 <% end %>
               </td>
             </tr>
@@ -36,7 +38,7 @@
         <% end %>
       </tbody>
     <% elsif @range == "投稿" %>
-      <tbody>
+      <tbody class="text-color">
         <% if @posts.present? %>
           <% @posts.each do |post| %>
             <tr>
@@ -50,7 +52,7 @@
                   <%= post.user.name %>
                 </div>
                 <div style="font-weight: bold; font-size: 20px">
-                  <%= link_to post.title, post_path(post.id), style: "color: #343a40;" %>
+                  <%= link_to post.title, post_path(post.id), style: "color: #33231d" %>
                 </div>
               </td>
               <td>

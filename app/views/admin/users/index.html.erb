@@ -2,7 +2,7 @@
 
 <div class="container" style="width: 30%;">
 
-  <div class="text-center mt-5 mb-5">
+  <div class="text-center text-color mt-5 mb-5">
     <div style="font-weight: bold; font-size: 30px;">
       ユーザー一覧
     </div>
@@ -15,12 +15,12 @@
               <td>
                 <%= link_to admin_user_path(user) do %>
                   <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
-                  <span style="font-size: 30px; padding-left: 20px; color: black;"><%= user.name %></span>
+                  <span style="font-size: 30px; padding-left: 20px; color: #33231d;"><%= user.name %></span>
                 <% end %>
               </td>
               <td style="text-align: right;">
-                <%= link_to admin_user_path(user), class: "text-dark" do %>
-                  <button class="btn btn-outline-secondary mt-3">詳細を見る</button>
+                <%= link_to admin_user_path(user) do %>
+                  <button class="btn btn-outline-secondary button mt-3" style="border-radius: 25px;">詳細を見る</button>
                 <% end %>
               </td>
             </tr>

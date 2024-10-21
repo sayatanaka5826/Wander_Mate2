@@ -5,17 +5,19 @@
     <div class="d-flex align-items-center">
       <%= link_to admin_user_path(@post.user) do %>
         <%= image_tag @post.user.get_profile_image(50, 50), class: "rounded-circle" %>
-        <span style="font-weight: bold; font-size: 20px; margin-left: 10px; color: black;"><%= @post.user.name %>
+        <span style="font-weight: bold; font-size: 20px; margin-left: 10px; color: #33231d;"><%= @post.user.name %>
       <% end %>
     </div>
     <% if admin_signed_in? %>
       <div class="ml-auto d-flex">
-        <%= link_to '削除 <i class="fa-solid fa-trash-can"></i>'.html_safe, admin_post_path, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-outline-danger"%>
+        <%= link_to '削除 <i class="fa-solid fa-trash-can"></i>'.html_safe,
+        admin_post_path, method: :delete, data: { confirm: '本当に消しますか？' },
+        class: "btn btn-outline-danger post-delete-button", style: "border-radius: 25px;"%>
       </div>
     <% end %>
   </div>
 
-  <div class="card-body">
+  <div class="card-body text-color">
     <% if @post.post_image.attached? %>
       <%= image_tag @post.post_image, class: "card-img-top", style: "width: 100%;" %>
     <% else %>
@@ -27,9 +29,9 @@
     <i class="fa-solid fa-rotate-right"></i> 最終変更日：<%= @post.updated_at.strftime("%Y年%m月%d日") %>
     <p class="card-text mt-3" style="font-size: 20px"><%= @post.body %></p>
     <div class="d-flex justify-content-left ml-2">
-      <i class="fa-regular fa-heart fa-2x mr-1" style="color: #343a40;"></i>
+      <i class="fa-regular fa-heart fa-2x mr-1" style="color: #33231d;"></i>
       <span style="font-size: 24px;"><%= @post.likes.count %></span>
-      <i class="fa-regular fa-comment-dots fa-2x ml-3 mr-1" style="color: #343a40;"></i>
+      <i class="fa-regular fa-comment-dots fa-2x ml-3 mr-1" style="color: #33231d;"></i>
       <span style="font-size: 24px;"><%= @post.post_comments.count %></span>
     </div>
 

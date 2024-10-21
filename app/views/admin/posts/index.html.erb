@@ -2,7 +2,7 @@
 
 <div class="container" style="width: 45%;">
 
-  <div class="text-center mt-5 mb-5">
+  <div class="text-center mt-5 mb-5 text-color">
     <div style="font-weight: bold; font-size: 30px;">
       投稿一覧
     </div>
@@ -18,14 +18,14 @@
             <% end %>
           </td>
           <td>
-            <div style="font-size: 18px; margin-left: 3px;">
+            <div style="font-size: 18px; margin-left: 3px; color: #33231d;">
               <%= post.user.name %>
             </div>
             <div style="font-weight: bold; font-size: 20px">
-              <%= link_to post.title, admin_post_path(post.id), style: "color: #343a40;" %>
+              <%= link_to post.title, admin_post_path(post.id), style: "color: #33231d;" %>
             </div>
           </td>
-          <td>
+          <td class="text-color">
             <div style="display: flex; align-items: center; margin-bottom: 5px;">
               <i class="fa-regular fa-heart mr-1"></i>
               <span><%= post.likes.count %></span>
