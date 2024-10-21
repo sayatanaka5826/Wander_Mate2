@@ -1,6 +1,4 @@
-<h1>admin/users/index</h1>
-
-<div class="container" style="width: 50%;">
+<div class="container" style="width: 40%;">
 
   <div class="text-center text-color mt-5 mb-5">
     <div style="font-weight: bold; font-size: 30px;">
@@ -13,10 +11,10 @@
       <% @users.each do |user| %>
             <tr>
               <td>
-                <%= link_to admin_user_path(user) do %>
+
                   <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
-                  <span style="font-size: 30px; padding-left: 20px; color: #33231d;"><%= user.name %></span>
-                <% end %>
+                  <span style="font-size: 25px; padding-left: 20px; color: #33231d;"><%= user.name %></span>
+
               </td>
               <td style="text-align: right;">
                 <%= link_to admin_user_path(user) do %>
