@@ -13,6 +13,7 @@ class Admin::UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    flash[:withdraw_success] = "退会処理が正常に行われました"
     redirect_to admin_top_path
   end
 

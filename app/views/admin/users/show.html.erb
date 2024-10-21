@@ -15,7 +15,7 @@
           <%= @user.bio %>
         </div>
         <div class="text-end mt-4">
-          <%= link_to "退会", admin_user_path, class: "btn btn-outline-danger withdraw-button",
+          <%= link_to '退会 <i class="fa-solid fa-right-from-bracket"></i>'.html_safe, admin_user_path, class: "btn btn-outline-danger button",
           style: "border-radius: 25px;", method: :delete, data: { confirm: "本当に退会しますか？" } %>
         </div>
       </div>

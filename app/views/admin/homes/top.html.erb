@@ -1,8 +1,14 @@
 <h1>admin/top</h1>
 
 <% if flash[:post_destroy_success] %>
-  <div class="alert alert-success mt-4 text-center w-25 mx-auto">
+  <div class="alert success-flash mt-4 text-center w-25 mx-auto">
     <%= flash[:post_destroy_success] %>
+  </div>
+<% end %>
+
+<% if flash[:withdraw_success] %>
+  <div class="alert success-flash mt-4 text-center w-25 mx-auto">
+    <%= flash[:withdraw_success] %>
   </div>
 <% end %>
 

@@ -24,11 +24,11 @@
       <%= image_tag 'no_image2.png', class: "card-img-top", style: "width: 100%;" %>
     <% end %>
     <h5 class="card-title" style="font-weight: bold; font-size: 30px; margin-top: 20px;" ><%= @post.title %></h5>
-    <i class="fa-regular fa-clock ml-2"></i> 投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>
+    <i class="fa-regular fa-clock"></i> 投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>
     <span style="margin: 0 6px;">&nbsp;</span>
     <i class="fa-solid fa-rotate-right"></i> 最終変更日：<%= @post.updated_at.strftime("%Y年%m月%d日") %>
     <p class="card-text mt-3" style="font-size: 20px"><%= @post.body %></p>
-    <div class="d-flex justify-content-left ml-2">
+    <div class="d-flex justify-content-left">
       <i class="fa-regular fa-heart fa-2x mr-1" style="color: #33231d;"></i>
       <span style="font-size: 24px;"><%= @post.likes.count %></span>
       <i class="fa-regular fa-comment-dots fa-2x ml-3 mr-1" style="color: #33231d;"></i>
@@ -40,7 +40,7 @@
       <tr>
         <td>
           <%= link_to admin_user_path(post_comment.user) do %>
-            <%= image_tag post_comment.user.get_profile_image(30, 30), class: "rounded-circle ml-2" %>
+            <%= image_tag post_comment.user.get_profile_image(30, 30), class: "rounded-circle" %>
           <% end %>
         </td>
         <td class="ml-3">

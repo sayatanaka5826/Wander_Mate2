@@ -35,11 +35,11 @@
       <%= image_tag 'no_image2.png', class: "card-img-top", style: "width: 100%;" %>
     <% end %>
     <h5 class="card-title" style="font-weight: bold; font-size: 30px; margin-top: 20px;" ><%= @post.title %></h5>
-    <i class="fa-regular fa-clock ml-2"></i> 投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>
+    <i class="fa-regular fa-clock"></i> 投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>
     <span style="margin: 0 6px;">&nbsp;</span>
     <i class="fa-solid fa-rotate-right"></i> 最終変更日：<%= @post.updated_at.strftime("%Y年%m月%d日") %>
     <p class="card-text mt-3" style="font-size: 20px"><%= @post.body %></p>
-    <div class="d-flex justify-content-left ml-2">
+    <div class="d-flex justify-content-left">
       <div id="like_btn_<%= @post.id %>">
         <%= render 'user/likes/btn', post: @post %>
       </div>
@@ -53,9 +53,9 @@
       <% if user_signed_in? %>
         <div class="row justify-content-left">
           <%= form_with model: [@post, @post_comment] do |f| %>
-          <div class="d-flex align-items-center ml-2 mt-4 mb-3" style="width: 100%;">
+          <div class="d-flex align-items-center mt-4 mb-3" style="width: 100%;">
             <%= f.text_area :body, cols: 110, placeholder: "コメントを入力", class: "form-control" %>
-            <%= f.submit "送信", class: "btn btn-secondary comment-send-button ml-3", style: "border-radius: 25px;" %>
+            <%= f.submit "送信", class: "btn btn-secondary comment-send-button ml-2", style: "border-radius: 25px;" %>
           </div>
           <% end %>
         </div>
@@ -67,7 +67,7 @@
       <tr>
         <td>
           <%= link_to user_path(post_comment.user) do %>
-            <%= image_tag post_comment.user.get_profile_image(30, 30), class: "rounded-circle ml-2" %>
+            <%= image_tag post_comment.user.get_profile_image(30, 30), class: "rounded-circle" %>
           <% end %>
         </td>
         <td class="ml-3">

@@ -35,6 +35,13 @@
                 <strong style="color: #33231d;">ようこそ、<%= current_user.name %>さん！</strong>
               </li>
               <li class="nav-item">
+                <%= link_to new_post_path, class: "nav-link" do %>
+                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">
+                    新規投稿
+                  </button>
+                <% end %>
+              </li>
+              <li class="nav-item">
                 <%= link_to my_page_path, class: "nav-link" do %>
                   <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">
                     マイページ

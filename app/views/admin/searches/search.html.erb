@@ -1,14 +1,14 @@
 <h1>admin/search</h1>
 
 <% if @range == "ユーザー" %>
-  <div class="container" style="width: 30%;">
+  <div class="container" style="width: 45%;">
     <div class="text-center text-color mt-5 mb-5">
       <div style="font-weight: bold; font-size: 30px;">
         <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果
       </div>
     </div>
 
-    <table class="table table-hover table-borderless" >
+    <table class="table table-hover table-borderless">
       <% if @users.present? %>
         <% @users.each do |user| %>
           <tr>
@@ -33,7 +33,7 @@
     </table>
   </div>
 <% elsif @range == "投稿" %>
-  <div class="container" style="width: 45%;">
+  <div class="container" style="width: 60%;">
     <div class="text-center text-color mt-5 mb-5">
       <div style="font-weight: bold; font-size: 30px;">
         <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果
