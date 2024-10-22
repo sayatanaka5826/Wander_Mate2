@@ -19,7 +19,7 @@
               </td>
               <td style="text-align: right;">
                 <% unless current_user == user %>
-                  <% if current_user.following?(user) %>
+                  <% if user_signed_in? && current_user.following?(user) %>
                     <%= link_to user_relationships_path(user.id), method: :delete do%>
                       <button class="btn following-button mt-3" style="border-radius: 25px; width: 150px;">
                       フォロー中 <i class="fa-solid fa-user-group"></i></i></button>

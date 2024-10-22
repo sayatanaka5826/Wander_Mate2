@@ -1,6 +1,6 @@
 class User::UsersController < ApplicationController
   before_action :set_user, only: [:show, :followings, :followers]
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :followings, :followers]
 
   def mypage
     @user = current_user
