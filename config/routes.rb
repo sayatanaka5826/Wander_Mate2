@@ -36,7 +36,7 @@ Rails.application.routes.draw do
       resources :post_comments, only: [:create, :destroy]
     end
 
-    resources :chats, only: [:index, :create, :show, :destroy]
+    resources :chats, only: [:index, :show, :create, :destroy]
 
     get "/search" => "searches#search", as: "search"
 

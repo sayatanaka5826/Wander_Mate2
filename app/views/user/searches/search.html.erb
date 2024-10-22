@@ -31,7 +31,7 @@
                     <% end %>
                   <% end %>
                   <span style="margin: 0 6px;">&nbsp;</span>
-                  <%= link_to chats_path, class: "text-dark" do %>
+                  <%= link_to chat_path(user.id), class: "text-dark" do %>
                     <button class="btn btn-outline-dark post-edit-button mt-3" style="border-radius: 25px; width: 150px;">
                       チャットする <i class="fa-solid fa-comment-dots"></i></button>
                   <% end %>

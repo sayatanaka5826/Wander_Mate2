@@ -172,7 +172,40 @@
   color: #33231d !important;
 }
 
+.chat-box {
+  padding: 20px;
+  width: 500px;
+  height: 500px;
+  margin-bottom: 20px;
+  background-color: white;
+}
 
+.my-message {
+  background-color: #ea4335;
+  color: #eeeed3;
+  border: 2px solid #33231d;
+}
+
+.their-message {
+  background-color: #eeeed3;
+  color: #33231d;
+  border: 2px solid #33231d;
+}
+
+.message-delete-button {
+  color: #33231d;
+  border: 1px solid #33231d !important;
+}
+
+.message-delete-button:hover {
+  color: #eeeed3 !important;
+  background-color: #33231d;
+}
+
+.message-send-button {
+  background-color: #33231d !important;
+  color: #eeeed3 !important;
+}
 
 
 /*

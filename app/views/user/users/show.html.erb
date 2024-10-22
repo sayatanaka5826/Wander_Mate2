@@ -39,9 +39,11 @@
             フォローする <i class="fa-solid fa-user-plus"></i></button>
           <% end %>
         <% end %>
-        <%= link_to chats_path, class: "text-dark" do %>
-          <button class="btn btn-outline-dark post-edit-button ml-1" style="border-radius: 25px;">
-          チャット <i class="fa-solid fa-comment-dots"></i></button>
+        <% if current_user != @user && current_user.following?(@user) && @user.following?(current_user) %>
+          <%= link_to chat_path(@user.id) do %>
+            <button class="btn btn-outline-dark post-edit-button ml-1" style="border-radius: 25px;">
+            チャット <i class="fa-solid fa-comment-dots"></i></button>
+          <% end %>
         <% end %>
       </td>
     </tr>

@@ -11,6 +11,13 @@
       </td>
     </tr>
     <tr>
+      <td colspan="3" style="text-align: center;">
+        <span class="text-color">フォロー中: <%= @user.followings.count %>人</span>
+        <span class="text-color">フォロワー: <%= @user.followers.count %>人</span>
+      </td>
+    </tr>
+    <tr><td colspan="3" style="height: 10px;"></td></tr>
+    <tr>
       <td class="text-center">
         <%= link_to '退会 <i class="fa-solid fa-right-from-bracket"></i>'.html_safe, admin_user_path, class: "btn btn-outline-danger button",
           style: "border-radius: 25px;", method: :delete, data: { confirm: "本当に退会しますか？" } %>
