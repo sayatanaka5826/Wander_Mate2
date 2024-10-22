@@ -7,17 +7,17 @@
 <div class="container text-color">
   <table style="margin: auto; border: none;">
     <tr>
-      <td colspan="3" style="text-align: center; vertical-align: middle;">
+      <td colspan="3" style="text-align: center;">
         <%= image_tag @user.get_profile_image(150, 150), class: "rounded-circle" %>
       </td>
     </tr>
     <tr>
-      <td colspan="3" style="text-align: center; vertical-align: middle; font-weight: bold; font-size: 50px;">
+      <td colspan="3" style="text-align: center; font-weight: bold; font-size: 50px;">
         <%= @user.name %>
       </td>
     </tr>
     <tr>
-      <td colspan="3" style="text-align: center; vertical-align: middle;">
+      <td colspan="3" style="text-align: center;">
         <%= link_to user_followings_path(@user) do %>
           <span class="text-color">フォロー中: <%= @user.followings.count %>人</span>
         <% end %>
@@ -27,24 +27,21 @@
       </td>
     </tr>
     <tr>
-      <td colspan="3" style="height: 10px;"></td>
+      <td colspan="3" class="text-center" style="font-size: 22px;"><%= @user.bio %></td>
     </tr>
+    <tr><td colspan="3" style="height: 10px;"></td></tr>
     <tr>
-      <td>
+      <td colspan="3" class="text-center">
         <%= link_to edit_mypage_path, class: "text-dark" do %>
-          <button class="btn btn-outline-dark post-edit-button mr-3" style="border-radius: 25px;">
+          <button class="btn btn-outline-dark post-edit-button mr-1" style="border-radius: 25px;">
           プロフィールを編集 <i class="fa-solid fa-pen"></i></button>
         <% end %>
-      </td>
-      <td>
         <%= link_to chats_path, class: "text-dark" do %>
-          <button class="btn btn-outline-dark post-edit-button mr-3" style="border-radius: 25px;">
+          <button class="btn btn-outline-dark post-edit-button ml-1 mr-1" style="border-radius: 25px;">
           チャット <i class="fa-solid fa-comment-dots"></i></button>
         <% end %>
-      </td>
-      <td>
         <%= link_to new_post_path, class: "text-dark" do %>
-          <button class="btn btn-outline-dark post-edit-button" style="border-radius: 25px;">
+          <button class="btn btn-outline-dark post-edit-button ml-1" style="border-radius: 25px;">
           いいね <i class="fa-solid fa-heart"></i></button>
         <% end %>
       </td>
