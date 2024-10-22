@@ -108,8 +108,7 @@
     <tr>
       <td>
         <%= link_to(post.user) do %>
-        <%= image_tag post.user.get_profile_image(50, 50), class: "rounded-circle" %>
-        <span style="font-weight: bold; margin-left: 3px; color: #33231d;"></span>
+          <%= image_tag post.user.get_profile_image(50, 50), class: "rounded-circle" %>
         <% end %>
       </td>
       <td>
