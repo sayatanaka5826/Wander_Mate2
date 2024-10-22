@@ -39,6 +39,16 @@ class User::UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def followings
+    set_user
+    @users = @user.followings
+  end
+
+  def followers
+    set_user
+    @users = @user.followers
+  end
+
 
   private
 

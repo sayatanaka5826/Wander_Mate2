@@ -17,9 +17,13 @@
       </td>
     </tr>
     <tr>
-      <td  colspan="3" style="text-align: center; vertical-align: middle;">
-        フォロー中: <%= @user.followings.count %>人
-        フォロワー: <%= @user.followers.count %>人
+      <td colspan="3" style="text-align: center; vertical-align: middle;">
+        <%= link_to user_followings_path(@user) do %>
+          <span class="text-color">フォロー中: <%= @user.followings.count %>人</span>
+        <% end %>
+        <%= link_to user_followers_path(@user) do %>
+          <span class="text-color">フォロワー: <%= @user.followers.count %>人</span>
+        <% end %>
       </td>
     </tr>
     <tr>
