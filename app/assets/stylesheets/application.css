@@ -154,8 +154,24 @@
   color: #33231d !important;
 }
 
+.followers-box {
+  padding: 20px;
+  width: 350px;
+  height: 400px;
+  margin-bottom: 20px;
+  background-color: white;
+}
 
-/*##以下admin*/
+.follower-box-following-button, .follower-box-follow-button:hover {
+  background-color: #33231d !important;
+  color: #eeeed3 !important;
+}
+
+.follower-box-follow-button, .follower-box-following-button:hover {
+  background-color: #eeeed3 !important;
+  color: #33231d !important;
+}
+
 
 
 
