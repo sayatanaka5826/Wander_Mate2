@@ -12,7 +12,7 @@
         <%= link_to "<i class='fa-regular fa-trash-can'></i>".html_safe,
         post_post_comment_path(post, post_comment), method: :delete,
         data: { confirm: '本当に消しますか？' },
-        class: "btn btn-sm btn-outline-danger rounded-circle float-end ml-3 remote: true" %>
+        class: "btn btn-sm btn-outline-danger rounded-circle float-end ml-3", remote: true %>
       <% end %>
     </td>
   </tr>

@@ -3,8 +3,10 @@
     <div class="row justify-content-left">
       <%= form_with model: [post, post_comment], local: false do |f| %>
       <div class="d-flex align-items-center mt-4 mb-3" style="width: 100%;">
-        <%= f.text_area :body, cols: 110, placeholder: "コメントを入力", class: "form-control" %>
-        <%= f.submit "送信", class: "btn btn-secondary comment-send-button ml-2", style: "border-radius: 25px;" %>
+        <%= f.text_area :body, cols: 95, placeholder: "コメントを入力", class: "form-control", id: "comment_textarea" %>
+        <%= button_tag(type: 'submit', class: "btn btn-sm message-send-button ml-2", style: "width: 45px;") do %>
+          <i class="fa-solid fa-paper-plane"></i>
+        <% end %>
       </div>
       <% end %>
     </div>
