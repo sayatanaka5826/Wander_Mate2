@@ -43,45 +43,23 @@
       <div id="like_btn_<%= @post.id %>">
         <%= render 'user/likes/btn', post: @post %>
       </div>
-      <div>
-        <span style="color: #33231d; margin-left: 12px;"><i class="fa-regular fa-comment-dots fa-2x"></i></i>
-        <span style="font-size: 24px;"><%= @post.post_comments.count %></span>
+      <div id="comment_counter">
+        <%= render "user/post_comments/counter", post: @post %>
       </div>
     </div>
 
-    <div class="container">
-      <% if user_signed_in? %>
-        <div class="row justify-content-left">
-          <%= form_with model: [@post, @post_comment] do |f| %>
-          <div class="d-flex align-items-center mt-4 mb-3" style="width: 100%;">
-            <%= f.text_area :body, cols: 110, placeholder: "コメントを入力", class: "form-control" %>
-            <%= f.submit "送信", class: "btn btn-secondary comment-send-button ml-2", style: "border-radius: 25px;" %>
-          </div>
-          <% end %>
-        </div>
-      <% end %>
+    <div id="comment_textarea">
+      <%= render "user/post_comments/form", post: @post, post_comment: @post_comment %>
     </div>
 
-    <table class="mt-3">
-      <% @post.post_comments.each do |post_comment| %>
-      <tr>
-        <td>
-          <%= link_to user_path(post_comment.user) do %>
-            <%= image_tag post_comment.user.get_profile_image(30, 30), class: "rounded-circle" %>
-          <% end %>
-        </td>
-        <td class="ml-3">
-          <%= post_comment.body %>
-          <% if post_comment.user == current_user %>
-            <%= link_to "<i class='fa-regular fa-trash-can'></i>".html_safe,
-            post_post_comment_path(@post, post_comment), method: :delete,
-            data: { confirm: '本当に消しますか？' },
-            class: "btn btn-sm btn-outline-danger rounded-circle float-end ml-3" %>
-          <% end %>
-        </td>
-      </tr>
-      <% end %>
-    </table>
+    <div id="comment_index">
+      <%= render "user/post_comments/index", post: @post %>
+    </div>
+
+
+
+
+
 
   </div>
 </div>
