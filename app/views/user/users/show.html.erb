@@ -24,24 +24,21 @@
       <td colspan="3" class="text-center" style="font-size: 22px;"><%= @user.bio %></td>
     </tr>
     <tr>
-      <td colspan="3" style="height: 10px;"></td>
-    </tr>
-    <tr>
       <td colspan="3" class="text-center">
         <% if user_signed_in? && current_user.following?(@user) %>
           <%= link_to user_relationships_path(@user.id), method: :delete do%>
-            <button class="btn following-button mr-1" style="border-radius: 25px;">
+            <button class="btn following-button mt-2" style="border-radius: 25px; width: 145px;">
             フォロー中 <i class="fa-solid fa-user-group"></i></button>
           <% end %>
         <% else %>
           <%= link_to user_relationships_path(@user.id), method: :post do%>
-            <button class="btn follow-button mr-1" style="border-radius: 25px;">
-            フォローする <i class="fa-solid fa-user-plus"></i></button>
+            <button class="btn follow-button mt-2" style="border-radius: 25px; width: 145px;">
+            フォロー <i class="fa-solid fa-user-plus"></i></button>
           <% end %>
         <% end %>
         <% if current_user != @user && current_user.following?(@user) && @user.following?(current_user) %>
           <%= link_to chat_path(@user.id) do %>
-            <button class="btn btn-outline-dark post-edit-button ml-1" style="border-radius: 25px;">
+            <button class="btn btn-outline-dark post-edit-button mt-2 ml-1" style="border-radius: 25px; width: 145px;">
             チャット <i class="fa-solid fa-comment-dots"></i></button>
           <% end %>
         <% end %>
@@ -135,17 +132,3 @@
 <div class="pagination d-flex justify-content-center mt-4 mb-5">
   <%= paginate @posts %>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

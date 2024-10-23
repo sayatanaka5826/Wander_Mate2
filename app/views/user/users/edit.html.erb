@@ -1,4 +1,4 @@
-<div class="container text-color">
+<div class="container text-color" style="width: 70%;">
   <%= render "user/shared/error_messages", resource: @user %>
 
   <%= form_with model: @user, url: update_mypage_path, method: :patch do |f| %>
@@ -71,7 +71,7 @@
         <td></td>
       </tr>
       <tr>
-        <td colspan="4" style="text-align: center; padding-top: 40px; margin-bottom: 40px;">
+        <td colspan="4" class="text-center" style="padding-top: 40px; margin-bottom: 40px;">
           <%= link_to "退会する", confirm_users_path, class: "btn btn-danger to-confirm-button", style: "border-radius: 25px;" %>
           <span style="margin: 0 20px;">&nbsp;</span>
           <%= f.submit "保存する", class: "btn btn-dark button", style: "border-radius: 25px;" %>

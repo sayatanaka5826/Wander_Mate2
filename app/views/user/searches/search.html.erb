@@ -21,18 +21,18 @@
                 <% unless current_user == user %>
                   <% if user_signed_in? && current_user.following?(user) %>
                     <%= link_to user_relationships_path(user.id), method: :delete do%>
-                      <button class="btn following-button mt-3" style="border-radius: 25px; width: 150px;">
-                      フォロー中 <i class="fa-solid fa-user-group"></i></i></button>
+                      <button class="btn following-button mt-2" style="border-radius: 25px; width: 145px;">
+                      フォロー中 <i class="fa-solid fa-user-group"></i></button>
                     <% end %>
                   <% else %>
                     <%= link_to user_relationships_path(user.id), method: :post do%>
-                      <button class="btn follow-button mt-3" style="border-radius: 25px; width: 150px;">
-                      フォローする <i class="fa-solid fa-user-plus"></i></button>
+                      <button class="btn follow-button mt-2" style="border-radius: 25px; width: 145px;">
+                      フォロー <i class="fa-solid fa-user-plus"></i></button>
                     <% end %>
                   <% end %>
                   <span style="margin: 0 6px;">&nbsp;</span>
                   <%= link_to chat_path(user.id), class: "text-dark" do %>
-                    <button class="btn btn-outline-dark post-edit-button mt-3" style="border-radius: 25px; width: 150px;">
+                    <button class="btn btn-outline-dark post-edit-button mt-2" style="border-radius: 25px; width: 145px;">
                       チャットする <i class="fa-solid fa-comment-dots"></i></button>
                   <% end %>
                 <% end %>
@@ -96,4 +96,3 @@
   </div>
 
 </div>
-
