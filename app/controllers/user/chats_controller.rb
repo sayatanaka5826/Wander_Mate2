@@ -2,7 +2,14 @@ class User::ChatsController < ApplicationController
   before_action :block_non_related_users, only: [:index, :show]
 
   def index
-    @rooms = current_user.user_rooms.pluck(:room_id)
+    @rooms = Room.all
+    @user = @current_user
+    @currentEntries = @current_user.entries
+    myRoomIds = []
+    @currentEntries.each do | entry |
+      myRoomIds << entry.room.id
+    end
+    @anotherEntries = Entry.where(room_id: myRoomIds).where('user_id != ?', @user.id)
   end
 
   def show

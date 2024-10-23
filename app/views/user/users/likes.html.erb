@@ -1,0 +1,37 @@
+<div class="container" style="width: 50%; margin: auto; margin-top: 30px;">
+  <div style="font-weight: bold; font-size: 25px;">
+      <i class="fa-solid fa-heart" style="color: #33231d;"></i> <span style="color: #33231d;">いいねした投稿</span>
+    </div>
+</div>
+
+<table class="table table-hover table-borderless" style="width: 50%; margin: auto; margin-top: 30px;" >
+  <tbody class="text-color">
+    <% @liked_posts.each do |post| %>
+    <tr>
+      <td>
+        <%= link_to(post.user) do %>
+          <%= image_tag post.user.get_profile_image(40, 40), class: "rounded-circle" %>
+        <% end %>
+      </td>
+      <td class="ml-3">
+        <div><%= post.user.name %></div>
+        <div style="font-weight: bold; font-size: 18px">
+          <%= link_to post.title, post_path(post.id), style: "color: #33231d;" %>
+        </div>
+      </td>
+      <td>
+        <% if current_user.likes.exists?(post_id: post.id) %>
+          <i class="fa-solid fa-heart mr-1"></i><%= post.likes.count %>
+        <% else %>
+          <i class="fa-regular fa-heart mr-1"></i><%= post.likes.count %>
+        <% end %>
+        <div><i class="fa-regular fa-comment-dots mr-1"></i><%= post.post_comments.count %></div>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="pagination d-flex justify-content-center mt-4 mb-5">
+  <%= paginate @liked_posts %>
+</div>

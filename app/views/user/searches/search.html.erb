@@ -63,10 +63,13 @@
                   <%= link_to post.title, post_path(post.id), style: "color: #33231d" %>
                 </div>
               </td>
-              <td>
+              <td style="vertical-align: middle;">
                 <div style="display: flex; align-items: center; margin-bottom: 5px;">
-                  <i class="fa-regular fa-heart mr-1"></i>
-                  <span><%= post.likes.count %></span>
+                  <% if current_user.likes.exists?(post_id: post.id) %>
+                    <i class="fa-solid fa-heart mr-1"></i><%= post.likes.count %>
+                  <% else %>
+                    <i class="fa-regular fa-heart mr-1"></i><%= post.likes.count %>
+                  <% end %>
                 </div>
                 <div style="display: flex; align-items: center; margin-bottom: 5px;">
                   <i class="fa-regular fa-comment-dots mr-1"></i>

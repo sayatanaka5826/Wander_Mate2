@@ -49,6 +49,12 @@ class User::UsersController < ApplicationController
     @users = @user.followers
   end
 
+  def likes
+    @user = User.find(params[:id])
+    likes = Like.where(user_id: @user.id).pluck(:post_id)
+    @liked_posts = Post.order(created_at: :desc).where(id: likes).page(params[:page]).per(10)
+  end
+
 
   private
 

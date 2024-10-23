@@ -36,11 +36,11 @@
           <button class="btn btn-outline-dark post-edit-button mr-1" style="border-radius: 25px;">
           プロフィールを編集 <i class="fa-solid fa-pen"></i></button>
         <% end %>
-        <%= link_to chats_path, class: "text-dark" do %>
-          <button class="btn btn-outline-dark post-edit-button ml-1 mr-1" style="border-radius: 25px;">
-          チャット <i class="fa-solid fa-comment-dots"></i></button>
-        <% end %>
-        <%= link_to new_post_path, class: "text-dark" do %>
+        <!--<!%= link_to chats_path, class: "text-dark" do %>-->
+        <!--  <button class="btn btn-outline-dark post-edit-button ml-1 mr-1" style="border-radius: 25px;">-->
+        <!--  チャット <i class="fa-solid fa-comment-dots"></i></button>-->
+        <!--<!% end %>-->
+        <%= link_to likes_user_path(@user), class: "text-dark" do %>
           <button class="btn btn-outline-dark post-edit-button ml-1" style="border-radius: 25px;">
           いいね <i class="fa-solid fa-heart"></i></button>
         <% end %>
@@ -118,7 +118,13 @@
         </div>
       </td>
       <td>
-        <div><i class="fa-regular fa-heart mr-1"></i><%= post.likes.count %></div>
+        <div id="like_btn_<%= post.id %>">
+          <% if current_user.likes.exists?(post_id: post.id) %>
+            <i class="fa-solid fa-heart mr-1"></i><%= post.likes.count %>
+          <% else %>
+            <i class="fa-regular fa-heart mr-1"></i><%= post.likes.count %>
+          <% end %>
+        </div>
         <div><i class="fa-regular fa-comment-dots mr-1"></i><%= post.post_comments.count %></div>
       </td>
     </tr>
