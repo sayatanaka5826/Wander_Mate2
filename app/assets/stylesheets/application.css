@@ -89,14 +89,13 @@
 }
 
 .post-delete-button {
-  background-color: #eeeed3 !important;
+  background-color: #ea4335 !important;
   border: 2px solid #33231d !important;
-  color: red !important;
+  color: #eeeed3 !important;
 }
 
 .post-delete-button:hover {
-  background-color: red !important;
-  color: #eeeed3 !important;
+  background-color: #ed9f82 !important;
 }
 
 .comment-send-button {
@@ -206,6 +205,8 @@
   background-color: #33231d !important;
   color: #eeeed3 !important;
 }
+
+
 
 
 

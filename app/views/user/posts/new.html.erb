@@ -2,7 +2,7 @@
   <%= render "user/shared/error_messages", resource: @post %>
 
   <%= form_with model: @post, url: posts_path do |f| %>
-  <table style="width: 75%; margin: auto; margin-top: 70px;">
+  <table style="width: 75%; margin: auto; margin-top: 40px;">
     <thead>
       <th style="font-weight: bold; font-size: 30px;">
         投稿を作成 <i class="fa-solid fa-pen"></i>
@@ -44,7 +44,7 @@
     </tbody>
   </table>
 
-  <div class="text-center " style="margin-top: 40px;">
+  <div class="text-center " style="margin-top: 40px; margin-bottom: 40px;">
     <%= f.submit "投稿する", class: "btn-lg btn-dark button", style: "border-radius: 25px;" %>
   </div>
 
