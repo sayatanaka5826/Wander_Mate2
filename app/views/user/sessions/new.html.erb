@@ -2,7 +2,7 @@
   <%= render "user/shared/error_messages", resource: @user %>
 
   <%= form_with model: @user, url: user_session_path do |f| %>
-  <table class="d-flex justify-content-center" style="width: 80%; margin: auto; margin-top: 70px;">
+  <table class="d-flex justify-content-center" style="width: 80%; margin: auto; margin-top: 30px;">
     <tbody>
       <tr>
         <td class="text-center" style="font-weight: bold; font-size: 30px;">
@@ -31,7 +31,7 @@
       </tr>
       <tr>
         <td>
-          <div class="mt-5 text-center">
+          <div class="mt-4 text-center">
             <%= f.submit "ログイン", class: "btn btn-dark sign-up-button", style: "border-radius: 25px;" %>
           </div>
         </td>
@@ -44,7 +44,7 @@
     <%= render "user/shared/links" %>
   </div>
 
-  <div class="row d-flex justify-content-center mt-2 text-color">
+  <div class="row d-flex justify-content-center text-color mt-2" style="margin-bottom: 40px;">
     <%= link_to "※管理者ログインはこちら", new_admin_session_path, style: "color: #33231d;" %>
   </div>
 

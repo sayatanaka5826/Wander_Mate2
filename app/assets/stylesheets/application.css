@@ -176,8 +176,14 @@
   padding: 20px;
   width: 500px;
   height: 500px;
-  margin-bottom: 20px;
+  margin-top: 20px !important;
+  margin-bottom: 50px !important;
   background-color: white;
+  margin: auto;
+  border-radius: 25px;
+  overflow: hidden;
+  overflow-y: auto;
+  position: relative;
 }
 
 .my-message {

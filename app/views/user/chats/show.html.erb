@@ -1,13 +1,11 @@
-<div class="chat-box shadow-lg text-color"
-     style="margin: auto; border-radius: 25px; overflow: hidden; margin-top: 40px;
-     overflow-y: auto; position: relative; height: 500px;"> <!-- 高さを指定 -->
+<div class="chat-box shadow-lg text-color">
 
   <%= link_to(@user) do %>
     <%= image_tag @user.get_profile_image(40, 40), class: "rounded-circle" %>
     <span class="text-color" style="font-weight: bold; font-size: 20px; margin-left: 10px;"><%= @user.name %></span>
   <% end %>
 
-  <div class="message mt-3" style="width: 470px; max-height: calc(100% - 100px); overflow-y: auto;"> <!-- メッセージエリアの高さを調整 -->
+  <div class="message mt-3" style="width: 470px; max-height: calc(100% - 100px); overflow-y: auto;">
     <% @chats.each do |chat| %>
       <% if chat.user_id == current_user.id %>
         <%= render "user/chats/chat", chat: chat %>
@@ -25,7 +23,7 @@
     <% end %>
   </div>
 
-  <div style="position: absolute; bottom: 10px; right: 32px; width: calc(100% - 20px;"> <!-- 右下に固定 -->
+  <div style="position: absolute; bottom: 10px; right: 32px; width: calc(100% - 20px;">
     <%= form_with model: @chat, data: {remote: true} do |f| %>
       <%= f.text_field :message, style: "width: 390px;" %>
       <%= button_tag(type: 'submit', class: "btn btn-sm message-send-button mb-1", style: "width: 45px;") do %>
