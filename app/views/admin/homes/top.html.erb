@@ -1,11 +1,11 @@
 <% if flash[:post_destroy_success] %>
-  <div class="alert success-flash mt-4 text-center w-25 mx-auto">
+  <div class="alert success-flash mt-4 text-center w-50 mx-auto">
     <%= flash[:post_destroy_success] %>
   </div>
 <% end %>
 
 <% if flash[:withdraw_success] %>
-  <div class="alert success-flash mt-4 text-center w-25 mx-auto">
+  <div class="alert success-flash mt-4 text-center w-50 mx-auto">
     <%= flash[:withdraw_success] %>
   </div>
 <% end %>
@@ -54,6 +54,6 @@
   <% end %>
 
 
-<div class="pagination d-flex justify-content-center mt-5 mb-5">
+<div class="pagination d-flex justify-content-center mt-5 mb-4">
   <%= paginate @posts %>
 </div>

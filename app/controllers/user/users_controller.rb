@@ -29,7 +29,7 @@ class User::UsersController < ApplicationController
     if current_user && @user == current_user
        redirect_to my_page_path
     end
-    @posts = @user.posts.order(created_at: :desc).page(params[:page]).per(3)
+    @posts = @user.posts.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def destroy

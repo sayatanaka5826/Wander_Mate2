@@ -9,7 +9,7 @@
         <span style="margin-left: 10px; color: #33231d; font-weight: bold; font-size: 15px;"><%= user.name %>
       <% end %>
       <% unless current_user == user %>
-        <% if current_user.following?(user) %>
+        <% if user_signed_in? && current_user.following?(user) %>
           <%= link_to user_relationships_path(user.id), method: :delete do%>
             <button class="btn follower-box-following-button"
                     style="border-radius: 25px; width: 100px; font-size: 12px;">

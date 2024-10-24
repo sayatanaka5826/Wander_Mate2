@@ -16,7 +16,7 @@
 
   <body style="background-color: #eeeed3;">
     <nav class="navbar navbar-expand-lg custom-navbar">
-      <div class="container" style="margin-left: 80px;">
+      <div class="container" style="margin-left: auto;">
         <% if admin_signed_in? %>
           <%= link_to 'Wander Mate', admin_top_path, class: 'navbar-brand header-logo',
           style: 'font-size: 30px; color: #33231d;' %>
@@ -90,11 +90,12 @@
         </div>
       </div>
 
-      <div class="mt-2">
-        <%= render 'layouts/search' %>
-      </div>
 
     </nav>
+    <div style="text-align: right; margin-right: 150px;">
+      <%= render 'layouts/search' %>
+    </div>
+
     <%= yield %>
   </body>
 </html>

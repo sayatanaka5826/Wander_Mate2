@@ -113,6 +113,7 @@
 .success-flash {
   background-color: #eeeed3 !important;
   border: 1px solid #33231d !important;
+  border-radius: 5px;
   color: #33231d !important;
 }
 
@@ -220,6 +221,13 @@
 .pagination a:hover, .active a {
     background-color: #ea4335;
     color: #eeeed3 !important;
+}
+
+.error-message-box {
+  background-color: #f9cdc2 !important;
+  border: 1px solid #d30700 !important;
+  border-radius: 5px;
+  color: #d30700 !important;
 }
 
 

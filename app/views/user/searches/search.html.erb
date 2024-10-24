@@ -65,7 +65,7 @@
               </td>
               <td style="vertical-align: middle;">
                 <div style="display: flex; align-items: center; margin-bottom: 5px;">
-                  <% if current_user.likes.exists?(post_id: post.id) %>
+                  <% if user_signed_in? && current_user.likes.exists?(post_id: post.id) %>
                     <i class="fa-solid fa-heart mr-1"></i><%= post.likes.count %>
                   <% else %>
                     <i class="fa-regular fa-heart mr-1"></i><%= post.likes.count %>

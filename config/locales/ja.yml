@@ -41,7 +41,7 @@ ja:
         name: "ユーザーネーム"
         email: "メールアドレス"
         password: "パスワード"
-        password_confirm: "確認用パスワード"
+        password_confirmation: "確認用パスワード"
       post:
         title: "タイトル"
         body: "本文"
@@ -59,7 +59,7 @@ ja:
     messages:
       accepted: を受諾してください
       blank: を入力してください
-      confirmation: と%{attribute}の入力が一致しません
+      confirmation: が一致しません
       empty: を入力してください
       equal_to: は%{count}にしてください
       even: は偶数にしてください
@@ -82,5 +82,5 @@ ja:
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
-      not_saved: "保存されませんでした。"
+      not_saved: "入力エラーがあります"
 

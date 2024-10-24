@@ -36,7 +36,7 @@
             フォロー <i class="fa-solid fa-user-plus"></i></button>
           <% end %>
         <% end %>
-        <% if current_user != @user && current_user.following?(@user) && @user.following?(current_user) %>
+        <% if user_signed_in? && current_user != @user && current_user.following?(@user) && @user.following?(current_user) %>
           <%= link_to chat_path(@user.id) do %>
             <button class="btn btn-outline-dark post-edit-button mt-2 ml-1" style="border-radius: 25px; width: 145px;">
             チャット <i class="fa-solid fa-comment-dots"></i></button>
@@ -116,7 +116,7 @@
         </div>
       </td>
       <td>
-        <% if current_user.likes.exists?(post_id: post.id) %>
+        <% if user_signed_in? && current_user.likes.exists?(post_id: post.id) %>
           <i class="fa-solid fa-heart mr-1"></i><%= post.likes.count %>
         <% else %>
           <i class="fa-regular fa-heart mr-1"></i><%= post.likes.count %>

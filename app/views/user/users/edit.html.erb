@@ -1,8 +1,10 @@
-<div class="container text-color" style="width: 70%;">
+<div class="text-center mt-3">
   <%= render "user/shared/error_messages", resource: @user %>
+</div>
 
+<div class="container text-color" style="width: 70%;">
   <%= form_with model: @user, url: update_mypage_path, method: :patch do |f| %>
-  <table style="margin-top: 50px; margin-bottom: 50px;">
+  <table style="margin-top: 20px; margin-bottom: 50px;">
     <thead>
       <th colspan="2" style="font-weight: bold; font-size: 30px;">
         プロフィール編集 <i class="fa-solid fa-pen-to-square"></i>

@@ -46,7 +46,9 @@ class User::ChatsController < ApplicationController
 
   def block_non_related_users
     user = User.find(params[:id])
-    unless current_user.following?(user) && user.following?(current_user)
+     if current_user.nil?
+       redirect_to new_user_session_path
+     else !(current_user.following?(user) && user.following?(current_user))
       redirect_to user_path(user)
     end
   end
