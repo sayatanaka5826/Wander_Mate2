@@ -206,6 +206,26 @@
   color: #eeeed3 !important;
 }
 
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    padding: 8px 15px;
+    border: 2px solid #33231d;
+    color: #33231d;
+    border-radius: 50px;
+}
+
+.pagination a:hover, .active a {
+    background-color: #ea4335;
+    color: #eeeed3 !important;
+}
+
+
+
+
+
 
 
 
