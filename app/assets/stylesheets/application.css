@@ -230,6 +230,16 @@
   color: #d30700 !important;
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+  background-color: #33231d;
+  color: #eeeed3;
+}
+
+
 
 
 
