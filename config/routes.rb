@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   sessions: "admin/sessions"
   }
 
+  get "users" => redirect("users/sign_up")
+  get "posts" => redirect("posts/new")
+
   scope module: :user do
     root to: 'homes#top'
 
