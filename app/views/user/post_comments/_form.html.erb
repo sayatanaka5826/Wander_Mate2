@@ -1,9 +1,9 @@
 <div class="container">
   <% if user_signed_in? %>
-    <div class="row justify-content-left">
+    <div class="row justify-content-center">
       <%= form_with model: [post, post_comment], local: false do |f| %>
       <div class="d-flex align-items-center mt-4 mb-3" style="width: 100%;">
-        <%= f.text_area :body, cols: 95, placeholder: "コメントを入力", class: "form-control", id: "comment_textarea" %>
+        <%= f.text_area :body, cols: 120, placeholder: "コメントを入力", class: "form-control", id: "comment_textarea" %>
         <%= button_tag(type: 'submit', class: "btn btn-sm message-send-button ml-2", style: "width: 45px;") do %>
           <i class="fa-solid fa-paper-plane"></i>
         <% end %>
