@@ -1,6 +1,7 @@
 class User::UsersController < ApplicationController
   before_action :set_user, only: [:show, :followings, :followers]
   before_action :authenticate_user!, except: [:show, :followings, :followers]
+  before_action :ensure_current_user!, only: [:likes]
 
   def mypage
     @user = current_user
@@ -57,6 +58,12 @@ class User::UsersController < ApplicationController
 
 
   private
+
+  def ensure_current_user!
+    unless current_user && current_user.id == params[:id].to_i
+      redirect_to user_path
+    end
+  end
 
   def set_user
     @user = User.find(params[:id])

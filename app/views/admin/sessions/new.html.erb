@@ -1,7 +1,7 @@
 <div class="container text-color">
 
   <%= form_with(model: resource, local: true, url: session_path(resource_name)) do |f| %>
-  <table class="d-flex justify-content-center" style="width: 80%; margin: auto; margin-top: 70px;">
+  <table class="d-flex justify-content-center" style="width: 80%; margin: auto; margin-top: 60px;">
     <tbody>
       <tr>
         <td style="font-weight: bold; font-size: 30px;">
@@ -30,7 +30,7 @@
       </tr>
       <tr>
         <td>
-          <div class="mt-5 text-center">
+          <div class="mt-5 text-center" style="margin-bottom: 130px;">
             <%= f.submit "ログイン", class: "btn btn-dark sign-up-button", style: "border-radius: 25px;"%>
           </div>
         </td>

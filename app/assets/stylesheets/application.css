@@ -170,6 +170,7 @@
 .follower-box-follow-button, .follower-box-following-button:hover {
   background-color: #eeeed3 !important;
   color: #33231d !important;
+  border: 2px solid #33231d !important;
 }
 
 .chat-box {
