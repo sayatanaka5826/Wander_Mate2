@@ -217,8 +217,7 @@
   border: 2px solid #33231d;
   padding: 5px 10px;
   border-radius: 25px;
-  display: inline-block;
-  vertical-align: middle;
+  max-width: 80%;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
