@@ -187,16 +187,41 @@
   position: relative;
 }
 
+.message-text-area {
+  width: 390px;
+  height: 35px;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+
+.message-send-button {
+  background-color: #33231d !important;
+  color: #eeeed3 !important;
+}
+
 .my-message {
   background-color: #ea4335;
   color: #eeeed3;
   border: 2px solid #33231d;
+  padding: 5px 10px;
+  border-radius: 25px;
+  max-width: 80%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .their-message {
   background-color: #eeeed3;
   color: #33231d;
   border: 2px solid #33231d;
+  padding: 5px 10px;
+  border-radius: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .message-delete-button {
@@ -207,11 +232,6 @@
 .message-delete-button:hover {
   color: #eeeed3 !important;
   background-color: #33231d;
-}
-
-.message-send-button {
-  background-color: #33231d !important;
-  color: #eeeed3 !important;
 }
 
 .pagination li {

@@ -1,5 +1,5 @@
 <div class="right-container d-flex justify-content-end align-items-center">
-  <p id="chat_<%= chat.id %>" class="my-message" style="padding: 5px 10px; border-radius: 25px;"><%= chat.message %></p>
+  <p id="chat_<%= chat.id %>" class="my-message"><%= chat.message %></p>
   <%= link_to '<i class="fa-solid fa-trash-can"></i>'.html_safe,
   chat_path(chat), method: :delete, data: { confirm: "本当に削除しますか？" },
   class: "btn btn-sm message-delete-button rounded-circle ml-2 mr-2 mb-3",

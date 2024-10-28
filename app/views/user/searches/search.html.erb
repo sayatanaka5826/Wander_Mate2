@@ -22,7 +22,7 @@
                   <% if user_signed_in? && current_user.following?(user) %>
                     <%= link_to user_relationships_path(user.id), method: :delete do%>
                       <button class="btn following-button mt-2" style="border-radius: 25px; width: 145px;">
-                      フォロー中 <i class="fa-solid fa-user-group"></i></button>
+                      フォロー中 <i class="fa-solid fa-user-check"></i></button>
                     <% end %>
                   <% else %>
                     <%= link_to user_relationships_path(user.id), method: :post do%>
