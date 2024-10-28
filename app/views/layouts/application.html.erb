@@ -91,9 +91,11 @@
       </div>
     </nav>
 
-    <div style="text-align: right; margin-right: 215px;">
-      <%= render 'layouts/search' %>
-    </div>
+    <% if user_signed_in? || admin_signed_in? %>
+      <div style="text-align: right; margin-right: 215px;">
+        <%= render 'layouts/search' %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
