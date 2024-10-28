@@ -5,7 +5,7 @@ class User::UsersController < ApplicationController
 
   def mypage
     @user = current_user
-    @posts = @user.posts.order(created_at: :desc).page(params[:page]).per(5)
+    @posts = @user.posts.order(created_at: :desc).page(params[:page]).per(3)
   end
 
   def edit
@@ -30,7 +30,7 @@ class User::UsersController < ApplicationController
     if current_user && @user == current_user
        redirect_to my_page_path
     end
-    @posts = @user.posts.order(created_at: :desc).page(params[:page]).per(5)
+    @posts = @user.posts.order(created_at: :desc).page(params[:page]).per(3)
   end
 
   def destroy
@@ -53,7 +53,7 @@ class User::UsersController < ApplicationController
   def likes
     @user = User.find(params[:id])
     likes = Like.where(user_id: @user.id).pluck(:post_id)
-    @liked_posts = Post.order(created_at: :desc).where(id: likes).page(params[:page]).per(10)
+    @liked_posts = Post.order(created_at: :desc).where(id: likes).page(params[:page]).per(5)
   end
 
 
