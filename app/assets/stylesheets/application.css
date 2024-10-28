@@ -209,8 +209,6 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
-  display: flex;
-  align-items: center;
 }
 
 .their-message {
@@ -224,8 +222,6 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
-  display: flex;
-  align-items: center;
 }
 
 .message-delete-button {
