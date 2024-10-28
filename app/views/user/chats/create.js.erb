@@ -3,9 +3,9 @@ $('input[type=text]').val("")
 
 document.querySelector('.message-text-area').value = '';
 
-<!--const latestMessageId = 'chat_<!%= @chat.id %>';-->
-<!--const latestMessageElement = document.getElementById(latestMessageId);-->
-<!--if (latestMessageElement) {-->
-<!--  latestMessageElement.scrollIntoView({ behavior: 'smooth' });-->
-<!--  latestMessageElement.focus();-->
-<!--}-->
+var latestMessageId = 'chat_<%= @chat.id %>';
+var latestMessageElement = document.getElementById(latestMessageId);
+if (latestMessageElement) {
+  latestMessageElement.scrollIntoView({ behavior: 'smooth' });
+  latestMessageElement.focus();
+}
