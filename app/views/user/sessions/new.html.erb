@@ -1,4 +1,4 @@
-<div class="cotainer text-color">
+<div class="custom-container text-color">
   <%= render "user/shared/error_messages", resource: @user %>
 
   <%= form_with model: @user, url: user_session_path do |f| %>
@@ -47,7 +47,3 @@
   <div class="row d-flex justify-content-center text-color mt-2" style="margin-bottom: 140px;">
     <%= link_to "※管理者ログインはこちら", new_admin_session_path, style: "color: #33231d;" %>
   </div>
-
-
-
-

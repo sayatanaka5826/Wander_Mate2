@@ -6,6 +6,11 @@
   color: #33231d;
 }
 
+.custom-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .button {
   background-color: #ea4335 !important;
   border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
@@ -56,6 +61,17 @@
   margin-right: 215px;
 }
 
+.search-index-title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.search-result-user-name {
+  font-size: 25px;
+  padding-left: 20px;
+  color: #33231d;
+}
+
 .sign-up-button {
   background-color: #ea4335 !important;
   border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
@@ -91,15 +107,17 @@
   background-color: #ed9f82 !important; /* ホバー時の背景色 */
 }
 
-.post-edit-button, .follow-button {
+.post-edit-button, .follow-button, .search-to-chat-button {
   background-color: #eeeed3 !important;
-  border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
+  border: 2px solid #33231d !important;
   color: #33231d !important;
+  width: 145px;
 }
 
-.post-edit-button:hover, .follow-button:hover, .following-button{
+.post-edit-button:hover, .follow-button:hover, .search-to-chat-button:hover, .following-button{
   background-color: #33231d !important;
   color: #eeeed3 !important;
+  width: 145px;
 }
 
 .post-delete-button {
@@ -285,6 +303,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   height: 60px;
   background-color: #33231d;
   color: #eeeed3;
@@ -294,6 +313,11 @@
 
 
 @media screen and (max-width:576px) {
+    .custom-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .search-container {
         margin: 0 20px 0 0;
     }
@@ -349,6 +373,50 @@
       width: 90%;
       margin: 40px auto;
     }
+
+    .search-index-title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .search-result-user-name {
+      font-weight: bold;
+      font-size: 15px;
+      padding-left: 5px;
+      color: #33231d;
+    }
+
+    .follow-button, .search-to-chat-button {
+      background-color: #eeeed3 !important;
+      border: 2px solid #33231d !important;
+      color: #33231d !important;
+      width: 110px;
+    }
+
+    .follow-button:hover, .search-to-chat-button:hover, .following-button{
+      background-color: #33231d !important;
+      color: #eeeed3 !important;
+      width: 110px !important;
+    }
+
+    .search-user-button-text {
+      font-size: 10px;
+      display: flex; /* フレックスボックスを使用 */
+      align-items: center; /* 垂直方向に中央寄せ */
+      justify-content: center; /* 水平方向に中央寄せ（必要に応じて） */
+    }
+
+    .search-result {
+      width: 80% !important;
+    }
+
+    .search-result-user-profile {
+      padding: 0;
+      margin: 0;
+    }
+
+
+
 
 
 

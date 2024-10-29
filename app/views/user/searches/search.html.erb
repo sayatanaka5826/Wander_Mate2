@@ -1,6 +1,6 @@
-<div class="container" style="width: 50%;">
+<div class="container search-result" style="width: 50%;">
   <div class="text-center text-color mt-5 mb-5">
-    <div style="font-weight: bold; font-size: 30px;">
+    <div class ="search-index-title">
       <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果
     </div>
   </div>
@@ -14,26 +14,29 @@
               <td>
                 <%= link_to(user) do %>
                   <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
-                  <span style="font-size: 25px; padding-left: 20px; color: #33231d;"><%= user.name %></span>
+                  <span class="search-result-user-name"><%= user.name %></span>
                 <% end %>
               </td>
               <td style="text-align: right;">
                 <% unless current_user == user %>
                   <% if user_signed_in? && current_user.following?(user) %>
                     <%= link_to user_relationships_path(user.id), method: :delete do%>
-                      <button class="btn following-button mt-2" style="border-radius: 25px; width: 145px;">
-                      フォロー中 <i class="fa-solid fa-user-check"></i></button>
+                      <button class="btn following-button mt-2" style="border-radius: 25px;">
+                        <span class="search-user-button-text">フォロー中 <i class="fa-solid fa-user-check ml-1"></i></span>
+                      </button>
                     <% end %>
                   <% else %>
                     <%= link_to user_relationships_path(user.id), method: :post do%>
-                      <button class="btn follow-button mt-2" style="border-radius: 25px; width: 145px;">
-                      フォロー <i class="fa-solid fa-user-plus"></i></button>
+                      <button class="btn follow-button mt-2" style="border-radius: 25px;">
+                        <span class="search-user-button-text">フォロー <i class="fa-solid fa-user-plus ml-1"></i></span>
+                      </button>
                     <% end %>
                   <% end %>
                   <span style="margin: 0 6px;">&nbsp;</span>
                   <%= link_to chat_path(user.id), class: "text-dark" do %>
-                    <button class="btn btn-outline-dark post-edit-button mt-2" style="border-radius: 25px; width: 145px;">
-                      チャットする <i class="fa-solid fa-comment-dots"></i></button>
+                    <button class="btn  search-to-chat-button mt-2" style="border-radius: 25px;">
+                      <span class="search-user-button-text">チャットする <i class="fa-solid fa-comment-dots"></i></span>
+                    </button>
                   <% end %>
                 <% end %>
               </td>
