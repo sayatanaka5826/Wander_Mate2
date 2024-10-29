@@ -16,8 +16,8 @@
   </head>
 
   <body style="background-color: #eeeed3;">
-<nav class="container navbar navbar-expand-lg navbar-light" style="background-color: #eeeed3;">
-  <div style="margin-left: auto;">
+    <nav class="container navbar navbar-expand-lg navbar-light" style="background-color: #eeeed3;">
+      <div style="margin-left: auto;">
         <% if admin_signed_in? %>
           <%= link_to 'Wander Mate', admin_top_path, class: 'navbar-brand header-logo',
           style: 'font-size: 30px; color: #33231d;' %>
@@ -25,74 +25,72 @@
           <%= link_to 'Wander Mate', root_path, class: 'navbar-brand header-logo',
           style: 'font-size: 30px; color: #33231d;' %>
         <% end %>
-  </div>
-        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
-              <li class="mt-3 mr-3">
-                <strong style="color: #33231d;">ようこそ、<%= current_user.name %>さん！</strong>
-              </li>
-              <li class="nav-item">
-                <%= link_to new_post_path, class: "nav-link text-right" do %>
-                  <button class="btn btn-outline-dark header-post-new-button" style="border-radius: 25px;">
-                    新規投稿 <i class="fa-solid fa-pen"></i>
-                  </button>
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to my_page_path, class: "nav-link text-right" do %>
-                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">
-                    マイページ
-                  </button>
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">
-                    ログアウト
-                  </button>
-                <% end %>
-              </li>
-            <% elsif admin_signed_in? %>
-              <li class="mt-3 mr-3">
-                ※管理者ログイン中
-              </li>
-              <li class="nav-item">
-                <%= link_to admin_posts_path, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">投稿一覧</button>
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to admin_users_path, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">ユーザー一覧</button>
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">ログアウト</button>
-                <% end %>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to new_user_registration_path, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">会員登録</button>
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <%= link_to new_user_session_path, class: "nav-link text-dark text-right" do %>
-                  <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">ログイン</button>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-
-  </div>
-</nav>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <% if user_signed_in? %>
+            <li class="mt-3 mr-3">
+              <strong style="color: #33231d;">ようこそ、<%= current_user.name %>さん！</strong>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_post_path, class: "nav-link text-right" do %>
+                <button class="btn btn-outline-dark header-post-new-button" style="border-radius: 25px;">
+                  新規投稿 <i class="fa-solid fa-pen"></i>
+                </button>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to my_page_path, class: "nav-link text-right" do %>
+                <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">
+                  マイページ
+                </button>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-dark text-right" do %>
+                <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">
+                  ログアウト
+                </button>
+              <% end %>
+            </li>
+          <% elsif admin_signed_in? %>
+            <li class="mt-3 mr-3">
+              ※管理者ログイン中
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_posts_path, class: "nav-link text-dark text-right" do %>
+                <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">投稿一覧</button>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_users_path, class: "nav-link text-dark text-right" do %>
+                <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">ユーザー一覧</button>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-dark text-right" do %>
+                <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">ログアウト</button>
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to new_user_registration_path, class: "nav-link text-dark text-right" do %>
+                <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">会員登録</button>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_user_session_path, class: "nav-link text-dark text-right" do %>
+                <button class="btn btn-outline-dark header-button" style="border-radius: 25px;">ログイン</button>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
 
     <% if user_signed_in? || admin_signed_in? %>
       <div class="search-container">
