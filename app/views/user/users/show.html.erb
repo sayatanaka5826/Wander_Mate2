@@ -28,18 +28,21 @@
         <% if user_signed_in? && current_user.following?(@user) %>
           <%= link_to user_relationships_path(@user.id), method: :delete do%>
             <button class="btn following-button mt-2" style="border-radius: 25px; width: 145px;">
-            フォロー中 <i class="fa-solid fa-user-check"></i></button>
+              <span class="user-show-following-button-text">フォロー中 <i class="fa-solid fa-user-check"></i></span>
+            </button>
           <% end %>
         <% else %>
           <%= link_to user_relationships_path(@user.id), method: :post do%>
             <button class="btn follow-button mt-2" style="border-radius: 25px; width: 145px;">
-            フォロー <i class="fa-solid fa-user-plus"></i></button>
+              <span class="user-show-follow-button-text">フォロー <i class="fa-solid fa-user-plus"></i></span>
+            </button>
           <% end %>
         <% end %>
         <% if user_signed_in? && current_user != @user && current_user.following?(@user) && @user.following?(current_user) %>
           <%= link_to chat_path(@user.id) do %>
             <button class="btn btn-outline-dark post-edit-button mt-2 ml-1" style="border-radius: 25px; width: 145px;">
-            チャット <i class="fa-solid fa-comment-dots"></i></button>
+              <span class="user-show-chat-button-text">チャット <i class="fa-solid fa-comment-dots"></i></span>
+            </button>
           <% end %>
         <% end %>
       </td>
@@ -52,41 +55,41 @@
   【プロフィール】
 </div>
 
-<table class="table" style="margin: auto; width: 50%; max-width: 800px;">
+<table class="user-profile-table">
   <tbody class="text-color">
     <tr style="line-height: 2; vertical-align: middle;">
       <td style="font-size: 15px;"><strong>性別</strong></td>
-      <td style="font-size: 20px;">
+      <td class="profile-item">
         <%= @user.gender_japanese %>
       </td>
       <td style="font-size: 15px;"><strong>年齢</strong></td>
-      <td style="font-size: 20px;">
+      <td class="profile-item">
         <%= @user.age_japanese %>
       </td>
     </tr>
     <tr style="line-height: 2; vertical-align: middle;">
       <td style="font-size: 15px;"><strong>喫煙</strong></td>
-      <td style="font-size: 20px;">
+      <td class="profile-item">
         <%= @user.smoking_japanese %>
       </td>
       <td style="font-size: 15px;"><strong>飲酒</strong></td>
-      <td style="font-size: 20px;">
+      <td class="profile-item">
         <%= @user.drinking_japanese %>
       </td>
     </tr>
     <tr style="line-height: 2; vertical-align: middle;">
       <td style="font-size: 15px;"><strong>行った国数</strong></td>
-      <td style="font-size: 20px;">
+      <td class="profile-item">
         <%= @user.country_count.present? ? @user.country_count : '非公開' %>
       </td>
       <td style="font-size: 15px;"><strong>好きな地域</strong></td>
-      <td style="font-size: 20px;">
+      <td class="profile-item">
         <%= @user.favorite_area_japanese %>
       </td>
     </tr>
     <tr style="line-height: 2; vertical-align: middle;">
       <td style="font-size: 15px;"><strong>予算</strong></td>
-      <td style="font-size: 20px;">
+      <td class="profile-item">
         <%= @user.budget_japanese %>
       </td>
       <td></td>
@@ -100,7 +103,7 @@
   【投稿一覧】
 </div>
 
-<table style="margin: auto; width: 60%; max-width: 800px;">
+<table class="user-posts-table">
   <tbody class="text-color">
     <% @posts.each do |post| %>
     <tr>
@@ -111,7 +114,7 @@
       </td>
       <td>
         <div><%= post.user.name %></div>
-        <div style="font-weight: bold; font-size: 20px">
+        <div class="user-posts-title">
           <%= link_to post.title, post_path(post.id), style: "color: #33231d;" %>
         </div>
       </td>
@@ -129,6 +132,6 @@
   </tbody>
 </table>
 
-<div class="pagination d-flex justify-content-center mt-4 mb-5">
+<div class="pagination d-flex justify-content-center mt-5 mb-5">
   <%= paginate @posts %>
 </div>

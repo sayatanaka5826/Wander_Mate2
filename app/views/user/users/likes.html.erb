@@ -1,10 +1,10 @@
 <div class="container" style="width: 50%; margin: auto; margin-top: 30px;">
-  <div style="font-weight: bold; font-size: 25px;">
-      <i class="fa-solid fa-heart" style="color: #33231d;"></i> <span style="color: #33231d;">いいねした投稿</span>
-    </div>
+  <div class="liked-posts-heading">
+    <i class="fa-solid fa-heart"></i> <span >いいねした投稿</span>
+  </div>
 </div>
 
-<table class="table table-hover table-borderless" style="width: 50%; margin: auto; margin-top: 30px;" >
+<table class="liked-posts-table table-hover table-borderless" >
   <tbody class="text-color">
     <% @liked_posts.each do |post| %>
     <tr>
@@ -15,7 +15,7 @@
       </td>
       <td class="ml-3">
         <div><%= post.user.name %></div>
-        <div style="font-weight: bold; font-size: 18px">
+        <div class="liked-posts-title">
           <%= link_to post.title, post_path(post.id), style: "color: #33231d;" %>
         </div>
       </td>
