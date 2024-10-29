@@ -94,19 +94,6 @@
   background-color: #fff; /* 背景色を白に */
 }
 
-.mypage-post-new-button {
-  background-color: #ea4335 !important; /* 通常時の背景色 */
-  color: #eeeed3 !important; /* 通常時のテキストカラー */
-  border: 3px solid #33231d !important; /* 枠線の太さと色を指定 */
-  width: 250px; /* 幅を指定 */
-  height: 60px; /* 高さを指定 */
-  transition: background-color 0.3s, color 0.3s; /* スムーズな遷移 */
-}
-
-.mypage-post-new-button:hover {
-  background-color: #ed9f82 !important; /* ホバー時の背景色 */
-}
-
 .follow-button, .search-to-chat-button {
   background-color: #eeeed3 !important;
   border: 2px solid #33231d !important;
@@ -302,6 +289,10 @@
 .liked-posts-title {
   font-weight: bold;
   font-size: 20px
+}
+
+.bio-text {
+  font-size: 22px;
 }
 
 .mypage-profile-table, .user-profile-table, .admin-user-profile-table {
@@ -504,6 +495,10 @@
 
     .liked-posts-user-name {
       font-size: 10px;
+    }
+
+    .bio-text {
+      font-size: 18px;
     }
 
     .mypage-profile-table, .user-profile-table, .admin-user-profile-table {
