@@ -1,4 +1,4 @@
-<div class="container" style="width: 50%;">
+<div class="admin-posts-index-container">
 
   <div class="text-center mt-5 mb-5 text-color">
     <div style="font-weight: bold; font-size: 30px;">
@@ -19,7 +19,7 @@
             <div style="font-size: 18px; margin-left: 3px; color: #33231d;">
               <%= post.user.name %>
             </div>
-            <div style="font-weight: bold; font-size: 20px">
+            <div class="admin-posts-index-title">
               <%= link_to post.title, admin_post_path(post.id), style: "color: #33231d;" %>
             </div>
           </td>

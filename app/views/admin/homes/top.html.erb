@@ -10,8 +10,8 @@
   </div>
 <% end %>
 
-<div class="container text-color" style="width: 50%;" >
-  <div class="d-flex justify-content-between align-items-center mt-5 mb-5">
+<div class="container text-color" style="width: 100%;" >
+  <div class="d-flex justify-content-center mt-5 mb-5">
     <div style="font-weight: bold; font-size: 30px;">
       <i class="fa-solid fa-map-pin" style="color: #33231d;"></i> <span style="color: #33231d;">みんなの投稿</span>
     </div>
@@ -20,7 +20,7 @@
 
 
   <% @posts.each do |post| %>
-    <div class="shadow card mb-3" style="width: 50%; margin: auto; margin-top: 20px; border-radius: 25px; overflow: hidden;">
+    <div class="card top-post-card shadow mb-3" style="border-radius: 25px;">
       <% if post.post_image.attached? %>
         <%= image_tag post.post_image, class: "card-img-top", style: "width: 100%;" %>
       <% else %>

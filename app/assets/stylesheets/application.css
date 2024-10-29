@@ -24,7 +24,7 @@
 }
 
 .custom-navbar {
-  background-color: #eeeed3; /* ヘッダーの背景色 */
+  background-color: #eeeed3;
 }
 
 .header-logo {
@@ -364,6 +364,16 @@
   color: #eeeed3;
 }
 
+.admin-posts-index-container {
+    width: 50%;
+    margin: auto;
+  }
+
+.admin-posts-index-title {
+  font-weight: bold;
+  font-size: 20px
+}
+
 
 
 
@@ -507,7 +517,16 @@
       font-size: 12px;
     }
 
-    
+    .admin-posts-index-container {
+      width: 80%;
+      margin: auto;
+    }
+
+    .admin-posts-index-title {
+      font-size: 12px;
+    }
+
+
 
 
 
