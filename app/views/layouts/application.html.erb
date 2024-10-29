@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://kit.fontawesome.com/8cc696f355.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -92,7 +93,7 @@
     </nav>
 
     <% if user_signed_in? || admin_signed_in? %>
-      <div style="text-align: right; margin-right: 215px;">
+      <div class="search-container">
         <%= render 'layouts/search' %>
       </div>
     <% end %>

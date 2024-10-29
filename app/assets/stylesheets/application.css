@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
 
+
 /*##以下user*/
 .text-color {
   color: #33231d;
@@ -39,6 +40,11 @@
   color: #eeeed3 !important;
 }
 
+.search-container {
+  text-align: right;
+  margin-right: 215px;
+}
+
 .sign-up-button {
   background-color: #ea4335 !important;
   border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
@@ -49,6 +55,16 @@
 
 .sign-up-button:hover {
   background-color: #ed9f82 !important; /* ホバー時の背景色 */
+}
+
+.top-post-card {
+  width: 50%; /* 幅は50% */
+  margin: auto; /* 中央寄せ */
+  margin-top: 20px; /* 上のマージン */
+  border-radius: 25px; /* 角を丸く */
+  overflow: hidden; /* 内容がはみ出さないように */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ボックスシャドウ */
+  background-color: #fff; /* 背景色を白に */
 }
 
 .top-post-new-button {
@@ -197,6 +213,7 @@
 .message-send-button {
   background-color: #33231d !important;
   color: #eeeed3 !important;
+  width: 45px;
 }
 
 .my-message {
@@ -267,6 +284,65 @@
   color: #eeeed3;
 }
 
+
+
+
+@media screen and (max-width:576px) {
+    .search-container {
+        margin: 0 20px 0 0;
+    }
+
+    .search-form {
+        align-items: stretch;
+        display: flex;
+        justify-content: center;
+    }
+
+    .chat-box {
+        padding: 20px;
+        width: 350px;
+        margin: auto;
+    }
+
+    .message-text-area {
+        width: 250px;
+        height: 30px;
+        overflow-y: auto;
+        border-radius: 5px;
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: center; /* 中央寄せ */
+        align-items: center; /* 縦方向中央寄せ */
+    }
+
+    .my-message {
+        font-size: 10px;
+        max-width: 250px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    .their-message {
+        font-size: 10px;
+        max-width: 250px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    .message-send-button {
+      margin-left: 5px;
+    }
+
+    .top-post-card {
+      width: 90%;
+      margin: auto;
+    }
+
+
+
+
+}
 
 
 
