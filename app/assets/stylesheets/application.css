@@ -11,7 +11,7 @@
   padding-right: 0;
 }
 
-.button, .admin-search-user-detail-button {
+.button, .admin-search-user-detail-button, .admin-users-index-detail-button {
   background-color: #ea4335 !important;
   border: 2px solid #33231d !important;
   color: #eeeed3 !important;
@@ -545,7 +545,7 @@
 
     .admin-search-user-detail-button, .admin-users-index-detail-button {
       background-color: #ea4335 !important;
-      border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
+      border: 2px solid #33231d !important;
       color: #eeeed3 !important;
       width: 110px;
     }
