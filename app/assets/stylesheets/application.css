@@ -40,6 +40,17 @@
   color: #eeeed3 !important;
 }
 
+.header-post-new-button {
+  background-color: #ea4335 !important; /* 通常時の背景色 */
+  color: #eeeed3 !important; /* 通常時のテキストカラー */
+  border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
+  transition: background-color 0.3s, color 0.3s
+}
+
+.header-post-new-button:hover {
+  background-color: #ed9f82 !important; /* ホバー時の背景色 */
+}
+
 .search-container {
   text-align: right;
   margin-right: 215px;
@@ -65,19 +76,6 @@
   overflow: hidden; /* 内容がはみ出さないように */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ボックスシャドウ */
   background-color: #fff; /* 背景色を白に */
-}
-
-.top-post-new-button {
-  background-color: #ea4335 !important; /* 通常時の背景色 */
-  color: #eeeed3 !important; /* 通常時のテキストカラー */
-  border: 3px solid #33231d !important; /* 枠線の太さと色を指定 */
-  width: 300px; /* 幅を指定 */
-  height: 80px; /* 高さを指定 */
-  transition: background-color 0.3s, color 0.3s; /* スムーズな遷移 */
-}
-
-.top-post-new-button:hover {
-  background-color: #ed9f82 !important; /* ホバー時の背景色 */
 }
 
 .mypage-post-new-button {
@@ -112,6 +110,14 @@
 
 .post-delete-button:hover {
   background-color: #ed9f82 !important;
+}
+
+.post-show-card {
+  width: 60%;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 40px;
+  margin-bottom: 70px;
 }
 
 .comment-send-button {
@@ -337,6 +343,11 @@
     .top-post-card {
       width: 90%;
       margin: auto;
+    }
+
+    .post-show-card {
+      width: 90%;
+      margin: 40px auto;
     }
 
 
