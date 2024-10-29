@@ -1,4 +1,4 @@
-<div class="container" style="width: 40%;">
+<div class="container admin-users-index" style="width: 40%;">
 
   <div class="text-center text-color mt-5 mb-5">
     <div style="font-weight: bold; font-size: 30px;">
@@ -13,12 +13,12 @@
               <td>
 
                   <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
-                  <span style="font-size: 25px; padding-left: 20px; color: #33231d;"><%= user.name %></span>
+                  <span class="admin-users-index-user-name"><%= user.name %></span>
 
               </td>
               <td style="text-align: right;">
                 <%= link_to admin_user_path(user) do %>
-                  <button class="btn btn-outline-secondary button mt-3" style="border-radius: 25px;">詳細を見る</button>
+                  <button class="btn admin-users-index-detail-button mt-3" style="border-radius: 25px;">詳細を見る</button>
                 <% end %>
               </td>
             </tr>

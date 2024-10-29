@@ -30,41 +30,42 @@
     プロフィール
   </div>
 
-  <table class="table" style="margin: auto; width: 50%; max-width: 800px;">
+
+  <table class="admin-user-profile-table">
     <tbody class="text-color">
       <tr style="line-height: 2; vertical-align: middle;">
         <td style="font-size: 15px;"><strong>性別</strong></td>
-        <td style="font-size: 20px;">
+        <td class="profile-item">
           <%= @user.gender_japanese %>
         </td>
         <td style="font-size: 15px;"><strong>年齢</strong></td>
-        <td style="font-size: 20px;">
+        <td class="profile-item">
           <%= @user.age_japanese %>
         </td>
       </tr>
       <tr style="line-height: 2; vertical-align: middle;">
         <td style="font-size: 15px;"><strong>喫煙</strong></td>
-        <td style="font-size: 20px;">
+        <td class="profile-item">
           <%= @user.smoking_japanese %>
         </td>
         <td style="font-size: 15px;"><strong>飲酒</strong></td>
-        <td style="font-size: 20px;">
+        <td class="profile-item">
           <%= @user.drinking_japanese %>
         </td>
       </tr>
       <tr style="line-height: 2; vertical-align: middle;">
         <td style="font-size: 15px;"><strong>行った国数</strong></td>
-        <td style="font-size: 20px;">
+        <td class="profile-item">
           <%= @user.country_count.present? ? @user.country_count : '非公開' %>
         </td>
         <td style="font-size: 15px;"><strong>好きな地域</strong></td>
-        <td style="font-size: 20px;">
+        <td class="profile-item">
           <%= @user.favorite_area_japanese %>
         </td>
       </tr>
       <tr style="line-height: 2; vertical-align: middle;">
         <td style="font-size: 15px;"><strong>予算</strong></td>
-        <td style="font-size: 20px;">
+        <td class="profile-item">
           <%= @user.budget_japanese %>
         </td>
         <td></td>
@@ -73,11 +74,12 @@
     </tbody>
   </table>
 
+
   <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;" class="text-center">
     投稿一覧
   </div>
 
-  <table style="width: 60%; margin: auto; margin-top: 20px;" >
+  <table class="admin-user-posts-table">
     <tbody class="text-color">
       <% @posts.each do |post| %>
       <tr>
@@ -88,7 +90,7 @@
         </td>
         <td>
           <div><%= post.user.name %></div>
-          <div style="font-weight: bold; font-size: 20px">
+          <div class="admin-user-posts-title">
             <%= link_to post.title, admin_post_path(post.id), style: "color: #33231d;" %>
           </div>
         </td>

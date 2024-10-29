@@ -11,15 +11,15 @@
   padding-right: 0;
 }
 
-.button {
+.button, .admin-search-user-detail-button {
   background-color: #ea4335 !important;
-  border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
+  border: 2px solid #33231d !important;
   color: #eeeed3 !important;
   width: 150px;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.button:hover {
+.button:hover, .admin-search-user-detail-button:hover {
   background-color: #ed9f82 !important; /* ホバー時の背景色 */
 }
 
@@ -304,13 +304,13 @@
   font-size: 20px
 }
 
-.mypage-profile-table, .user-profile-table {
+.mypage-profile-table, .user-profile-table, .admin-user-profile-table {
   margin: auto;
   width: 50%;
   max-width: 800px;
 }
 
-.mypage-posts-table, .user-posts-table {
+.mypage-posts-table, .user-posts-table, .admin-user-posts-table {
   margin: auto;
   width: 60%;
   margin-top: 20px;
@@ -321,7 +321,7 @@
   font-size: 20px
 }
 
-.user-posts-title {
+.user-posts-title, .admin-user-posts-title {
   font-weight: bold;
   font-size: 20px
 }
@@ -372,6 +372,12 @@
   font-weight: bold;
   font-size: 20px
 }
+
+.admin-search-result-user-name, .admin-users-index-user-name{
+    font-size: 25px;
+    padding-left: 20px;
+    color: #33231d;
+  }
 
 
 
@@ -470,7 +476,7 @@
       justify-content: center; /* 水平方向に中央寄せ（必要に応じて） */
     }
 
-    .search-result {
+    .search-result, .admin-users-index {
       width: 80% !important;
     }
 
@@ -500,18 +506,19 @@
       font-size: 10px;
     }
 
-    .mypage-profile-table, .user-profile-table {
+    .mypage-profile-table, .user-profile-table, .admin-user-profile-table {
       margin: auto;
+      margin-left: 40px;
       width: 80%;
     }
 
-    .mypage-posts-table, .user-posts-table {
+    .mypage-posts-table, .user-posts-table, .admin-user-posts-table {
       margin: auto;
       width: 80%;
       margin-top: 20px;
     }
 
-    .mypage-posts-title, .user-posts-title {
+    .mypage-posts-title, .user-posts-title, .admin-user-posts-title {
       font-weight: bold;
       font-size: 12px
     }
@@ -528,6 +535,26 @@
     .admin-posts-index-title {
       font-size: 12px;
     }
+
+    .admin-search-result-user-name, .admin-users-index-user-name {
+      font-size: 15px;
+      padding-left: 10px;
+      color: #33231d;
+      font-weight: bold;
+    }
+
+    .admin-search-user-detail-button, .admin-users-index-detail-button {
+      background-color: #ea4335 !important;
+      border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
+      color: #eeeed3 !important;
+      width: 110px;
+    }
+
+    .admin-search-user-detail-button:hover, .admin-users-index-detail-button:hover {
+      background-color: #ed9f82 !important;
+    }
+
+
 
 
 
