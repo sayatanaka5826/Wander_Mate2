@@ -53,7 +53,7 @@ class User::UsersController < ApplicationController
   def likes
     @user = User.find(params[:id])
     likes = Like.where(user_id: @user.id).pluck(:post_id)
-    @liked_posts = Post.order(created_at: :desc).where(id: likes).page(params[:page]).per(6)
+    @liked_posts = Post.order(created_at: :desc).where(id: likes).page(params[:page]).per(5)
   end
 
 
