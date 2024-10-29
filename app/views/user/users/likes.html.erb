@@ -14,7 +14,7 @@
         <% end %>
       </td>
       <td class="ml-3">
-        <div><%= post.user.name %></div>
+        <div class="liked-posts-user-name"><%= post.user.name %></div>
         <div class="liked-posts-title">
           <%= link_to post.title, post_path(post.id), style: "color: #33231d;" %>
         </div>
