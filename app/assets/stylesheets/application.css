@@ -306,13 +306,13 @@
 
 .mypage-profile-table, .user-profile-table, .admin-user-profile-table {
   margin: auto;
-  width: 50%;
+  width: 70%;
   max-width: 800px;
 }
 
 .mypage-posts-table, .user-posts-table, .admin-user-posts-table {
   margin: auto;
-  width: 60%;
+  width: 50%;
   margin-top: 20px;
 }
 
@@ -508,8 +508,8 @@
 
     .mypage-profile-table, .user-profile-table, .admin-user-profile-table {
       margin: auto;
-      margin-left: 40px;
-      width: 80%;
+      width: 70%;
+      max-width: 380px;
     }
 
     .mypage-posts-table, .user-posts-table, .admin-user-posts-table {
@@ -521,6 +521,10 @@
     .mypage-posts-title, .user-posts-title, .admin-user-posts-title {
       font-weight: bold;
       font-size: 12px
+    }
+
+    .mypage-posts-user-name, .user-show-posts-user-name, .admin-user-show-posts-user-name {
+      font-size: 12px;
     }
 
     .profile-item {

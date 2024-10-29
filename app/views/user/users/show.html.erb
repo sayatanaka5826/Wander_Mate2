@@ -55,48 +55,50 @@
   【プロフィール】
 </div>
 
-<table class="user-profile-table">
-  <tbody class="text-color">
-    <tr style="line-height: 2; vertical-align: middle;">
-      <td style="font-size: 15px;"><strong>性別</strong></td>
-      <td class="profile-item">
-        <%= @user.gender_japanese %>
-      </td>
-      <td style="font-size: 15px;"><strong>年齢</strong></td>
-      <td class="profile-item">
-        <%= @user.age_japanese %>
-      </td>
-    </tr>
-    <tr style="line-height: 2; vertical-align: middle;">
-      <td style="font-size: 15px;"><strong>喫煙</strong></td>
-      <td class="profile-item">
-        <%= @user.smoking_japanese %>
-      </td>
-      <td style="font-size: 15px;"><strong>飲酒</strong></td>
-      <td class="profile-item">
-        <%= @user.drinking_japanese %>
-      </td>
-    </tr>
-    <tr style="line-height: 2; vertical-align: middle;">
-      <td style="font-size: 15px;"><strong>行った国数</strong></td>
-      <td class="profile-item">
-        <%= @user.country_count.present? ? @user.country_count : '非公開' %>
-      </td>
-      <td style="font-size: 15px;"><strong>好きな地域</strong></td>
-      <td class="profile-item">
-        <%= @user.favorite_area_japanese %>
-      </td>
-    </tr>
-    <tr style="line-height: 2; vertical-align: middle;">
-      <td style="font-size: 15px;"><strong>予算</strong></td>
-      <td class="profile-item">
-        <%= @user.budget_japanese %>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+<div class="container text-center">
+  <table class=" table user-profile-table">
+    <tbody class="text-color">
+      <tr style="line-height: 2; vertical-align: middle;">
+        <td style="font-size: 15px;"><strong>性別</strong></td>
+        <td class="profile-item">
+          <%= @user.gender_japanese %>
+        </td>
+        <td style="font-size: 15px;"><strong>年齢</strong></td>
+        <td class="profile-item">
+          <%= @user.age_japanese %>
+        </td>
+      </tr>
+      <tr style="line-height: 2; vertical-align: middle;">
+        <td style="font-size: 15px;"><strong>喫煙</strong></td>
+        <td class="profile-item">
+          <%= @user.smoking_japanese %>
+        </td>
+        <td style="font-size: 15px;"><strong>飲酒</strong></td>
+        <td class="profile-item">
+          <%= @user.drinking_japanese %>
+        </td>
+      </tr>
+      <tr style="line-height: 2; vertical-align: middle;">
+        <td style="font-size: 15px;"><strong>行った国数</strong></td>
+        <td class="profile-item">
+          <%= @user.country_count.present? ? @user.country_count : '非公開' %>
+        </td>
+        <td style="font-size: 15px;"><strong>好きな地域</strong></td>
+        <td class="profile-item">
+          <%= @user.favorite_area_japanese %>
+        </td>
+      </tr>
+      <tr style="line-height: 2; vertical-align: middle;">
+        <td style="font-size: 15px;"><strong>予算</strong></td>
+        <td class="profile-item">
+          <%= @user.budget_japanese %>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;"
      class="text-center text-color">
@@ -113,7 +115,7 @@
         <% end %>
       </td>
       <td>
-        <div><%= post.user.name %></div>
+        <div class="user-show-posts-user-name"><%= post.user.name %></div>
         <div class="user-posts-title">
           <%= link_to post.title, post_path(post.id), style: "color: #33231d;" %>
         </div>

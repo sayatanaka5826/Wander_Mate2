@@ -30,8 +30,8 @@
     プロフィール
   </div>
 
-
-  <table class="admin-user-profile-table">
+<div class="container text-center">
+  <table class="table admin-user-profile-table">
     <tbody class="text-color">
       <tr style="line-height: 2; vertical-align: middle;">
         <td style="font-size: 15px;"><strong>性別</strong></td>
@@ -73,7 +73,7 @@
       </tr>
     </tbody>
   </table>
-
+</div>
 
   <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;" class="text-center">
     投稿一覧
@@ -89,7 +89,7 @@
           <% end %>
         </td>
         <td>
-          <div><%= post.user.name %></div>
+          <div class="admin-user-show-posts-user-name"><%= post.user.name %></div>
           <div class="admin-user-posts-title">
             <%= link_to post.title, admin_post_path(post.id), style: "color: #33231d;" %>
           </div>
