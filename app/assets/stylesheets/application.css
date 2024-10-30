@@ -265,7 +265,7 @@
 }
 
 .message-delete-button {
-  color: #33231d;
+  color: #33231d !important;
   border: 1px solid #33231d !important;
 }
 
