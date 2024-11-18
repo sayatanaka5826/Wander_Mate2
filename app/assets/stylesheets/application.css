@@ -35,21 +35,24 @@
 
 .header-button {
   background-color: #0001dd !important;
-  color: #eeeed3 !important; /* 通常時のテキストカラー */
-  border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
-  transition: background-color 0.3s, color 0.3s; /* スムーズな遷移 */
+  color: #eeeed3 !important;
+  border: 2px solid #33231d !important;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 25px !important;
 }
 
 .header-button:hover {
   background-color: #8282ed !important;
   color: #eeeed3 !important;
+  border-radius: 25px !important;
 }
 
 .header-post-new-button {
-  background-color: #ea4335 !important; /* 通常時の背景色 */
-  color: #eeeed3 !important; /* 通常時のテキストカラー */
-  border: 2px solid #33231d !important; /* 枠線の太さと色を指定 */
-  transition: background-color 0.3s, color 0.3s
+  background-color: #ea4335 !important;
+  color: #eeeed3 !important;
+  border: 2px solid #33231d !important;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 25px !important;
 }
 
 .header-post-new-button:hover {
@@ -59,6 +62,18 @@
 .search-container {
   text-align: right;
   margin-right: 215px;
+}
+
+.search-button {
+  background-color: #0001dd !important;
+  color: #eeeed3 !important;
+  border: 2px solid #33231d !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #8282ed !important;
+  color: #eeeed3 !important;
 }
 
 .search-index-title {
