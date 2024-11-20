@@ -375,9 +375,14 @@
     margin: auto;
   }
 
+.admin-posts-index-user-name {
+  font-size: 18px;
+  color: #33231d;
+}
+
 .admin-posts-index-title {
   font-weight: bold;
-  font-size: 20px
+  font-size: 20px;
 }
 
 .admin-search-result-user-name, .admin-users-index-user-name{
