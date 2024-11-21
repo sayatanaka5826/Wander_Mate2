@@ -1,22 +1,22 @@
 <div class="container text-color">
   <table style="margin: auto; border: none;">
     <tr>
-      <td colspan="3" style="text-align: center;">
+      <td style="text-align: center;">
         <%= image_tag @user.get_profile_image(150, 150), class: "rounded-circle" %>
       </td>
     </tr>
     <tr>
-      <td colspan="3" style="text-align: center; font-weight: bold; font-size: 50px;">
+      <td style="text-align: center; font-weight: bold; font-size: 50px;">
         <%= @user.name %>
       </td>
     </tr>
     <tr>
-      <td colspan="3" style="text-align: center;">
+      <td style="text-align: center;">
         <span class="text-color">フォロー中: <%= @user.followings.count %>人</span>
         <span class="text-color">フォロワー: <%= @user.followers.count %>人</span>
       </td>
     </tr>
-    <tr><td colspan="3" style="height: 10px;"></td></tr>
+    <tr><td style="height: 10px;"></td></tr>
     <tr>
       <td class="text-center">
         <%= link_to '退会 <i class="fa-solid fa-right-from-bracket"></i>'.html_safe, admin_user_path, class: "btn btn-outline-danger button",
@@ -26,7 +26,7 @@
   </table>
 </div>
 
-  <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;" class="text-center">
+  <div class="text-center" style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;" >
     プロフィール
   </div>
 
@@ -68,14 +68,12 @@
         <td class="profile-item">
           <%= @user.budget_japanese %>
         </td>
-        <td></td>
-        <td></td>
       </tr>
     </tbody>
   </table>
 </div>
 
-  <div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;" class="text-center">
+  <div class="text-center" style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;" >
     投稿一覧
   </div>
 
@@ -99,7 +97,7 @@
           <div><i class="fa-regular fa-comment-dots mr-1"></i><%= post.post_comments.count %></div>
         </td>
       </tr>
-      <tr><td colspan="2" style="height: 10px;"></td></tr>
+      <tr><td style="height: 10px;"></td></tr>
       <% end %>
     </tbody>
   </table>

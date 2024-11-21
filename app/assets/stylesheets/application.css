@@ -123,6 +123,12 @@
   width: 145px;
 }
 
+.card-title {
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
 .post-edit-button {
   background-color: #eeeed3 !important;
   border: 2px solid #33231d !important;
@@ -150,6 +156,7 @@
   overflow: hidden;
   margin-top: 40px;
   margin-bottom: 70px;
+  border-radius: 25px !important;
 }
 
 .comment-send-button {
@@ -391,6 +398,12 @@
     color: #33231d;
   }
 
+  .admin-search-users-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
 
 
 
@@ -421,9 +434,9 @@
       height: 30px;
       overflow-y: auto;
       border-radius: 5px;
-      display: flex; /* フレックスボックスを使用 */
-      justify-content: center; /* 中央寄せ */
-      align-items: center; /* 縦方向中央寄せ */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .my-message {
@@ -454,6 +467,7 @@
     .post-show-card {
       width: 90%;
       margin: 40px auto;
+      border-radius: 25px !important;
     }
 
     .search-index-title {
@@ -483,9 +497,9 @@
 
     .search-user-button-text {
       font-size: 10px;
-      display: flex; /* フレックスボックスを使用 */
-      align-items: center; /* 垂直方向に中央寄せ */
-      justify-content: center; /* 水平方向に中央寄せ（必要に応じて） */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .search-result, .admin-users-index {
@@ -564,16 +578,25 @@
     }
 
     .admin-search-user-detail-button, .admin-users-index-detail-button {
+      font-size: 12px !important;
       background-color: #ea4335 !important;
       border: 2px solid #33231d !important;
+      border-radius: 25px !important;
       color: #eeeed3 !important;
-      width: 110px;
+      width: 90px;
     }
 
     .admin-search-user-detail-button:hover, .admin-users-index-detail-button:hover {
       background-color: #ed9f82 !important;
     }
 
+    .admin-search-users-result {
+      width: 100%;
+    }
+
+    .admin-search-posts-title {
+      font-size: 14px !important;
+    }
 
 
 

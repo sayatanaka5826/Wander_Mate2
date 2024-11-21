@@ -9,20 +9,18 @@
   <table class="table table-hover table-borderless">
     <tbody>
       <% @users.each do |user| %>
-            <tr>
-              <td>
-
-                  <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
-                  <span class="admin-users-index-user-name"><%= user.name %></span>
-
-              </td>
-              <td style="text-align: right;">
-                <%= link_to admin_user_path(user) do %>
-                  <button class="btn admin-users-index-detail-button mt-3" style="border-radius: 25px;">詳細を見る</button>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
+        <tr>
+          <td>
+            <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
+            <span class="admin-users-index-user-name"><%= user.name %></span>
+          </td>
+          <td style="text-align: right;">
+            <%= link_to admin_user_path(user) do %>
+              <button class="btn admin-users-index-detail-button mt-3">詳細を見る</button>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 

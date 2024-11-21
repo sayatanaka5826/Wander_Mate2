@@ -1,5 +1,5 @@
 <% if @range == "ユーザー" %>
-  <div class="container search-result" style="width: 50%;">
+  <div class="container search-result" style="width: 40%;">
     <div class="text-center text-color mt-5 mb-5">
       <div style="font-weight: bold; font-size: 30px;">
         <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果
@@ -10,16 +10,16 @@
       <% if @users.present? %>
         <% @users.each do |user| %>
           <tr>
-            <td style="display: flex; justify-content: space-between; align-items: center;">
-              <div style="display: flex; align-items: center;">
+            <td class="admin-search-users-result">
+              <div>
                 <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
                 <span class="admin-search-result-user-name"><%= user.name %></span>
               </div>
-              <span>
-                <%= link_to admin_user_path(user), class: "text-dark" do %>
-                  <button class="btn admin-search-user-detail-button" style="border-radius: 25px;">詳細を見る</button>
+              <div>
+                <%= link_to admin_user_path(user) do %>
+                  <button class="btn admin-search-user-detail-button">詳細を見る</button>
                 <% end %>
-              </span>
+              </div>
             </td>
           </tr>
         <% end %>
@@ -48,10 +48,10 @@
               <% end %>
             </td>
             <td>
-              <div style="font-size: 18px; margin-left: 3px; color: #33231d;">
+              <div style="margin-left: 3px; color: #33231d;">
                 <%= post.user.name %>
               </div>
-              <div style="font-weight: bold; font-size: 20px">
+              <div class="admin-search-posts-title" style="font-weight: bold; font-size: 20px">
                 <%= link_to post.title, admin_post_path(post.id), style: "color: #33231d;" %>
               </div>
             </td>
@@ -84,93 +84,4 @@
   <% end %>
 </div>
 
-
-
-
-
-
-
-<!--<div class="container" style="width: 30%;">-->
-
-<!--  <div class="text-center mt-5 mb-5">-->
-<!--    <div style="font-weight: bold; font-size: 30px;">-->
-<!--      <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果-->
-<!--    </div>-->
-<!--  </div>-->
-
-
-<!--    <table class="table table-hover table-borderless" >-->
-<!--      <% if @range == "ユーザー" %>-->
-<!--        <tbody>-->
-<!--          <% if @users.present? %>-->
-<!--            <% @users.each do |user| %>-->
-<!--              <tr>-->
-<!--                <td style="display: flex; justify-content: space-between; align-items: center;">-->
-<!--                  <div style="display: flex; align-items: center;">-->
-<!--                    <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>-->
-<!--                    <span style="font-size: 30px; padding-left: 20px; color: black;"><%= user.name %></span>-->
-<!--                  </div>-->
-<!--                  <span>-->
-<!--                    <%= link_to admin_user_path(user), class: "text-dark" do %>-->
-<!--                      <button class="btn btn-outline-secondary">詳細を見る</button>-->
-<!--                    <% end %>-->
-<!--                  </span>-->
-<!--                </td>-->
-<!--              </tr>-->
-<!--            <% end %>-->
-<!--          <% else %>-->
-<!--            <tr>-->
-<!--              <td colspan="2" class="text-center">該当するユーザーが見つかりませんでした。</td>-->
-<!--            </tr>-->
-<!--          <% end %>-->
-<!--        </tbody>-->
-<!--      <% elsif @range == "投稿" %>-->
-<!--        <tbody>-->
-<!--          <% if @posts.present? %>-->
-<!--            <% @posts.each do |post| %>-->
-<!--              <tr>-->
-<!--                <td>-->
-<!--                  <%= link_to admin_user_path(post.user) do %>-->
-<!--                    <%= image_tag post.user.get_profile_image(50, 50), class: "rounded-circle" %>-->
-<!--                  <% end %>-->
-<!--                </td>-->
-<!--                <td>-->
-<!--                  <div style="font-size: 18px; margin-left: 3px;">-->
-<!--                    <%= post.user.name %>-->
-<!--                  </div>-->
-<!--                  <div style="font-weight: bold; font-size: 20px">-->
-<!--                    <%= link_to post.title, admin_post_path(post.id), style: "color: #343a40;" %>-->
-<!--                  </div>-->
-<!--                </td>-->
-<!--                <td>-->
-<!--                  <div style="display: flex; align-items: center; margin-bottom: 5px;">-->
-<!--                    <i class="fa-regular fa-heart mr-1"></i>-->
-<!--                    <span><%= post.likes.count %></span>-->
-<!--                  </div>-->
-<!--                  <div style="display: flex; align-items: center; margin-bottom: 5px;">-->
-<!--                    <i class="fa-regular fa-comment-dots mr-1"></i>-->
-<!--                    <span><%= post.post_comments.count %></span>-->
-<!--                  </div>-->
-<!--                </td>-->
-<!--              </tr>-->
-<!--            <% end %>-->
-<!--          <% else %>-->
-<!--            <tr>-->
-<!--              <td colspan="2" class="text-center">該当する投稿が見つかりませんでした。</td>-->
-<!--            </tr>-->
-<!--          <% end %>-->
-<!--        </tbody>-->
-<!--      <% end %>-->
-<!--    </table>-->
-
-
-<!--  <div class="pagination d-flex justify-content-center mt-5 mb-5">-->
-<!--    <% if @range == "ユーザー" %>-->
-<!--      <%= paginate @users %>-->
-<!--    <% elsif @range == "投稿" %>-->
-<!--      <%= paginate @posts %>-->
-<!--    <% end %>-->
-<!--  </div>-->
-
-<!--</div>-->
 
