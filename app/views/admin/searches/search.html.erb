@@ -11,9 +11,11 @@
         <% @users.each do |user| %>
           <tr>
             <td class="admin-search-users-result">
-              <div>
+              <div style="display: flex; align-items: center; gap: 10px;">
                 <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
-                <span class="admin-search-result-user-name"><%= user.name %></span>
+                <div class="admin-search-result-user-name" style="white-space: normal; word-break: break-word;">
+                  <%= user.name %>
+                </div>
               </div>
               <div>
                 <%= link_to admin_user_path(user) do %>

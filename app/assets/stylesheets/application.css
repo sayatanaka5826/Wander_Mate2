@@ -575,6 +575,7 @@
       padding-left: 10px;
       color: #33231d;
       font-weight: bold;
+      width: 150;
     }
 
     .admin-search-user-detail-button, .admin-users-index-detail-button {
