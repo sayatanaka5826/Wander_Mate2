@@ -9,32 +9,30 @@
   </div>
 <% end %>
 
-<div class="card post-show-card shadow-lg text-color" style="border-radius: 25px;">
+<div class="card post-show-card shadow-lg text-color">
   <div class="card-header d-flex justify-content-between align-items-center">
-    <div class="d-flex align-items-center">
-      <%= link_to user_path(@post.user) do %>
-        <%= image_tag @post.user.get_profile_image(50, 50), class: "rounded-circle" %>
-        <span style="font-weight: bold; font-size: 20px; margin-left: 10px; color: #33231d;"><%= @post.user.name %>
-      <% end %>
-    </div>
+    <%= link_to user_path(@post.user) do %>
+      <%= image_tag @post.user.get_profile_image(50, 50), class: "rounded-circle" %>
+      <span style="font-weight: bold; font-size: 20px; margin-left: 10px; color: #33231d;"><%= @post.user.name %>
+    <% end %>
     <% if current_user == @post.user %>
       <div class="ml-auto d-flex">
-        <%= link_to edit_post_path, class: "text-dark text-right mr-2" do %>
-          <button class="btn btn-outline-dark post-edit-button" style="border-radius: 25px;">編集 <i class="fa-solid fa-pen"></i></button>
+        <%= link_to edit_post_path, class: "text-right mr-2" do %>
+          <button class="btn post-edit-button">編集 <i class="fa-solid fa-pen"></i></button>
         <% end %>
         <%= link_to '削除 <i class="fa-solid fa-trash-can"></i>'.html_safe, post_path, method: :delete,
-        data: { confirm: '本当に消しますか？' }, class: "btn btn-outline-danger post-delete-button", style: "border-radius: 25px;" %>
+        data: { confirm: '本当に消しますか？' }, class: "btn post-delete-button"%>
       </div>
     <% end %>
   </div>
 
   <div class="card-body text-color">
     <% if @post.post_image.attached? %>
-      <%= image_tag @post.post_image, class: "card-img-top", style: "width: 100%;" %>
+      <%= image_tag @post.post_image, style: "width: 100%;" %>
     <% else %>
-      <%= image_tag 'no_image2.png', class: "card-img-top", style: "width: 100%;" %>
+      <%= image_tag 'no_image2.png', style: "width: 100%;" %>
     <% end %>
-    <h5 class="card-title" style="font-weight: bold; font-size: 30px; margin-top: 20px;" ><%= @post.title %></h5>
+    <h5 style="font-weight: bold; font-size: 30px; margin-top: 15px;" ><%= @post.title %></h5>
     <i class="fa-regular fa-clock"></i> 投稿日：<%= @post.created_at.strftime("%Y年%m月%d日") %>
     <span style="margin: 0 6px;">&nbsp;</span>
     <i class="fa-solid fa-rotate-right"></i> 最終変更日：<%= @post.updated_at.strftime("%Y年%m月%d日") %>

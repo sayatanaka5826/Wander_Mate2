@@ -132,6 +132,7 @@
   background-color: #eeeed3 !important;
   border: 2px solid #33231d !important;
   color: #33231d !important;
+  border-radius: 25px !important;
 }
 
 .post-edit-button:hover {
@@ -143,6 +144,7 @@
   background-color: #ea4335 !important;
   border: 2px solid #33231d !important;
   color: #eeeed3 !important;
+  border-radius: 25px !important;
 }
 
 .post-delete-button:hover {
