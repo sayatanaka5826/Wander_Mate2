@@ -5,27 +5,25 @@
     <span class="text-color" style="font-weight: bold; font-size: 20px; margin-left: 10px;"><%= @user.name %></span>
   <% end %>
 
-  <div class="message mt-3" style="width: 100%; max-height: calc(100% - 100px); overflow-y: auto;">
+  <div class="message">
     <% @chats.each do |chat| %>
       <% if chat.user_id == current_user.id %>
         <%= render "user/chats/chat", chat: chat %>
       <% else %>
         <div class="left-container d-flex align-items-center">
           <%= image_tag @user.get_profile_image(40, 40), style: 'border-radius: 50%;' %>
-          <p class="ml-2 mb-3" style="text-align: left;">
-            <span class="their-message mt-2">
-              <%= chat.message %>
-            </span>
+          <p class="their-message">
+            <%= chat.message %>
           </p>
         </div>
       <% end %>
     <% end %>
   </div>
 
-  <div style="position: absolute; bottom: 15px; right: 32px; width: calc(100% - 20px;">
+  <div style="position: absolute; bottom: 20px; right: 32px; width: calc(100% - 20px;">
     <%= form_with model: @chat, data: {remote: true} do |f| %>
       <div style="display: flex; align-items: center;">
-        <%= f.text_area :message, class: "message-text-area", rows: 1 %>
+        <%= f.text_area :message, placeholder: " メッセージを入力", class: "message-text-area", rows: 1 %>
         <%= button_tag(type: 'submit', class: "btn btn-sm message-send-button ml-2 mb-1") do %>
           <i class="fa-solid fa-paper-plane"></i>
         <% end %>
