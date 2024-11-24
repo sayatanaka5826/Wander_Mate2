@@ -113,6 +113,7 @@
 .follow-button, .search-to-chat-button {
   background-color: #eeeed3 !important;
   border: 2px solid #33231d !important;
+  border-radius: 25px !important;
   color: #33231d !important;
   width: 145px;
 }
@@ -120,6 +121,7 @@
 .follow-button:hover, .search-to-chat-button:hover, .following-button{
   background-color: #33231d !important;
   color: #eeeed3 !important;
+  border-radius: 25px !important;
   width: 145px;
 }
 
@@ -484,6 +486,11 @@
       font-size: 20px;
     }
 
+    .search-result-profile-image {
+      width: 50px;
+      height: 50px;
+    }
+
     .search-result-user-name {
       font-weight: bold;
       font-size: 15px;
@@ -495,13 +502,13 @@
       background-color: #eeeed3 !important;
       border: 2px solid #33231d !important;
       color: #33231d !important;
-      width: 145px;
+      width: 100px;
     }
 
     .follow-button:hover, .search-to-chat-button:hover, .following-button{
       background-color: #33231d !important;
       color: #eeeed3 !important;
-      width: 145px !important;
+      width: 100px !important;
     }
 
     .search-user-button-text {

@@ -13,7 +13,7 @@
             <tr>
               <td>
                 <%= link_to(user) do %>
-                  <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle" %>
+                  <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle search-result-profile-image" %>
                   <span class="search-result-user-name"><%= user.name %></span>
                 <% end %>
               </td>
@@ -21,23 +21,23 @@
                 <% unless current_user == user %>
                   <% if user_signed_in? && current_user.following?(user) %>
                     <%= link_to user_relationships_path(user.id), method: :delete do%>
-                      <button class="btn following-button mt-2" style="border-radius: 25px;">
+                      <button class="btn following-button mt-2">
                         <span class="search-user-button-text">フォロー中 <i class="fa-solid fa-user-check ml-1"></i></span>
                       </button>
                     <% end %>
                   <% else %>
                     <%= link_to user_relationships_path(user.id), method: :post do%>
-                      <button class="btn follow-button mt-2" style="border-radius: 25px;">
+                      <button class="btn follow-button mt-2">
                         <span class="search-user-button-text">フォロー <i class="fa-solid fa-user-plus ml-1"></i></span>
                       </button>
                     <% end %>
                   <% end %>
                   <span style="margin: 0 6px;">&nbsp;</span>
-                  <%= link_to chat_path(user.id), class: "text-dark" do %>
-                    <button class="btn  search-to-chat-button mt-2" style="border-radius: 25px;">
-                      <span class="search-user-button-text">チャットする <i class="fa-solid fa-comment-dots"></i></span>
-                    </button>
-                  <% end %>
+                  <!--<!%= link_to chat_path(user.id), class: "text-dark" do %>-->
+                  <!--  <button class="btn  search-to-chat-button mt-2" style="border-radius: 25px;">-->
+                  <!--    <span class="search-user-button-text">チャットする <i class="fa-solid fa-comment-dots"></i></span>-->
+                  <!--  </button>-->
+                  <!--<!% end %>-->
                 <% end %>
               </td>
             </tr>
