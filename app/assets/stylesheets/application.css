@@ -11,7 +11,8 @@
   padding-right: 0;
 }
 
-.button, .admin-search-user-detail-button, .admin-users-index-detail-button {
+.button, .admin-search-user-detail-button, 
+.admin-users-index-detail-button, .mypage-edit-save-button {
   background-color: #ea4335 !important;
   border: 2px solid #33231d !important;
   color: #eeeed3 !important;
@@ -188,7 +189,6 @@
   border-radius: 25px !important;
   color: #eeeed3 !important;
   width: 150px;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .to-confirm-button:hover {
@@ -427,6 +427,14 @@
 
 
 @media screen and (max-width:576px) {
+    .success-flash {
+      background-color: #eeeed3 !important;
+      border: 1px solid #33231d !important;
+      border-radius: 5px;
+      color: #33231d !important;
+      font-size: 12px;
+    }
+
     .custom-container {
       padding-left: 0;
       padding-right: 0;
@@ -622,6 +630,36 @@
     .search-posts-title {
       font-size: 14px !important;
     }
+
+    .mypage-edit-tbody {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mypage-edit-item {
+      width: 100% !important;
+      padding-right: 0 !important;
+      display: block;
+      width: 100%;
+    }
+
+    .to-confirm-button {
+      width: 100px;
+      margin-left: 37px;
+    }
+
+    .mypage-edit-save-button {
+      background-color: #ea4335 !important;
+      border: 2px solid #33231d !important;
+      color: #eeeed3 !important;
+      border-radius: 25px !important;
+      width: 100px;
+    }
+
+    .mypage-edit-save-button:hover {
+      background-color: #ed9f82 !important;
+    }
+
 
 
 
