@@ -1,11 +1,11 @@
-<div class="container search-result" style="width: 50%;">
+<div class="container search-result" style="width: 40%;">
   <div class="text-center text-color mt-5 mb-5">
     <div class ="search-index-title">
       <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果
     </div>
   </div>
 
-  <table class="table table-hover table-borderless">
+  <table class="table table-hover table-border">
     <% if @range == "ユーザー" %>
       <tbody>
         <% if @users.present? %>
@@ -13,8 +13,10 @@
             <tr>
               <td>
                 <%= link_to(user) do %>
-                  <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle search-result-profile-image" %>
-                  <span class="search-result-user-name"><%= user.name %></span>
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <%= image_tag user.get_profile_image(70, 70), class: "rounded-circle search-result-profile-image" %>
+                    <span class="search-result-user-name" style="white-space: normal; word-break: break-word;"><%= user.name %></span>
+                  </div>
                 <% end %>
               </td>
               <td style="text-align: right;">
@@ -62,7 +64,7 @@
                 <div style="font-size: 18px; margin-left: 3px;">
                   <%= post.user.name %>
                 </div>
-                <div style="font-weight: bold; font-size: 20px">
+                <div class="search-posts-title">
                   <%= link_to post.title, post_path(post.id), style: "color: #33231d" %>
                 </div>
               </td>

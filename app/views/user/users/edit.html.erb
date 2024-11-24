@@ -4,7 +4,7 @@
 
 <div class="container text-color" style="width: 70%;">
   <%= form_with model: @user, url: update_mypage_path, method: :patch do |f| %>
-  <table style="margin-top: 20px; margin-bottom: 50px;">
+  <table style="margin: 20px 0 50px 0;">
     <thead>
       <th colspan="2" style="font-weight: bold; font-size: 30px;">
         プロフィール編集 <i class="fa-solid fa-pen-to-square"></i>
@@ -12,7 +12,7 @@
     </thead>
 
     <tbody>
-      <tr style="line-height: 4; vertical-align: middle;">
+      <tr style="vertical-align: middle;">
         <td style="width: 25%;">
           <div style="margin-top: 40px;">
             <strong>プロフィール画像</strong> <span class="badge badge-secondary">任意</span>
@@ -26,12 +26,12 @@
       </tr>
       <tr style="line-height: 4; vertical-align: middle;">
         <td style="width: 25%;"><strong>ユーザーネーム</strong> <span class="badge badge-danger">必須</span></td>
-        <td colspan="3"style="width: 25%;">
+        <td colspan="3" style="width: 25%;">
           <%= f.text_field :name, class: "form-control" %>
         </td>
       </tr>
       <tr style="line-height: 4; vertical-align: middle;">
-        <td colspan="1" style="width: 25%;"><strong>プロフィール </strong><span class="badge badge-secondary">任意</span></td>
+        <td colspan="1" style="width: 25%;"><strong>自己紹介 </strong><span class="badge badge-secondary">任意</span></td>
         <td colspan="3" style="width: 75%;"><%= f.text_area :bio, class: 'form-control' %></td>
       </tr>
       <tr style="line-height: 4; vertical-align: middle;">
@@ -74,9 +74,9 @@
       </tr>
       <tr>
         <td colspan="4" class="text-center" style="padding-top: 40px; margin-bottom: 40px;">
-          <%= link_to "退会する", confirm_users_path, class: "btn btn-danger to-confirm-button", style: "border-radius: 25px;" %>
+          <%= link_to "退会する", confirm_users_path, class: "btn to-confirm-button" %>
           <span style="margin: 0 20px;">&nbsp;</span>
-          <%= f.submit "保存する", class: "btn btn-dark button", style: "border-radius: 25px;" %>
+          <%= f.submit "保存する", class: "btn button" %>
         </td>
       </tr>
     </tbody>

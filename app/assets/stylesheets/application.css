@@ -91,9 +91,10 @@
 .sign-up-button {
   background-color: #ea4335 !important;
   border: 2px solid #33231d !important;
+  border-radius: 25px !important;
   color: #eeeed3 !important;
   width: 150px;
-  transition: background-color 0.3s, color 0.3s;
+
 }
 
 .sign-up-button:hover {
@@ -184,6 +185,7 @@
 .to-confirm-button {
   background-color: #33231d !important;
   border: 2px solid #33231d !important;
+  border-radius: 25px !important;
   color: #eeeed3 !important;
   width: 150px;
   transition: background-color 0.3s, color 0.3s;
@@ -197,6 +199,7 @@
 .go-back-button {
   background-color: #eeeed3 !important;
   color: #33231d !important;
+  border-radius: 25px !important;
   width: 150px;
   border: 2px solid #33231d !important;
 }
@@ -415,6 +418,11 @@
     align-items: center;
   }
 
+  .search-posts-title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
 
 
 
@@ -611,7 +619,7 @@
       width: 100%;
     }
 
-    .admin-search-posts-title {
+    .search-posts-title {
       font-size: 14px !important;
     }
 

@@ -33,7 +33,7 @@
     </table>
   </div>
 <% elsif @range == "投稿" %>
-  <div class="container search-result" style="width: 50%;">
+  <div class="container search-result" style="width: 40%;">
     <div class="text-center text-color mt-5 mb-5">
       <div style="font-weight: bold; font-size: 30px;">
         <i class="fa-solid fa-magnifying-glass"></i> 「<%= @word %>」の検索結果
@@ -53,7 +53,7 @@
               <div style="margin-left: 3px; color: #33231d;">
                 <%= post.user.name %>
               </div>
-              <div class="admin-search-posts-title" style="font-weight: bold; font-size: 20px">
+              <div class="search-posts-title">
                 <%= link_to post.title, admin_post_path(post.id), style: "color: #33231d;" %>
               </div>
             </td>
