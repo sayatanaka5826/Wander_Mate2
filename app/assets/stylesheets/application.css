@@ -11,7 +11,7 @@
   padding-right: 0;
 }
 
-.button, .admin-search-user-detail-button, 
+.button, .admin-search-user-detail-button,
 .admin-users-index-detail-button, .mypage-edit-save-button {
   background-color: #ea4335 !important;
   border: 2px solid #33231d !important;
@@ -135,8 +135,8 @@
 .post-edit-button {
   background-color: #eeeed3 !important;
   border: 2px solid #33231d !important;
-  color: #33231d !important;
   border-radius: 25px !important;
+  color: #33231d !important;
 }
 
 .post-edit-button:hover {
@@ -224,20 +224,29 @@
 .followers-box {
   padding: 20px;
   width: 380px;
-  height: 400px;
-  margin-bottom: 20px;
+  height: 450px;
+  margin: 50px auto 60px;
+  border-radius: 25px !important;
+  overflow: hidden;
+  overflow-y: auto;
   background-color: white;
 }
 
 .follower-box-following-button, .follower-box-follow-button:hover {
   background-color: #33231d !important;
+  border-radius: 25px !important;
   color: #eeeed3 !important;
+  width: 100px;
+  font-size: 12px;
 }
 
 .follower-box-follow-button, .follower-box-following-button:hover {
   background-color: #eeeed3 !important;
-  color: #33231d !important;
   border: 2px solid #33231d !important;
+  border-radius: 25px !important;
+  color: #33231d !important;
+  width: 100px;
+  font-size: 12px;
 }
 
 .chat-box {

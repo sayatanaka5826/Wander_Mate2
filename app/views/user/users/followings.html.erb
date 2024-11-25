@@ -1,5 +1,4 @@
-<div class="followers-box shadow-lg"
-     style="margin: auto; border-radius: 25px; overflow: hidden; margin-top: 50px; margin-bottom: 110px; overflow-y: auto;">
+<div class="followers-box shadow-lg">
   <p class="text-center" style="font-weight: bold; font-size: 20px; color: #33231d;">フォロー中</p>
 
   <% @users.each do |user| %>
@@ -11,16 +10,14 @@
       <% unless current_user == user %>
         <% if user_signed_in? && current_user.following?(user) %>
           <%= link_to user_relationships_path(user.id), method: :delete do%>
-            <button class="btn follower-box-following-button"
-                    style="border-radius: 25px; width: 100px; font-size: 12px;">
-                    フォロー中
+            <button class="btn follower-box-following-button" style="font-size: 12px;">
+              フォロー中
             </button>
           <% end %>
         <% else %>
           <%= link_to user_relationships_path(user.id), method: :post do%>
-            <button class="btn follower-box-follow-button"
-                    style="border-radius: 25px; width: 100px; font-size: 12px;">
-                    フォローする
+            <button class="btn follower-box-follow-button" style="font-size: 12px;">
+              フォローする
             </button>
           <% end %>
         <% end %>

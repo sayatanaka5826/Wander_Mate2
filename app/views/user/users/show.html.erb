@@ -27,20 +27,20 @@
       <td colspan="3" class="text-center">
         <% if user_signed_in? && current_user.following?(@user) %>
           <%= link_to user_relationships_path(@user.id), method: :delete do%>
-            <button class="btn following-button mt-2" style="border-radius: 25px; width: 145px;">
+            <button class="btn following-button mt-2" style="width: 145px;">
               フォロー中 <i class="fa-solid fa-user-check"></i>
             </button>
           <% end %>
         <% else %>
           <%= link_to user_relationships_path(@user.id), method: :post do%>
-            <button class="btn follow-button mt-2" style="border-radius: 25px; width: 145px;">
+            <button class="btn follow-button mt-2" style="width: 145px;">
               フォロー <i class="fa-solid fa-user-plus"></i>
             </button>
           <% end %>
         <% end %>
         <% if user_signed_in? && current_user != @user && current_user.following?(@user) && @user.following?(current_user) %>
           <%= link_to chat_path(@user.id) do %>
-            <button class="btn btn-outline-dark post-edit-button mt-2 ml-1" style="border-radius: 25px; width: 145px;">
+            <button class="btn post-edit-button mt-2 ml-1" style="width: 145px;">
               チャット <i class="fa-solid fa-comment-dots"></i>
             </button>
           <% end %>
@@ -50,8 +50,8 @@
   </table>
 </div>
 
-<div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;"
-     class="text-center text-color">
+<div class="text-center text-color"
+     style="font-weight: bold; font-size: 25px; margin: 40px 0 20px 0;">
   【プロフィール】
 </div>
 
@@ -100,8 +100,8 @@
   </table>
 </div>
 
-<div style="font-weight: bold; font-size: 25px; margin-top: 40px; margin-bottom: 20px;"
-     class="text-center text-color">
+<div class="text-center text-color"
+     style="font-weight: bold; font-size: 25px; margin: 40px 0 20px 0;">
   【投稿一覧】
 </div>
 
